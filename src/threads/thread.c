@@ -158,13 +158,30 @@ print_list () {
 void
 wakeup_thread (int64_t curr_ticks)
 {
+	enum intr_level old_level = intr_disable();
 
-	if (!list_empty(&block_list)) {
+	while (!list_empty(&block_list)) {
+		
+		struct list_elem *element = list_front(&block_list);
+		struct thread *t = list_entry(element, struct thread, elem);
+
+		if (t->wake_time <= curr_ticks) {
+			list_pop_front(&block_list);
+			thread_unblock(t);
+		} else {
+			break;
+		}
+
+	}
+
+	intr_set_level(old_level);
+
+/*	if (!list_empty(&block_list)) {
 
 		int i;
 		struct list_elem *element = list_begin(&block_list);
 
-		for (i = 0; i < list_size(&block_list)-1; i++) {
+		for (i = 0; i < list_size(&block_list); i++) {
 
 			enum intr_level old_level;
 			old_level = intr_disable();
@@ -173,14 +190,14 @@ wakeup_thread (int64_t curr_ticks)
 		
 			element = list_next(element);
 
-			intr_set_level(old_level);
-
 			if (t->wake_time <= curr_ticks) {
 				list_remove(&t->elem);
 				thread_unblock(t);
 			}
+			
+			intr_set_level(old_level);
 		} 
-	}
+	} */
 }
 
 /* Prints thread statistics. */
@@ -247,13 +264,32 @@ thread_create (const char *name, int priority,
   return tid;
 }
 
+static bool 
+block_list_ordering (struct list_elem *a, struct list_elem *b, void *aux) {
+	
+	struct thread *thread_a = list_entry(a, struct thread, elem);
+	struct thread *thread_b = list_entry(b, struct thread, elem);
+
+	if (thread_a->wake_time < thread_b->wake_time) {
+		return true;
+	} else if (thread_a->wake_time == thread_b->wake_time) {
+		return true;
+	} else {
+		return false;
+	}
+
+}
+
+
 void
 thread_sleep (int64_t ticks) {
 	
 	struct thread *t = thread_current();
 
-	t->wake_time = timer_ticks() + ticks;
-	list_push_back(&block_list, &t->elem);
+	int64_t wake_time = timer_ticks() + ticks;
+	t->wake_time = wake_time;
+
+	list_insert_ordered(&block_list, &t->elem, block_list_ordering, NULL);
 
 	thread_block();	
 }
@@ -296,9 +332,9 @@ thread_unblock (struct thread *t)
 	list_push_back (&ready_list, &t->elem);
   t->status = THREAD_READY;
 
-//	if (!intr_context()){
+	if (!intr_context() && thread_current() != idle_thread){
 		thread_yield();
-//	} 
+	} 
 	intr_set_level (old_level);
 }
 
