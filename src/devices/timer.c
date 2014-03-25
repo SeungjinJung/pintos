@@ -29,12 +29,21 @@ static bool too_many_loops (unsigned loops);
 static void busy_wait (int64_t loops);
 static void real_time_sleep (int64_t num, int32_t denom);
 
+static bool early_wakeup(const struct list_elem *, const struct list_elem *, void *);
+
+/* blocking list */
+struct list blocked_list;
+
+
 /* Sets up the 8254 Programmable Interval Timer (PIT) to
    interrupt PIT_FREQ times per second, and registers the
    corresponding interrupt. */
 void
 timer_init (void) 
 {
+
+  /* init the blocked list */
+  list_init(&blocked_list);
   /* 8254 input frequency divided by TIMER_FREQ, rounded to
      nearest. */
   uint16_t count = (1193180 + TIMER_FREQ / 2) / TIMER_FREQ;
@@ -92,18 +101,57 @@ timer_elapsed (int64_t then)
   return timer_ticks () - then;
 }
 
+/* for ordering the blocked_list */
+static bool
+early_wakeup(const struct list_elem *a, const struct list_elem *b, void *aux UNUSED){
+  struct thread * threada = list_entry(a, struct thread, elem);
+  struct thread * threadb = list_entry(b, struct thread, elem);
+  if(threada->wakeuptick < threadb->wakeuptick)
+    return true;
+  else if(threada->wakeuptick == threadb->wakeuptick){
+    if(threada->priority > threadb->priority)
+      return true;
+    else
+      return false;
+  }
+  else
+    return false;
+}
+
+void printlist(int p){
+  struct list_elem * s = list_front(&blocked_list);
+  struct list_elem * b = list_back(&blocked_list);
+  printf("----------------%d is in---------------\n", p);
+  while(s != b){
+    struct thread * t = list_entry(s, struct thread, elem);
+    printf("prio : %d\n", t->priority);
+    s = list_next(s);
+  }
+  printf("----------------------------------------\n");
+}
 /* Suspends execution for approximately TICKS timer ticks. */
 void
 timer_sleep (int64_t ticks) 
 {
-	ASSERT (intr_get_level () == INTR_ON);
-		
-	enum intr_level old_level;
-	old_level = intr_disable();
-
-	thread_sleep(ticks);
-
-	intr_set_level(old_level);
+  int64_t start = timer_ticks (); 
+  struct thread * nowthread = thread_current();
+  enum intr_level oldlevel;
+  //treat negative ticks
+  if(ticks < 0)
+    return;
+  oldlevel = intr_disable ();
+  nowthread->wakeuptick = start+ticks;
+  list_insert_ordered(&blocked_list, &nowthread->elem, early_wakeup, NULL);
+//  printf("address of first : %x\n", blocked_list.head.next);
+//  printf("address of now: %x\n", &nowthread->elem);
+  thread_block();
+  intr_set_level(oldlevel);
+  
+/*
+  ASSERT (intr_get_level () == INTR_ON);
+  while (timer_elapsed (start) < ticks) 
+    thread_yield ();
+*/
 }
 
 /* Suspends execution for approximately MS milliseconds. */
@@ -133,14 +181,28 @@ timer_print_stats (void)
 {
   printf ("Timer: %"PRId64" ticks\n", timer_ticks ());
 }
-
+
+
 /* Timer interrupt handler. */
+void wakeup_thread(){
+  struct thread * wakeupthread;
+  while(!list_empty(&blocked_list)){
+    wakeupthread = list_entry(list_front(&blocked_list), struct thread, elem);
+    if(ticks >= wakeupthread->wakeuptick){
+//      printlist(wakeupthread->priority);
+      list_pop_front(&blocked_list);
+      thread_unblock(wakeupthread);
+    }
+    else
+      break;
+  }
+}
 static void
 timer_interrupt (struct intr_frame *args UNUSED)
 {
   ticks++;
   thread_tick ();
-	wakeup_thread (ticks);
+  wakeup_thread();
 }
 
 /* Returns true if LOOPS iterations waits for more than one timer

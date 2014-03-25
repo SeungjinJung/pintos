@@ -102,7 +102,7 @@ arena_to_block	malloc.c	/^arena_to_block (struct arena *a, size_t idx) $/;"	f	fi
 arg_cnt	loader.S	/^arg_cnt:$/;"	l
 args	loader.S	/^args:$/;"	l
 aux	thread.c	/^    void *aux;                  \/* Auxiliary data for function. *\/$/;"	m	struct:kernel_thread_frame	file:
-barrier	synch.h	49;"	d
+barrier	synch.h	50;"	d
 base	palloc.c	/^    uint8_t *base;                      \/* Base of pool. *\/$/;"	m	struct:pool	file:
 base_page_dir	init.c	/^uint32_t *base_page_dir;$/;"	v
 block	malloc.c	/^struct block $/;"	s	file:
@@ -202,6 +202,7 @@ kernel_pool	palloc.c	/^struct pool kernel_pool, user_pool;$/;"	v	typeref:struct:
 kernel_thread	thread.c	/^kernel_thread (thread_func *function, void *aux) $/;"	f	file:
 kernel_thread_frame	thread.c	/^struct kernel_thread_frame $/;"	s	file:
 kernel_ticks	thread.c	/^static long long kernel_ticks;  \/* # of timer ticks in kernel threads. *\/$/;"	v	file:
+lesswaiter	synch.c	/^lesswaiter (const struct list_elem *a, const struct list_elem *b, void *aux UNUSED){$/;"	f	file:
 lib_SRC	build/Makefile	/^lib_SRC  = lib\/debug.c			# Debug helpers.$/;"	m
 lock	malloc.c	/^    struct lock lock;           \/* Lock. *\/$/;"	m	struct:desc	typeref:struct:desc::lock	file:
 lock	palloc.c	/^    struct lock lock;                   \/* Mutual exclusion. *\/$/;"	m	struct:pool	typeref:struct:pool::lock	file:
@@ -223,6 +224,8 @@ malloc_init	malloc.c	/^malloc_init (void) $/;"	f
 name	thread.h	/^    char name[16];                      \/* Name (for debugging purposes). *\/$/;"	m	struct:thread
 next	switch.h	/^    struct thread *next;        \/* 24: switch_threads()'s NEXT argument. *\/$/;"	m	struct:switch_threads_frame	typeref:struct:switch_threads_frame::thread
 next_thread_to_run	thread.c	/^next_thread_to_run (void) $/;"	f	file:
+orderprio	thread.c	/^orderprio(const struct list_elem *a, const struct list_elem *b, void *aux UNUSED){$/;"	f
+origin_priority	thread.h	/^    int origin_priority;                    \/* donated priority after donation *\/ $/;"	m	struct:thread
 outb	io.h	/^outb (uint16_t port, uint8_t data)$/;"	f
 outl	io.h	/^outl (uint16_t port, uint32_t data)$/;"	f
 outsb	io.h	/^outsb (uint16_t port, const void *addr, size_t cnt)$/;"	f
@@ -254,6 +257,7 @@ pool	palloc.c	/^struct pool$/;"	s	file:
 power_off	init.c	/^power_off (void) $/;"	f
 power_off_when_done	init.c	/^bool power_off_when_done;$/;"	v
 print_stats	init.c	/^print_stats (void) $/;"	f	file:
+priority	synch.c	/^	int priority;$/;"	m	struct:semaphore_elem	file:
 priority	thread.h	/^    int priority;                       \/* Priority. *\/$/;"	m	struct:thread
 pt_no	pte.h	/^static inline unsigned pt_no (const void *va) {$/;"	f
 pte_create_kernel	pte.h	/^static inline uint32_t pte_create_kernel (void *page, bool writable) {$/;"	f
@@ -316,6 +320,7 @@ thread_ticks	thread.c	/^static unsigned thread_ticks;   \/* # of timer ticks sin
 thread_tid	thread.c	/^thread_tid (void) $/;"	f
 thread_unblock	thread.c	/^thread_unblock (struct thread *t) $/;"	f
 thread_yield	thread.c	/^thread_yield (void) $/;"	f
+threadelem	synch.h	/^	struct thread * threadelem;$/;"	m	struct:semaphore	typeref:struct:semaphore::thread
 threads_SRC	build/Makefile	/^threads_SRC  = threads\/init.c		# Main program.$/;"	m
 tid	thread.h	/^    tid_t tid;                          \/* Thread identifier. *\/$/;"	m	struct:thread
 tid_lock	thread.c	/^static struct lock tid_lock;$/;"	v	typeref:struct:lock	file:
@@ -331,5 +336,6 @@ vec_no	interrupt.h	/^    uint32_t vec_no;            \/* Interrupt vector number
 vtop	vaddr.h	/^vtop (const void *vaddr)$/;"	f
 waiters	synch.h	/^    struct list waiters;        \/* List of waiting threads. *\/$/;"	m	struct:condition	typeref:struct:condition::list
 waiters	synch.h	/^    struct list waiters;        \/* List of waiting threads. *\/$/;"	m	struct:semaphore	typeref:struct:semaphore::list
+wakeuptick	thread.h	/^    unsigned int wakeuptick;		\/* Last Tick for Waking up *\/$/;"	m	struct:thread
 yield_on_return	interrupt.c	/^static bool yield_on_return;    \/* Should we yield on interrupt return? *\/$/;"	v	file:
 zero	intr-stubs.S	/^#define zero                                    \\$/;"	d

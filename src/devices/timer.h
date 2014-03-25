@@ -20,4 +20,5 @@ void timer_nsleep (int64_t nanoseconds);
 
 void timer_print_stats (void);
 
+void wakeup_thread(void);
 #endif /* devices/timer.h */

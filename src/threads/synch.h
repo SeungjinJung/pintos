@@ -4,11 +4,14 @@
 #include <list.h>
 #include <stdbool.h>
 
+
 /* A counting semaphore. */
 struct semaphore 
   {
     unsigned value;             /* Current value. */
+    struct thread * threadelem;
     struct list waiters;        /* List of waiting threads. */
+	struct list_elem semaelem;
   };
 
 void sema_init (struct semaphore *, unsigned value);

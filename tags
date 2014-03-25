@@ -238,9 +238,9 @@ PRIX64	src/lib/inttypes.h	32;"	d
 PRIX8	src/lib/inttypes.h	11;"	d
 PRIXMAX	src/lib/inttypes.h	39;"	d
 PRIXPTR	src/lib/inttypes.h	46;"	d
-PRI_DEFAULT	src/threads/thread.h	24;"	d
-PRI_MAX	src/threads/thread.h	25;"	d
-PRI_MIN	src/threads/thread.h	23;"	d
+PRI_DEFAULT	src/threads/thread.h	27;"	d
+PRI_MAX	src/threads/thread.h	28;"	d
+PRI_MIN	src/threads/thread.h	26;"	d
 PRId16	src/lib/inttypes.h	13;"	d
 PRId32	src/lib/inttypes.h	20;"	d
 PRId64	src/lib/inttypes.h	27;"	d
@@ -403,16 +403,16 @@ THREADS_SYNCH_H	src/threads/synch.h	2;"	d
 THREADS_THREAD_H	src/threads/thread.h	2;"	d
 THREADS_VADDR_H	src/threads/vaddr.h	2;"	d
 THREAD_BASIC	src/threads/thread.c	25;"	d	file:
-THREAD_BLOCKED	src/threads/thread.h	/^    THREAD_BLOCKED,     \/* Waiting for an event to trigger. *\/$/;"	e	enum:thread_status
+THREAD_BLOCKED	src/threads/thread.h	/^	THREAD_BLOCKED,     \/* Waiting for an event to trigger. *\/$/;"	e	enum:thread_status
 THREAD_CNT	src/tests/threads/mlfqs-load-60.c	112;"	d	file:
 THREAD_CNT	src/tests/threads/mlfqs-load-avg.c	123;"	d	file:
 THREAD_CNT	src/tests/threads/priority-fifo.c	26;"	d	file:
-THREAD_DYING	src/threads/thread.h	/^    THREAD_DYING        \/* About to be destroyed. *\/$/;"	e	enum:thread_status
+THREAD_DYING	src/threads/thread.h	/^	THREAD_DYING        \/* About to be destroyed. *\/$/;"	e	enum:thread_status
 THREAD_MAGIC	src/threads/thread.c	21;"	d	file:
-THREAD_READY	src/threads/thread.h	/^    THREAD_READY,       \/* Not running but ready to run. *\/$/;"	e	enum:thread_status
-THREAD_RUNNING	src/threads/thread.h	/^    THREAD_RUNNING,     \/* Running thread. *\/$/;"	e	enum:thread_status
+THREAD_READY	src/threads/thread.h	/^	THREAD_READY,       \/* Not running but ready to run. *\/$/;"	e	enum:thread_status
+THREAD_RUNNING	src/threads/thread.h	/^	THREAD_RUNNING,     \/* Running thread. *\/$/;"	e	enum:thread_status
 THR_REG	src/devices/serial.c	22;"	d	file:
-TID_ERROR	src/threads/thread.h	20;"	d
+TID_ERROR	src/threads/thread.h	23;"	d
 TIMER_FREQ	src/devices/timer.h	8;"	d
 TIME_SLICE	src/threads/thread.c	54;"	d	file:
 UCHAR_MAX	src/lib/limits.h	8;"	d
@@ -549,7 +549,7 @@ bad_action	src/examples/insult.c	/^char *bad_action[] =$/;"	v
 bad_actionLoc	src/examples/insult.c	/^char bad_actionLoc[] =$/;"	v
 bad_place	src/examples/insult.c	/^char *bad_place[] =$/;"	v
 bad_placeLoc	src/examples/insult.c	/^char bad_placeLoc[] = { 6, 0, 2, 3, 5, 7, 8, 9 };$/;"	v
-barrier	src/threads/synch.h	49;"	d
+barrier	src/threads/synch.h	52;"	d
 base	src/lib/stdio.c	/^    int base;                   \/* Base. *\/$/;"	m	struct:integer_base	file:
 base	src/threads/palloc.c	/^    uint8_t *base;                      \/* Base of pool. *\/$/;"	m	struct:pool	file:
 base_X	src/lib/stdio.c	/^static const struct integer_base base_X = {16, "0123456789ABCDEF", 'X', 4};$/;"	v	typeref:struct:integer_base	file:
@@ -593,6 +593,7 @@ block_size	src/threads/malloc.c	/^    size_t block_size;          \/* Size of ea
 block_size	src/threads/malloc.c	/^block_size (void *block) $/;"	f	file:
 block_thread	src/tests/threads/mlfqs-block.c	/^block_thread (void *lock_) $/;"	f	file:
 block_to_arena	src/threads/malloc.c	/^block_to_arena (struct block *b)$/;"	f	file:
+blocked_list	src/devices/timer.c	/^struct list blocked_list;$/;"	v	typeref:struct:list
 blocks_per_arena	src/threads/malloc.c	/^    size_t blocks_per_arena;    \/* Number of blocks in an arena. *\/$/;"	m	struct:desc	file:
 body_parts	src/examples/insult.c	/^char *body_parts[] =$/;"	v
 body_partsLoc	src/examples/insult.c	/^char body_partsLoc[] = { 6, 0, 1, 2, 3, 4, 5, 6 };$/;"	v
@@ -755,6 +756,8 @@ do_remove	src/tests/filesys/extended/dir-rm-tree.c	/^do_remove (const char *form
 do_swap	src/lib/stdlib.c	/^do_swap (unsigned char *array, size_t a_idx, size_t b_idx, size_t size)$/;"	f	file:
 do_touch	src/tests/filesys/extended/mk-tree.c	/^do_touch (const char *format, ...)$/;"	f	file:
 do_write	src/tests/filesys/extended/tar.c	/^do_write (int fd, const char *buffer, int size, bool *write_error) $/;"	f	file:
+donateelem	src/threads/thread.h	/^	struct list_elem donateelem;$/;"	m	struct:thread	typeref:struct:thread::list_elem
+donating	src/threads/thread.h	/^	struct list donating;				\/*list of thread with getting prio donation from this *\/$/;"	m	struct:thread	typeref:struct:thread::list
 donor_thread_func	src/tests/threads/priority-donate-chain.c	/^donor_thread_func (void *locks_) $/;"	f	file:
 donor_thread_func	src/tests/threads/priority-donate-chain.c	/^static thread_func donor_thread_func;$/;"	v	file:
 ds	src/threads/interrupt.h	/^    uint16_t ds, :16;           \/* Saved DS segment register. *\/$/;"	m	struct:intr_frame
@@ -775,6 +778,7 @@ e_shoff	src/userprog/process.c	/^    Elf32_Off     e_shoff;$/;"	m	struct:Elf32_E
 e_shstrndx	src/userprog/process.c	/^    Elf32_Half    e_shstrndx;$/;"	m	struct:Elf32_Ehdr	file:
 e_type	src/userprog/process.c	/^    Elf32_Half    e_type;$/;"	m	struct:Elf32_Ehdr	file:
 e_version	src/userprog/process.c	/^    Elf32_Word    e_version;$/;"	m	struct:Elf32_Ehdr	file:
+early_wakeup	src/devices/timer.c	/^early_wakeup(const struct list_elem *a, const struct list_elem *b, void *aux UNUSED){$/;"	f	file:
 eax	src/threads/interrupt.h	/^    uint32_t eax;               \/* Saved EAX. *\/$/;"	m	struct:intr_frame
 eax	src/userprog/tss.c	/^    uint32_t eax, ecx, edx, ebx;$/;"	m	struct:tss	file:
 ebp	src/threads/interrupt.h	/^    uint32_t ebp;               \/* Saved EBP. *\/$/;"	m	struct:intr_frame
@@ -802,7 +806,7 @@ elem	src/filesys/inode.c	/^    struct list_elem elem;              \/* Element i
 elem	src/lib/kernel/hash.h	/^    struct hash_elem *elem;     \/* Current hash element in current bucket. *\/$/;"	m	struct:hash_iterator	typeref:struct:hash_iterator::hash_elem
 elem	src/tests/internal/list.c	/^    struct list_elem elem;      \/* List element. *\/$/;"	m	struct:value	typeref:struct:value::list_elem	file:
 elem	src/threads/synch.c	/^    struct list_elem elem;              \/* List element. *\/$/;"	m	struct:semaphore_elem	typeref:struct:semaphore_elem::list_elem	file:
-elem	src/threads/thread.h	/^    struct list_elem elem;              \/* List element. *\/$/;"	m	struct:thread	typeref:struct:thread::list_elem
+elem	src/threads/thread.h	/^	struct list_elem elem;              \/* List element. *\/$/;"	m	struct:thread	typeref:struct:thread::list_elem
 elem_cnt	src/lib/kernel/bitmap.c	/^elem_cnt (size_t bit_cnt)$/;"	f	file:
 elem_cnt	src/lib/kernel/hash.h	/^    size_t elem_cnt;            \/* Number of elements in table. *\/$/;"	m	struct:hash
 elem_idx	src/lib/kernel/bitmap.c	/^elem_idx (size_t bit_idx) $/;"	f	file:
@@ -1111,6 +1115,7 @@ left_shift	src/devices/kbd.c	/^static bool left_shift, right_shift;    \/* Left 
 length	src/filesys/inode.c	/^    off_t length;                       \/* File size in bytes. *\/$/;"	m	struct:inode_disk	file:
 length	src/lib/stdio.c	/^    int length;         \/* Length of output string. *\/$/;"	m	struct:vsnprintf_aux	file:
 less	src/lib/kernel/hash.h	/^    hash_less_func *less;       \/* Comparison function. *\/$/;"	m	struct:hash
+lesswaiter	src/threads/synch.c	/^lesswaiter (const struct list_elem *a, const struct list_elem *b, void *aux UNUSED){$/;"	f	file:
 lib_SRC	src/threads/build/Makefile	/^lib_SRC  = lib\/debug.c			# Debug helpers.$/;"	m
 lineup_SRC	src/examples/Makefile	/^lineup_SRC = lineup.c$/;"	m
 list	src/lib/kernel/list.h	/^struct list $/;"	s
@@ -1166,6 +1171,7 @@ lock_init	src/threads/synch.c	/^lock_init (struct lock *lock)$/;"	f
 lock_pair	src/tests/threads/priority-donate-chain.c	/^struct lock_pair$/;"	s	file:
 lock_release	src/threads/synch.c	/^lock_release (struct lock *lock) $/;"	f
 lock_try_acquire	src/threads/synch.c	/^lock_try_acquire (struct lock *lock)$/;"	f
+locking	src/threads/thread.h	/^	struct list locking;				\/*list of locking resource *\/$/;"	m	struct:thread	typeref:struct:thread::list
 locks	src/tests/threads/priority-donate-nest.c	/^struct locks $/;"	s	file:
 log	src/utils/pintos	/^log: bochsout.txt$/;"	l
 lookup	src/filesys/directory.c	/^lookup (const struct dir *dir, const char *name,$/;"	f	file:
@@ -1176,7 +1182,7 @@ m_thread_func	src/tests/threads/priority-donate-sema.c	/^m_thread_func (void *ls
 m_thread_func	src/tests/threads/priority-donate-sema.c	/^static thread_func m_thread_func;$/;"	v	file:
 magic	src/filesys/inode.c	/^    unsigned magic;                     \/* Magic number. *\/$/;"	m	struct:inode_disk	file:
 magic	src/threads/malloc.c	/^    unsigned magic;             \/* Always set to ARENA_MAGIC. *\/$/;"	m	struct:arena	file:
-magic	src/threads/thread.h	/^    unsigned magic;                     \/* Detects stack overflow. *\/$/;"	m	struct:thread
+magic	src/threads/thread.h	/^	unsigned magic;                     \/* Detects stack overflow. *\/$/;"	m	struct:thread
 main	src/examples/bubsort.c	/^main (void)$/;"	f
 main	src/examples/cat.c	/^main (int argc, char *argv[]) $/;"	f
 main	src/examples/cmp.c	/^main (int argc, char *argv[]) $/;"	f
@@ -1267,8 +1273,9 @@ name	src/devices/disk.c	/^    char name[8];               \/* Name, e.g. "hd0:1"
 name	src/examples/insult.c	/^char *name[] =$/;"	v
 name	src/filesys/directory.c	/^    char name[NAME_MAX + 1];            \/* Null terminated file name. *\/$/;"	m	struct:dir_entry	file:
 name	src/tests/threads/tests.c	/^    const char *name;$/;"	m	struct:test	file:
-name	src/threads/thread.h	/^    char name[16];                      \/* Name (for debugging purposes). *\/$/;"	m	struct:thread
+name	src/threads/thread.h	/^	char name[16];                      \/* Name (for debugging purposes). *\/$/;"	m	struct:thread
 nameLoc	src/examples/insult.c	/^char nameLoc[] = { 7, 0, 1, 6, 10, 16, 21, 23, 27 };$/;"	v
+nestedprio	src/threads/synch.c	/^nestedprio(struct list * donatedlist, int prio){$/;"	f	file:
 new	src/tests/Algorithm/Diff.pm	/^sub new$/;"	s
 newline	src/devices/vga.c	/^newline (void)$/;"	f	file:
 next	src/devices/intq.c	/^next (int pos) $/;"	f	file:
@@ -1295,8 +1302,11 @@ open_disk	src/utils/pintos	/^sub open_disk {$/;"	s
 open_disk_copy	src/utils/pintos	/^sub open_disk_copy {$/;"	s
 open_file	src/tests/tests.pm	/^sub open_file {$/;"	s
 open_inodes	src/filesys/inode.c	/^static struct list open_inodes;$/;"	v	typeref:struct:list	file:
+orderlock	src/threads/synch.c	/^static bool orderlock(const struct list_elem * a, const struct list_elem *b, void *aux UNUSED){$/;"	f	file:
+orderprio	src/threads/thread.c	/^orderprio(const struct list_elem *a, const struct list_elem *b, void *aux UNUSED){$/;"	f
 organics	src/examples/insult.c	/^char *organics[] =$/;"	v
 organicsLoc	src/examples/insult.c	/^char organicsLoc[] =$/;"	v
+origin_priority	src/threads/thread.h	/^	int origin_priority;                    \/* donated priority after donation *\/ $/;"	m	struct:thread
 outb	src/threads/io.h	/^outb (uint16_t port, uint8_t data)$/;"	f
 outl	src/threads/io.h	/^outl (uint16_t port, uint32_t data)$/;"	f
 output_dup	src/lib/stdio.c	/^output_dup (char ch, size_t cnt, void (*output) (char, void *), void *aux) $/;"	f	file:
@@ -1321,7 +1331,7 @@ p_vaddr	src/userprog/process.c	/^    Elf32_Addr p_vaddr;$/;"	m	struct:Elf32_Phdr
 page_fault	src/userprog/exception.c	/^page_fault (struct intr_frame *f) $/;"	f	file:
 page_fault_cnt	src/userprog/exception.c	/^static long long page_fault_cnt;$/;"	v	file:
 page_from_pool	src/threads/palloc.c	/^page_from_pool (const struct pool *pool, void *page) $/;"	f	file:
-pagedir	src/threads/thread.h	/^    uint32_t *pagedir;                  \/* Page directory. *\/$/;"	m	struct:thread
+pagedir	src/threads/thread.h	/^	uint32_t *pagedir;                  \/* Page directory. *\/$/;"	m	struct:thread
 pagedir_activate	src/userprog/pagedir.c	/^pagedir_activate (uint32_t *pd) $/;"	f
 pagedir_clear_page	src/userprog/pagedir.c	/^pagedir_clear_page (uint32_t *pd, void *upage) $/;"	f
 pagedir_create	src/userprog/pagedir.c	/^pagedir_create (void) $/;"	f
@@ -1352,6 +1362,7 @@ pass	src/tests/threads/tests.c	/^pass (void) $/;"	f
 pd_no	src/threads/pte.h	/^static inline uintptr_t pd_no (const void *va) {$/;"	f
 pde_create	src/threads/pte.h	/^static inline uint32_t pde_create (uint32_t *pt) {$/;"	f
 pde_get_pt	src/threads/pte.h	/^static inline uint32_t *pde_get_pt (uint32_t pde) {$/;"	f
+pelem	src/threads/thread.h	/^	struct list_elem pelem;$/;"	m	struct:prio_list_elem	typeref:struct:prio_list_elem::list_elem
 pg_no	src/threads/vaddr.h	/^static inline uintptr_t pg_no (const void *va) {$/;"	f
 pg_ofs	src/threads/vaddr.h	/^static inline unsigned pg_ofs (const void *va) {$/;"	f
 pg_round_down	src/threads/vaddr.h	/^static inline void *pg_round_down (const void *va) {$/;"	f
@@ -1380,7 +1391,11 @@ print_fs	src/tests/tests.pm	/^sub print_fs {$/;"	s
 print_stats	src/threads/init.c	/^print_stats (void) $/;"	f	file:
 printf	src/lib/stdio.c	/^printf (const char *format, ...) $/;"	f
 printf_conversion	src/lib/stdio.c	/^struct printf_conversion $/;"	s	file:
-priority	src/threads/thread.h	/^    int priority;                       \/* Priority. *\/$/;"	m	struct:thread
+printlist	src/devices/timer.c	/^void printlist(int p){$/;"	f
+prio	src/threads/thread.h	/^	int prio;$/;"	m	struct:prio_list_elem
+prio_list_elem	src/threads/thread.h	/^struct prio_list_elem$/;"	s
+priority	src/threads/synch.c	/^	int priority;$/;"	m	struct:semaphore_elem	file:
+priority	src/threads/thread.h	/^	int priority;                       \/* Priority. *\/$/;"	m	struct:thread
 priority_condvar_thread	src/tests/threads/priority-condvar.c	/^priority_condvar_thread (void *aux UNUSED) $/;"	f	file:
 priority_condvar_thread	src/tests/threads/priority-condvar.c	/^static thread_func priority_condvar_thread;$/;"	v	file:
 priority_sema_thread	src/tests/threads/priority-sema.c	/^priority_sema_thread (void *aux UNUSED) $/;"	f	file:
@@ -1497,6 +1512,7 @@ sema_self_test	src/threads/synch.c	/^sema_self_test (void) $/;"	f
 sema_test_helper	src/threads/synch.c	/^sema_test_helper (void *sema_) $/;"	f	file:
 sema_try_down	src/threads/synch.c	/^sema_try_down (struct semaphore *sema) $/;"	f
 sema_up	src/threads/synch.c	/^sema_up (struct semaphore *sema) $/;"	f
+semaelem	src/threads/synch.h	/^	struct list_elem semaelem;$/;"	m	struct:semaphore	typeref:struct:semaphore::list_elem
 semaphore	src/threads/synch.c	/^    struct semaphore semaphore;         \/* This semaphore. *\/$/;"	m	struct:semaphore_elem	typeref:struct:semaphore_elem::semaphore	file:
 semaphore	src/threads/synch.h	/^    struct semaphore semaphore; \/* Binary semaphore controlling access. *\/$/;"	m	struct:lock	typeref:struct:lock::semaphore
 semaphore	src/threads/synch.h	/^struct semaphore $/;"	s
@@ -1548,7 +1564,7 @@ ss	src/userprog/tss.c	/^    uint16_t ss, :16;$/;"	m	struct:tss	file:
 ss0	src/userprog/tss.c	/^    uint16_t ss0, :16;                  \/* Ring 0 stack segment selector. *\/$/;"	m	struct:tss	file:
 ss1	src/userprog/tss.c	/^    uint16_t ss1, :16;$/;"	m	struct:tss	file:
 ss2	src/userprog/tss.c	/^    uint16_t ss2, :16;$/;"	m	struct:tss	file:
-stack	src/threads/thread.h	/^    uint8_t *stack;                     \/* Saved stack pointer. *\/$/;"	m	struct:thread
+stack	src/threads/thread.h	/^	uint8_t *stack;                     \/* Saved stack pointer. *\/$/;"	m	struct:thread
 start	src/examples/insult.c	/^char *start[] =$/;"	v
 start	src/filesys/inode.c	/^    disk_sector_t start;                \/* First data sector. *\/$/;"	m	struct:inode_disk	file:
 start	src/tests/threads/alarm-simultaneous.c	/^    int64_t start;              \/* Current time at start of test. *\/$/;"	m	struct:sleep_test	file:
@@ -1560,7 +1576,7 @@ start_process	src/userprog/process.c	/^start_process (void *f_name)$/;"	f	file:
 start_time	src/tests/threads/mlfqs-fair.c	/^    int64_t start_time;$/;"	m	struct:thread_info	file:
 start_time	src/tests/threads/mlfqs-load-60.c	/^static int64_t start_time;$/;"	v	file:
 start_time	src/tests/threads/mlfqs-load-avg.c	/^static int64_t start_time;$/;"	v	file:
-status	src/threads/thread.h	/^    enum thread_status status;          \/* Thread state. *\/$/;"	m	struct:thread	typeref:enum:thread::thread_status
+status	src/threads/thread.h	/^	enum thread_status status;          \/* Thread state. *\/$/;"	m	struct:thread	typeref:enum:thread::thread_status
 strcat	src/lib/string.h	31;"	d
 strchr	src/lib/string.c	/^strchr (const char *string, int c_) $/;"	f
 strcmp	src/lib/string.c	/^strcmp (const char *a_, const char *b_) $/;"	f
@@ -1610,6 +1626,7 @@ test_alarm_simultaneous	src/tests/threads/alarm-simultaneous.c	/^test_alarm_simu
 test_alarm_single	src/tests/threads/alarm-wait.c	/^test_alarm_single (void) $/;"	f
 test_alarm_zero	src/tests/threads/alarm-zero.c	/^test_alarm_zero (void) $/;"	f
 test_func	src/tests/threads/tests.h	/^typedef void test_func (void);$/;"	t
+test_hello	src/tests/threads/alarm-wait.c	/^test_hello (void)$/;"	f
 test_main	src/tests/filesys/base/syn-read.c	/^test_main (void) $/;"	f
 test_main	src/tests/filesys/base/syn-remove.c	/^test_main (void) $/;"	f
 test_main	src/tests/filesys/base/syn-write.c	/^test_main (void) $/;"	f
@@ -1784,10 +1801,11 @@ thread_ticks	src/threads/thread.c	/^static unsigned thread_ticks;   \/* # of tim
 thread_tid	src/threads/thread.c	/^thread_tid (void) $/;"	f
 thread_unblock	src/threads/thread.c	/^thread_unblock (struct thread *t) $/;"	f
 thread_yield	src/threads/thread.c	/^thread_yield (void) $/;"	f
+threadelem	src/threads/synch.h	/^    struct thread * threadelem;$/;"	m	struct:semaphore	typeref:struct:semaphore::thread
 threads_SRC	src/threads/build/Makefile	/^threads_SRC  = threads\/init.c		# Main program.$/;"	m
 tick_count	src/tests/threads/mlfqs-fair.c	/^    int tick_count;$/;"	m	struct:thread_info	file:
 ticks	src/devices/timer.c	/^static int64_t ticks;$/;"	v	file:
-tid	src/threads/thread.h	/^    tid_t tid;                          \/* Thread identifier. *\/$/;"	m	struct:thread
+tid	src/threads/thread.h	/^	tid_t tid;                          \/* Thread identifier. *\/$/;"	m	struct:thread
 tid_lock	src/threads/thread.c	/^static struct lock tid_lock;$/;"	v	typeref:struct:lock	file:
 tid_t	src/threads/thread.h	/^typedef int tid_t;$/;"	t
 timeout	src/utils/pintos	/^sub timeout {$/;"	s
@@ -1879,6 +1897,8 @@ wait_while_busy	src/devices/disk.c	/^wait_while_busy (const struct disk *d) $/;"
 waiters	src/threads/synch.h	/^    struct list waiters;        \/* List of waiting threads. *\/$/;"	m	struct:condition	typeref:struct:condition::list
 waiters	src/threads/synch.h	/^    struct list waiters;        \/* List of waiting threads. *\/$/;"	m	struct:semaphore	typeref:struct:semaphore::list
 wake_time	src/tests/threads/alarm-priority.c	/^static int64_t wake_time;$/;"	v	file:
+wakeup_thread	src/devices/timer.c	/^void wakeup_thread(){$/;"	f
+wakeuptick	src/threads/thread.h	/^	unsigned int wakeuptick;		\/* Last Tick for Waking up *\/$/;"	m	struct:thread
 width	src/lib/stdio.c	/^    int width;$/;"	m	struct:printf_conversion	file:
 wrap_open	src/tests/filesys/extended/dir-rm-cwd.c	/^wrap_open (const char *name) $/;"	f	file:
 write	src/lib/user/syscall.c	/^write (int fd, const void *buffer, unsigned size)$/;"	f
