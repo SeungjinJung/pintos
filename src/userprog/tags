@@ -17,31 +17,31 @@ GRAN_BYTE	gdt.c	/^    GRAN_BYTE = 0,              \/* Limit has 1-byte granulari
 GRAN_PAGE	gdt.c	/^    GRAN_PAGE = 1               \/* Limit has 4 kB granularity. *\/$/;"	e	enum:seg_granularity	file:
 NO_RETURN	process.c	/^static thread_func start_process NO_RETURN;$/;"	v	file:
 OBJECTS	build/Makefile	/^OBJECTS = $(patsubst %.c,%.o,$(patsubst %.S,%.o,$(SOURCES)))$/;"	m
-PE32Ax	process.c	207;"	d	file:
-PE32Hx	process.c	209;"	d	file:
-PE32Ox	process.c	208;"	d	file:
-PE32Wx	process.c	206;"	d	file:
+PE32Ax	process.c	266;"	d	file:
+PE32Hx	process.c	268;"	d	file:
+PE32Ox	process.c	267;"	d	file:
+PE32Wx	process.c	265;"	d	file:
 PF_P	exception.h	5;"	d
-PF_R	process.c	259;"	d	file:
+PF_R	process.c	318;"	d	file:
 PF_U	exception.h	7;"	d
 PF_W	exception.h	6;"	d
-PF_W	process.c	258;"	d	file:
-PF_X	process.c	257;"	d	file:
-PT_DYNAMIC	process.c	249;"	d	file:
-PT_INTERP	process.c	250;"	d	file:
-PT_LOAD	process.c	248;"	d	file:
-PT_NOTE	process.c	251;"	d	file:
-PT_NULL	process.c	247;"	d	file:
-PT_PHDR	process.c	253;"	d	file:
-PT_SHLIB	process.c	252;"	d	file:
-PT_STACK	process.c	254;"	d	file:
+PF_W	process.c	317;"	d	file:
+PF_X	process.c	316;"	d	file:
+PT_DYNAMIC	process.c	308;"	d	file:
+PT_INTERP	process.c	309;"	d	file:
+PT_LOAD	process.c	307;"	d	file:
+PT_NOTE	process.c	310;"	d	file:
+PT_NULL	process.c	306;"	d	file:
+PT_PHDR	process.c	312;"	d	file:
+PT_SHLIB	process.c	311;"	d	file:
+PT_STACK	process.c	313;"	d	file:
 SEL_CNT	gdt.h	11;"	d
 SEL_TSS	gdt.h	10;"	d
 SEL_UCSEG	gdt.h	8;"	d
 SEL_UDSEG	gdt.h	9;"	d
 SOURCES	build/Makefile	/^SOURCES = $(foreach dir,$(KERNEL_SUBDIRS),$($(dir)_SRC))$/;"	m
 SRCDIR	build/Makefile	/^SRCDIR = ..\/..$/;"	m
-TOOLARGETOCONSOLE	syscall.c	13;"	d	file:
+TOOLARGETOCONSOLE	syscall.c	18;"	d	file:
 USERPROG_EXCEPTION_H	exception.h	2;"	d
 USERPROG_GDT_H	gdt.h	2;"	d
 USERPROG_PAGEDIR_H	pagedir.h	2;"	d
@@ -90,12 +90,14 @@ esp1	tss.c	/^    void *esp1;$/;"	m	struct:tss	file:
 esp2	tss.c	/^    void *esp2;$/;"	m	struct:tss	file:
 exception_init	exception.c	/^exception_init (void) $/;"	f
 exception_print_stats	exception.c	/^exception_print_stats (void) $/;"	f
+execute_num	syscall.c	/^int execute_num=0;$/;"	v
 filesys_SRC	build/Makefile	/^filesys_SRC  = filesys\/filesys.c	# Filesystem core.$/;"	m
 fs	tss.c	/^    uint16_t fs, :16;$/;"	m	struct:tss	file:
 gdt	gdt.c	/^static uint64_t gdt[SEL_CNT];$/;"	v	file:
 gdt_init	gdt.c	/^gdt_init (void)$/;"	f
 getaddr	syscall.c	/^getaddr(void *ptr){$/;"	f	file:
-goodfileptr	syscall.c	/^bool goodfileptr(void *ptr){$/;"	f
+goodfd	syscall.c	/^	bool goodfd(int fd){$/;"	f
+goodfileptr	syscall.c	/^bool goodfileptr(void *fileptr){$/;"	f
 gs	tss.c	/^    uint16_t gs, :16;$/;"	m	struct:tss	file:
 install_page	process.c	/^install_page (void *upage, void *kpage, bool writable)$/;"	f	file:
 invalidate_pagedir	pagedir.c	/^invalidate_pagedir (uint32_t *pd) $/;"	f	file:
@@ -157,3 +159,4 @@ tss_init	tss.c	/^tss_init (void) $/;"	f
 tss_update	tss.c	/^tss_update (void) $/;"	f
 userprog_SRC	build/Makefile	/^userprog_SRC  = userprog\/process.c	# Process loading.$/;"	m
 validate_segment	process.c	/^validate_segment (const struct Elf32_Phdr *phdr, struct file *file) $/;"	f	file:
+wakeupwaiting	process.c	/^void wakeupwaiting(int status){$/;"	f

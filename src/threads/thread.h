@@ -5,7 +5,7 @@
 #include <list.h>
 #include <stdint.h>
 
-
+#include "threads/synch.h"
 
 
 /* States in a thread's life cycle. */
@@ -28,7 +28,7 @@ typedef int tid_t;
 #define PRI_MAX 63                      /* Highest priority. */
 
 #define MAXFD 256
-
+#define MAX_WAIT 128
 
 /* A kernel thread or user process.
 
@@ -87,7 +87,8 @@ only because they are mutually exclusive: only a thread in the
 ready state is on the run queue, whereas only a thread in the
 blocked state is on a semaphore wait list. */
 
-
+struct list execute_list;
+int execute_num;
 
 struct prio_list_elem
 {
@@ -121,7 +122,11 @@ struct thread
 
 	/* below variable for PJ2 */
 	void * fd_set[MAXFD];
-	struct list excutelist;
+	struct semaphore wait;
+	struct list_elem e_elem;
+	tid_t waitfor[MAX_WAIT];
+	int waitnum;
+	int child_exit_status;
 };
 
 /* If false (default), use round-robin scheduler.

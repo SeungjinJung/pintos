@@ -482,9 +482,11 @@ init_thread (struct thread *t, const char *name, int priority)
   //init fd_Set
   memset(t->fd_set, 0, MAXFD);
   //reverse for fd_set[0] and fd_set[1]
-  t->fd_set[0] = 1;
-  t->fd_set[1] = 1;
-  list_init(&t->excutelist);
+  t->fd_set[0] = (void *)1;
+  t->fd_set[1] = (void *)1;
+	sema_init(&t->wait, 0);
+	memset(&t->waitfor, -1, MAX_WAIT);
+	t->waitnum = 0;
 }
 
 /* Allocates a SIZE-byte frame at the top of thread T's stack and
