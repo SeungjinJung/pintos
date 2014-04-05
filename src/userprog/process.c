@@ -100,7 +100,6 @@ start_process (void *f_name)
 	else
 		success = load (token, &if_.eip, &if_.esp);
 	if(success){
-
 		strlcpy(thread_current()->name, token, strlen(token)+1);
 		while(token){
 			strlcpy(argv+argvlen, token, strlen(token)+1);
@@ -303,6 +302,7 @@ load (const char *file_name, void (**eip) (void), void **esp)
 	if (file == NULL) 
 	{
 		printf ("load: %s: open failed\n", file_name);
+		success =false;
 		goto done; 
 	}
 
@@ -316,6 +316,7 @@ load (const char *file_name, void (**eip) (void), void **esp)
 			|| ehdr.e_phnum > 1024) 
 	{
 		printf ("load: %s: error loading executable\n", file_name);
+		success = false;
 		goto done; 
 	}
 
@@ -392,7 +393,7 @@ done:
 	file_close (file);
 	return success;
 }
-
+
 /* load() helpers. */
 
 static bool install_page (void *upage, void *kpage, bool writable);

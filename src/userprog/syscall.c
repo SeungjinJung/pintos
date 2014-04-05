@@ -22,16 +22,18 @@ static bool goodfileptr(void *);
 static bool goodfd(int);
 struct excute_elem{
 		tid_t pid;
-		struct lock wait;
+		struct semaphore wait;
 		struct list_elem e_elem;
 };
-
+struct list execute_list;
+int execute_num=0;
 
 static void syscall_handler (struct intr_frame *);
 
 	void
 syscall_init (void) 
 {
+	list_init(&execute_list);
 	intr_register_int (0x30, 3, INTR_ON, syscall_handler, "syscall");
 }
 
@@ -46,31 +48,32 @@ syscall_handler (struct intr_frame *f UNUSED)
 	int syscallnum = *((int *)f->esp);
 	//  printf ("system call!\n");
 	//  printf ("system call num(%d)!\n", syscallnum);
-	//
 
 	if(syscallnum == SYS_HALT){
 		//this systemcall is about halt
 		power_off();
 	}
 	else if(syscallnum == SYS_EXIT){
-		//this systemcall is about exit
-		int status = getaddr(f->esp+0x4);
-		struct thread *cur = thread_current();
-		struct list *elist = cur->excutelist;
-		struct list_elem *e;
-		struct excute_elem *ex;
-		for(e = list_begin(elist); e!=list_end(elist); e=list_next(e)){
-				if(e->pid == cur->tid)
-						break;
-		}
-		ex = list_entry(e, struct excute_elem, e_elem);
-		lock_release(&ex->lock);
-		free(ex);
-
-		if(status < 0)
-			status = -1;
-		f->eax = status;
-		sysexit(status);
+			//this systemcall is about exit
+			int status = getaddr(f->esp+0x4);
+			struct thread *cur = thread_current();
+			struct list *elist = &execute_list;
+			struct list_elem *e;
+			struct excute_elem *ex=NULL;
+			if(list_size(elist) != 0){
+					for(e = list_begin(elist); e!=list_end(elist); e=list_next(e)){
+							ex = list_entry(e, struct excute_elem, e_elem);
+							if(ex->pid == cur->tid)
+									break;
+					}
+					sema_up(&ex->wait);
+//					free(ex);
+			}
+			if(status < 0)
+				status = -1;
+			f->eax = status;
+		//	printf("status : %x\n", status);
+			sysexit(status);
 	}
 	else if(syscallnum == SYS_EXEC){
 		//this systemcall is about exec
@@ -79,24 +82,33 @@ syscall_handler (struct intr_frame *f UNUSED)
 		struct excute_elem *e = (struct excute_elem *)malloc(sizeof(struct excute_elem));
 		memset(e, 0, sizeof(struct excute_elem));
 		e->pid = pid;
-		lock_init(&e->lock);
-		list_push_back(&thread_current()->excutelist, &e->e_elem);
-		lock_acquire(&e->lock);
+		sema_init(&e->wait, 1);
+//		if(execute_num == 0){
+//				//excute first then make list for excuting process
+//				execute_list = (struct list *)malloc(sizeof(struct list));
+//				memset(excute_list, 0, sizeof(struct list));
+//				list_init(execute_list);
+//		}
+		list_push_back(&execute_list, &e->e_elem);
+		sema_down(&e->wait);
 		f->eax = pid;
 	}
 	else if(syscallnum == SYS_WAIT){
 		//this systemcall is about wait
 		tid_t pid = (tid_t)getaddr(f->esp+0x04);
 		struct thread *cur = thread_current();
-		struct list *elist = cur->excutelist;
+		struct list *elist = &execute_list;
 		struct list_elem *e;
-		struct excute_elem *ex;
-		for(e = list_begin(elist); e!=list_end(elist); e=list_next(e)){
-				if(e->pid == pid)
-						break;
+		struct excute_elem *ex=NULL;
+		if(list_size(elist) != 0){
+				for(e = list_begin(elist); e!=list_end(elist); e=list_next(e)){
+						ex = list_entry(e, struct excute_elem, e_elem);
+						if(ex->pid == pid)
+								break;
+				}
+				sema_down(&ex->wait);
+//				free(ex);
 		}
-		ex = list_entry(e, struct excute_elem, e_elem);
-		lock_acquire(&ex->lock);
 	}
 	else if(syscallnum == SYS_CREATE){
 		//this systemcall is about create
@@ -134,6 +146,7 @@ syscall_handler (struct intr_frame *f UNUSED)
 		struct file *ofile = NULL;
 		int i;
 		struct thread *cur = thread_current();
+		printf("FILE OPEN IS CALLED\n");
 		if(!goodfileptr((void *)file)){	
 			sysexit(-1);
 			return;
