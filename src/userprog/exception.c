@@ -4,6 +4,7 @@
 #include "userprog/gdt.h"
 #include "threads/interrupt.h"
 #include "threads/thread.h"
+#include "userprog/pagedir.h"
 
 /* Number of page faults processed. */
 static long long page_fault_cnt;
@@ -126,7 +127,7 @@ page_fault (struct intr_frame *f)
   bool write;        /* True: access was write, false: access was read. */
   bool user;         /* True: access by user, false: access by kernel. */
   void *fault_addr;  /* Fault address. */
-
+	
   /* Obtain faulting address, the virtual address that was
      accessed to cause the fault.  It may point to code or to
      data.  It is not necessarily the address of the instruction
@@ -136,9 +137,22 @@ page_fault (struct intr_frame *f)
      (#PF)". */
   asm ("movl %%cr2, %0" : "=r" (fault_addr));
 
+
+
   /* Turn interrupts back on (they were only off so that we could
      be assured of reading CR2 before it changed). */
   intr_enable ();
+
+	/* check the the pointer is valid */
+//	if(fault_addr >= 0xc0000000 || fault_addr < 0x08048000){
+	if(pagedir_get_page(thread_current()->pagedir, fault_addr) == NULL){
+//		f->eip = f->eax;
+		f->eax = -1;
+		printf("%s: exit(%d)\n", thread_name(), -1);
+		thread_exit();
+		return;
+		}
+
 
   /* Count page faults. */
   page_fault_cnt++;

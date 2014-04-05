@@ -27,6 +27,9 @@ typedef int tid_t;
 #define PRI_DEFAULT 31                  /* Default priority. */
 #define PRI_MAX 63                      /* Highest priority. */
 
+#define MAXFD 256
+
+
 /* A kernel thread or user process.
 
 Each thread structure is stored in its own 4 kB page.  The
@@ -115,6 +118,10 @@ struct thread
 	struct list_elem donateelem;
 	int origin_priority;                    /* donated priority after donation */ 
 	unsigned int wakeuptick;		/* Last Tick for Waking up */
+
+	/* below variable for PJ2 */
+	void * fd_set[MAXFD];
+	struct list excutelist;
 };
 
 /* If false (default), use round-robin scheduler.

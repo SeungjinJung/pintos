@@ -479,6 +479,12 @@ init_thread (struct thread *t, const char *name, int priority)
   list_init(&t->donating);
   t->wakeuptick = 0;
   t->origin_priority = priority;
+  //init fd_Set
+  memset(t->fd_set, 0, MAXFD);
+  //reverse for fd_set[0] and fd_set[1]
+  t->fd_set[0] = 1;
+  t->fd_set[1] = 1;
+  list_init(&t->excutelist);
 }
 
 /* Allocates a SIZE-byte frame at the top of thread T's stack and
