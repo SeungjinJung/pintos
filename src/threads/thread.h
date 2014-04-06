@@ -127,6 +127,7 @@ struct thread
 	tid_t waitfor;
 	int child_exit_status;
 	struct thread* parent_id;
+	struct file* selffile;
 };
 
 /* If false (default), use round-robin scheduler.

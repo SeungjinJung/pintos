@@ -238,12 +238,17 @@ process_exit (void)
 	uint32_t *pd;
 	int i;
 	wakeupwaiting(curr->child_exit_status);
+	//close my fds
 	for(i=0; i<MAXFD; i++){
-		if(curr->fd_set[i] > 1){
+		if((int)curr->fd_set[i] > 1){
 //			printf("addr %x\n",curr->fd_set[i]);
 			file_close((struct file *)ptov((uintptr_t)curr->fd_set[i]));
 		}
 	}
+	//file_allow_write
+	if(curr->selffile != NULL)
+		file_allow_write(curr->selffile);
+
 	/* Destroy the current process's page directory and switch back
 		 to the kernel-only page directory. */
 	pd = curr->pagedir;
@@ -375,14 +380,6 @@ load (const char *file_name, void (**eip) (void), void **esp)
 		success =false;
 		goto done; 
 	}
-//	file_allow_write(file);
-//	printf("ff : %d\n", file_read (file, &ehdr, sizeof ehdr) != sizeof ehdr);
-//	printf("f2 : %d\n", memcmp (ehdr.e_ident, "\177ELF\1\1\1", 7));
-//	printf("f3 : %d\n", ehdr.e_type != 2);
-//	printf("f4 : %d\n", ehdr.e_machine != 3);
-//	printf("f5 : %d\n", ehdr.e_phentsize != sizeof (struct Elf32_Phdr));
-//	printf("f6 : %d\n", ehdr.e_phnum > 1024);
-//	file_seek(file, 0);
 
 
 	/* Read and verify executable header. */
@@ -470,8 +467,10 @@ load (const char *file_name, void (**eip) (void), void **esp)
 done:
 	/* We arrive here whether the load is successful or not. */
 	//make file not write
-	if(success)
+	if(success){
 		file_deny_write(file);
+		t->selffile = file;
+	}
 	else
 		file_close(file);
 

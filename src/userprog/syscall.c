@@ -52,8 +52,6 @@ syscall_handler (struct intr_frame *f UNUSED)
 	else if(syscallnum == SYS_EXIT){
 		//this systemcall is about exit
 		int status = getaddr(f->esp+0x4);
-		//		wakeupwaiting(status);
-		thread_current()->child_exit_status = status;
 		if(status < 0)
 			status = -1;
 		f->eax = status;

@@ -487,6 +487,7 @@ init_thread (struct thread *t, const char *name, int priority)
 	sema_init(&t->wait, 0);
 	t->waitfor = -1;
 	t->parent_id = NULL;
+	t->selffile = NULL;
 }
 
 /* Allocates a SIZE-byte frame at the top of thread T's stack and
