@@ -10,4 +10,7 @@ int process_wait (tid_t);
 void process_exit (void);
 void process_activate (void);
 void wakeupwaiting(int);
+
+struct thread * findthread(struct list *, tid_t);
+
 #endif /* userprog/process.h */

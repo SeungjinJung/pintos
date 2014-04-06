@@ -91,7 +91,7 @@ thread_init (void)
 
   lock_init (&tid_lock);
   list_init (&ready_list);
-
+	list_init (&execute_list);
   /* Set up a thread structure for the running thread. */
   initial_thread = running_thread ();
   init_thread (initial_thread, "main", PRI_DEFAULT);
@@ -485,8 +485,8 @@ init_thread (struct thread *t, const char *name, int priority)
   t->fd_set[0] = (void *)1;
   t->fd_set[1] = (void *)1;
 	sema_init(&t->wait, 0);
-	memset(&t->waitfor, -1, MAX_WAIT);
-	t->waitnum = 0;
+	t->waitfor = -1;
+	t->parent_id = NULL;
 }
 
 /* Allocates a SIZE-byte frame at the top of thread T's stack and

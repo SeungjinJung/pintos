@@ -5,6 +5,9 @@
 #include "threads/interrupt.h"
 #include "threads/thread.h"
 #include "userprog/pagedir.h"
+#include "threads/thread.h"
+#include "threads/vaddr.h"
+#include "threads/palloc.h"
 
 /* Number of page faults processed. */
 static long long page_fault_cnt;
@@ -143,15 +146,6 @@ page_fault (struct intr_frame *f)
      be assured of reading CR2 before it changed). */
   intr_enable ();
 
-	/* check the the pointer is valid */
-//	if(fault_addr >= 0xc0000000 || fault_addr < 0x08048000){
-	if(pagedir_get_page(thread_current()->pagedir, fault_addr) == NULL){
-//		f->eip = f->eax;
-		f->eax = -1;
-		printf("%s: exit(%d)\n", thread_name(), -1);
-		thread_exit();
-		return;
-		}
 
 
   /* Count page faults. */
@@ -162,6 +156,29 @@ page_fault (struct intr_frame *f)
   write = (f->error_code & PF_W) != 0;
   user = (f->error_code & PF_U) != 0;
 
+	
+	
+	/* check the the pointer is valid */
+	void* virtual_addr = pg_round_down(fault_addr); // upage.
+//	printf("PAGE FAULT OCCURED at %x\n", virtual_addr);
+	if(user && virtual_addr >= PHYS_BASE){
+//		printf("KERNEL MEMORY FAULT\n");
+		f->eax = -1;
+		thread_current()->child_exit_status=-1;
+		printf("%s: exit(%d)\n", thread_name(), -1);
+		thread_exit();
+		return;
+	}
+	else if(virtual_addr < PHYS_BASE){
+		if(pagedir_get_page(thread_current()->pagedir, virtual_addr) == NULL){
+//			f->eip = f->eax;
+			f->eax = -1;
+			thread_current()->child_exit_status=-1;
+			printf("%s: exit(%d)\n", thread_name(), -1);
+			thread_exit();
+			return;
+		}
+	}
   /* To implement virtual memory, delete the rest of the function
      body, and replace it with code that brings in the page to
      which fault_addr refers. */

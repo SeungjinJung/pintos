@@ -26,38 +26,45 @@ static thread_func start_process NO_RETURN;
 static bool load (const char *cmdline, void (**eip) (void), void **esp);
 
 static struct semaphore wait_execute;
-
-
+struct thread *findthread(struct list *elist, tid_t t){
+	struct list_elem *e;
+	struct thread *ex;
+	if(!list_empty(elist)){
+		for(e = list_begin(elist); e!=list_end(elist); e=list_next(e)){
+			ex = list_entry(e, struct thread, e_elem);
+				if(ex->tid == t)
+					return ex;
+		}
+	}
+	return NULL;
+}
 void wakeupwaiting(int status){
 	struct thread *cur = thread_current();
 	struct list *elist = &execute_list;
 	struct list_elem *e;
-	struct thread *fex=NULL;
-	int i;
+	struct thread *ex=NULL;
 	bool end=false;
-	printf("list empty? %d\n", list_empty(elist));
 	if(!list_empty(elist)){
 		for(e = list_begin(elist); e!=list_end(elist); e=list_next(e)){
-			struct thread *ex = list_entry(e, struct thread, e_elem);
-			for(i=0; i<ex->waitnum; i++){
-				if(ex->waitfor[i] == cur->tid){
-					fex = ex;
-					end=true;
-				}
-			}
-			if(end){
-				list_remove(e);
+			ex = list_entry(e, struct thread, e_elem);
+			if(ex->waitfor == cur->tid){
+				end = true;
 				break;
 			}
 		}
-		if(!end){
+		if(end){
+			list_remove(&cur->e_elem);
+		}
+		else{
 			//nothing found for waking up
+			list_remove(&cur->e_elem);
 			return;
 		}
-		printf("waking up tid : %d with %d\n", fex->tid, status);
-		fex->child_exit_status = status;
-		fex->waitnum--;
-		sema_up(&fex->wait);
+//		printf("%d's exit stats is %d\n", ex->tid, status);
+		ex->waitfor = -1;
+		ex->child_exit_status = status;
+//		printf("%d wake up\n", ex->tid);
+		sema_up(&ex->wait);
 	}
 }
 
@@ -82,15 +89,13 @@ process_execute (const char *file_name)
 	/* Create a new thread to execute FILE_NAME. */
 	tid = thread_create (file_name, PRI_DEFAULT, start_process, fn_copy);
 
-
-//	printf("%d excute_process %d\n", thread_current()->tid, tid);
 	//it's for first process
-	if(list_empty(&execute_list))
+	if(list_empty(&execute_list)){
 		list_push_back(&execute_list, &thread_current()->e_elem);
+	}
 
 	//wait for just execution
 	sema_down(&wait_execute);
-
 	if (tid == TID_ERROR)
 		palloc_free_page (fn_copy);
 	
@@ -123,6 +128,7 @@ start_process (void *f_name)
 	int argc = 0;
 	int argvlen = 0;
 	int i;
+  
 
 	list_push_back(&execute_list, &thread_current()->e_elem);
 	/* Initialize interrupt frame and load executable. */
@@ -177,13 +183,14 @@ start_process (void *f_name)
 	palloc_free_page (file_name);
 
 	if (!success){
-		wakeupwaiting(-1);
+//		wakeupwaiting(-1);
 		thread_current()->child_exit_status=-1;
 		sema_up(&wait_execute);
 		thread_exit ();
 	}
 	else{
 		sema_up(&wait_execute);
+//		printf("thread %d go to sleep\n", thread_current()->tid);
 		sema_down(&thread_current()->wait);
 	}
 	/* Start the user process by simulating a return from an
@@ -196,18 +203,7 @@ start_process (void *f_name)
 	NOT_REACHED ();
 }
 
-struct thread * findthread(struct list *elist, tid_t t){
-	struct list_elem *e;
-	struct thread *ex;
-	if(!list_empty(elist)){
-		for(e = list_begin(elist); e!=list_end(elist); e=list_next(e)){
-			ex = list_entry(e, struct thread, e_elem);
-				if(ex->tid == t)
-					return ex;
-		}
-	}
-	return NULL;
-}
+
 /* Waits for thread TID to die and returns its exit status.  If
 	 it was terminated by the kernel (i.e. killed due to an
 	 exception), returns -1.  If TID is invalid or if it was not a
@@ -222,17 +218,14 @@ process_wait (tid_t child_tid UNUSED)
 {
 	//	while(1);
 	struct thread *cur = thread_current();
-//	printf("%d wait for %d\n", cur->tid, child_tid);
-	cur->waitfor[cur->waitnum++] = child_tid;
-	while(cur->waitnum > 0){
+	cur->waitfor = child_tid;
+//	printf("%d wait %d\n", cur->tid, child_tid);
+	while(cur->waitfor > 0){
 		struct thread *child = findthread(&execute_list, child_tid);
-//		printf("total process : %d\n", list_size(&execute_list));
-//		printf("child tid %d\n", child->tid);
 		sema_up(&child->wait);
 		sema_down(&cur->wait);
 	}
-//	printf("%s is waiking by %d\n", cur->name, child_tid);
-	cur->waitnum--;
+	cur->waitfor = -1;
 //	thread_set_priority(0);
 	return cur->child_exit_status;
 }
@@ -243,8 +236,14 @@ process_exit (void)
 {
 	struct thread *curr = thread_current ();
 	uint32_t *pd;
-
+	int i;
 	wakeupwaiting(curr->child_exit_status);
+	for(i=0; i<MAXFD; i++){
+		if(curr->fd_set[i] > 1){
+//			printf("addr %x\n",curr->fd_set[i]);
+			file_close((struct file *)ptov((uintptr_t)curr->fd_set[i]));
+		}
+	}
 	/* Destroy the current process's page directory and switch back
 		 to the kernel-only page directory. */
 	pd = curr->pagedir;
@@ -376,6 +375,15 @@ load (const char *file_name, void (**eip) (void), void **esp)
 		success =false;
 		goto done; 
 	}
+//	file_allow_write(file);
+//	printf("ff : %d\n", file_read (file, &ehdr, sizeof ehdr) != sizeof ehdr);
+//	printf("f2 : %d\n", memcmp (ehdr.e_ident, "\177ELF\1\1\1", 7));
+//	printf("f3 : %d\n", ehdr.e_type != 2);
+//	printf("f4 : %d\n", ehdr.e_machine != 3);
+//	printf("f5 : %d\n", ehdr.e_phentsize != sizeof (struct Elf32_Phdr));
+//	printf("f6 : %d\n", ehdr.e_phnum > 1024);
+//	file_seek(file, 0);
+
 
 	/* Read and verify executable header. */
 	if (file_read (file, &ehdr, sizeof ehdr) != sizeof ehdr
@@ -456,12 +464,18 @@ load (const char *file_name, void (**eip) (void), void **esp)
 
 	/* Start address. */
 	*eip = (void (*) (void)) ehdr.e_entry;
-
+	
 	success = true;
-
+	
 done:
 	/* We arrive here whether the load is successful or not. */
-	file_close (file);
+	//make file not write
+	if(success)
+		file_deny_write(file);
+	else
+		file_close(file);
+
+//	file_close (file);
 	return success;
 }
 

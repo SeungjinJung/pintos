@@ -28,7 +28,7 @@ typedef int tid_t;
 #define PRI_MAX 63                      /* Highest priority. */
 
 #define MAXFD 256
-#define MAX_WAIT 128
+#define MAX_CHILD 256
 
 /* A kernel thread or user process.
 
@@ -87,9 +87,9 @@ only because they are mutually exclusive: only a thread in the
 ready state is on the run queue, whereas only a thread in the
 blocked state is on a semaphore wait list. */
 
-struct list execute_list;
 int execute_num;
 
+struct list execute_list;
 struct prio_list_elem
 {
 	int prio;
@@ -124,9 +124,9 @@ struct thread
 	void * fd_set[MAXFD];
 	struct semaphore wait;
 	struct list_elem e_elem;
-	tid_t waitfor[MAX_WAIT];
-	int waitnum;
+	tid_t waitfor;
 	int child_exit_status;
+	struct thread* parent_id;
 };
 
 /* If false (default), use round-robin scheduler.

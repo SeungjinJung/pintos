@@ -17,24 +17,24 @@ GRAN_BYTE	gdt.c	/^    GRAN_BYTE = 0,              \/* Limit has 1-byte granulari
 GRAN_PAGE	gdt.c	/^    GRAN_PAGE = 1               \/* Limit has 4 kB granularity. *\/$/;"	e	enum:seg_granularity	file:
 NO_RETURN	process.c	/^static thread_func start_process NO_RETURN;$/;"	v	file:
 OBJECTS	build/Makefile	/^OBJECTS = $(patsubst %.c,%.o,$(patsubst %.S,%.o,$(SOURCES)))$/;"	m
-PE32Ax	process.c	266;"	d	file:
-PE32Hx	process.c	268;"	d	file:
-PE32Ox	process.c	267;"	d	file:
-PE32Wx	process.c	265;"	d	file:
+PE32Ax	process.c	283;"	d	file:
+PE32Hx	process.c	285;"	d	file:
+PE32Ox	process.c	284;"	d	file:
+PE32Wx	process.c	282;"	d	file:
 PF_P	exception.h	5;"	d
-PF_R	process.c	318;"	d	file:
+PF_R	process.c	335;"	d	file:
 PF_U	exception.h	7;"	d
 PF_W	exception.h	6;"	d
-PF_W	process.c	317;"	d	file:
-PF_X	process.c	316;"	d	file:
-PT_DYNAMIC	process.c	308;"	d	file:
-PT_INTERP	process.c	309;"	d	file:
-PT_LOAD	process.c	307;"	d	file:
-PT_NOTE	process.c	310;"	d	file:
-PT_NULL	process.c	306;"	d	file:
-PT_PHDR	process.c	312;"	d	file:
-PT_SHLIB	process.c	311;"	d	file:
-PT_STACK	process.c	313;"	d	file:
+PF_W	process.c	334;"	d	file:
+PF_X	process.c	333;"	d	file:
+PT_DYNAMIC	process.c	325;"	d	file:
+PT_INTERP	process.c	326;"	d	file:
+PT_LOAD	process.c	324;"	d	file:
+PT_NOTE	process.c	327;"	d	file:
+PT_NULL	process.c	323;"	d	file:
+PT_PHDR	process.c	329;"	d	file:
+PT_SHLIB	process.c	328;"	d	file:
+PT_STACK	process.c	330;"	d	file:
 SEL_CNT	gdt.h	11;"	d
 SEL_TSS	gdt.h	10;"	d
 SEL_UCSEG	gdt.h	8;"	d
@@ -90,8 +90,9 @@ esp1	tss.c	/^    void *esp1;$/;"	m	struct:tss	file:
 esp2	tss.c	/^    void *esp2;$/;"	m	struct:tss	file:
 exception_init	exception.c	/^exception_init (void) $/;"	f
 exception_print_stats	exception.c	/^exception_print_stats (void) $/;"	f
-execute_num	syscall.c	/^int execute_num=0;$/;"	v
+executestatus	syscall.c	/^int executestatus(tid_t t){$/;"	f
 filesys_SRC	build/Makefile	/^filesys_SRC  = filesys\/filesys.c	# Filesystem core.$/;"	m
+findthread	process.c	/^static struct thread * findthread(struct list *elist, tid_t t){$/;"	f	file:
 fs	tss.c	/^    uint16_t fs, :16;$/;"	m	struct:tss	file:
 gdt	gdt.c	/^static uint64_t gdt[SEL_CNT];$/;"	v	file:
 gdt_init	gdt.c	/^gdt_init (void)$/;"	f
@@ -159,4 +160,5 @@ tss_init	tss.c	/^tss_init (void) $/;"	f
 tss_update	tss.c	/^tss_update (void) $/;"	f
 userprog_SRC	build/Makefile	/^userprog_SRC  = userprog\/process.c	# Process loading.$/;"	m
 validate_segment	process.c	/^validate_segment (const struct Elf32_Phdr *phdr, struct file *file) $/;"	f	file:
+wait_execute	process.c	/^static struct semaphore wait_execute;$/;"	v	typeref:struct:semaphore	file:
 wakeupwaiting	process.c	/^void wakeupwaiting(int status){$/;"	f
