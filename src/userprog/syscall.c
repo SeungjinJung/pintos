@@ -24,7 +24,7 @@ static int makeP_C(tid_t);
 
 static void syscall_handler (struct intr_frame *);
 
-struct semaphore filesys[MAXFD];
+static struct semaphore filesys[MAXFD]; /* for synchronizing file access */
 	void
 syscall_init (void) 
 {
@@ -362,6 +362,11 @@ bool goodfileptr(void *fileptr){
 	//		printf("ptr : %x\n", fileptr);
 	if(fileptr == NULL)
 		return false;
+	if(!is_user_vaddr(fileptr)){
+		return false;
+	}
+	return true;
+	/*
 	if(is_user_vaddr(fileptr) && fileptr >= (void *)0x08048000){
 		//ASSERT(false);
 		if(pagedir_get_page(cur->pagedir, fileptr) == NULL){
@@ -374,6 +379,7 @@ bool goodfileptr(void *fileptr){
 		return true;
 	else
 		return false;
+		*/
 }
 int makeP_C(tid_t t){
 	struct thread *cur = thread_current();

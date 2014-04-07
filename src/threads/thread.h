@@ -27,8 +27,7 @@ typedef int tid_t;
 #define PRI_DEFAULT 31                  /* Default priority. */
 #define PRI_MAX 63                      /* Highest priority. */
 
-#define MAXFD 256
-#define MAX_CHILD 256
+#define MAXFD 512
 
 /* A kernel thread or user process.
 
@@ -87,14 +86,8 @@ only because they are mutually exclusive: only a thread in the
 ready state is on the run queue, whereas only a thread in the
 blocked state is on a semaphore wait list. */
 
-int execute_num;
 
-struct list execute_list;
-struct prio_list_elem
-{
-	int prio;
-	struct list_elem pelem;
-};
+struct list execute_list; /* for saving all excuting process */
 struct thread
 {
 	/* Owned by thread.c. */
@@ -121,13 +114,13 @@ struct thread
 	unsigned int wakeuptick;		/* Last Tick for Waking up */
 
 	/* below variable for PJ2 */
-	void * fd_set[MAXFD];
-	struct semaphore wait;
-	struct list_elem e_elem;
-	tid_t waitfor;
-	int child_exit_status;
-	struct thread* parent_id;
-	struct file* selffile;
+	void * fd_set[MAXFD];	/* for saving fd which this thread use */
+	struct semaphore wait; /* for do exec and wait */
+	struct list_elem e_elem; /* for saving executing process */
+	tid_t waitfor; /* for wait function */
+	int child_exit_status; /* for saving child exit status and my exit status */
+	struct thread* parent_id; /* for saving my parent */
+	struct file* selffile; /* what excutable file make this thread */
 };
 
 /* If false (default), use round-robin scheduler.

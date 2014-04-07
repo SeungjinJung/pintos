@@ -83,7 +83,7 @@ process_execute (const char *file_name)
 	fn_copy = palloc_get_page (0);
 	if (fn_copy == NULL)
 		return TID_ERROR;
-	strlcpy (fn_copy, file_name, PGSIZE);
+	strlcpy (fn_copy, file_name, 512);
 
 	sema_init(&wait_execute, 0);
 	/* Create a new thread to execute FILE_NAME. */
@@ -219,9 +219,13 @@ process_wait (tid_t child_tid UNUSED)
 	//	while(1);
 	struct thread *cur = thread_current();
 	cur->waitfor = child_tid;
+	struct thread *child = findthread(&execute_list, child_tid);
+	if(child->parent_id != NULL && child->parent_id->tid != cur->tid){
+					//check child relationship
+					return -1;
+	}
 //	printf("%d wait %d\n", cur->tid, child_tid);
 	while(cur->waitfor > 0){
-		struct thread *child = findthread(&execute_list, child_tid);
 		sema_up(&child->wait);
 		sema_down(&cur->wait);
 	}
