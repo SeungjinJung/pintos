@@ -1,0 +1,533 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ACTUAL	vm/child-mm-wrt.c	12;"	d	file:
+ACTUAL	vm/mmap-close.c	10;"	d	file:
+ACTUAL	vm/mmap-unmap.c	9;"	d	file:
+ACTUAL	vm/mmap-write.c	11;"	d	file:
+Algorithm::Diff	Algorithm/Diff.pm	/^package Algorithm::Diff;$/;"	p
+Algorithm::Diff::_impl	Algorithm/Diff.pm	/^package Algorithm::Diff::_impl;$/;"	p
+BLOCK_SIZE	filesys/base/lg-random.c	5;"	d	file:
+BLOCK_SIZE	filesys/base/lg-seq-block.c	6;"	d	file:
+BLOCK_SIZE	filesys/base/sm-random.c	5;"	d	file:
+BLOCK_SIZE	filesys/base/sm-seq-block.c	6;"	d	file:
+BUF_SIZE	filesys/base/syn-read.h	4;"	d
+BUF_SIZE	filesys/base/syn-write.h	6;"	d
+BUF_SIZE	filesys/extended/syn-rw.h	6;"	d
+Base	Algorithm/Diff.pm	/^sub Base$/;"	s
+CHECK	lib.h	29;"	d
+CHILD_CNT	filesys/base/syn-read.c	14;"	d	file:
+CHILD_CNT	filesys/base/syn-write.h	4;"	d
+CHILD_CNT	filesys/extended/syn-rw.c	12;"	d	file:
+CHILD_CNT	userprog/rox-child.c	4;"	d	file:
+CHILD_CNT	userprog/rox-multichild.c	4;"	d	file:
+CHILD_CNT	vm/page-parallel.c	7;"	d	file:
+CHUNK_CNT	filesys/extended/syn-rw.h	5;"	d
+CHUNK_CNT	vm/page-merge-seq.c	15;"	d	file:
+CHUNK_CNT	vm/parallel-merge.c	14;"	d	file:
+CHUNK_SIZE	filesys/base/syn-write.h	5;"	d
+CHUNK_SIZE	filesys/extended/syn-rw.h	4;"	d
+CHUNK_SIZE	vm/page-merge-seq.c	14;"	d	file:
+CHUNK_SIZE	vm/parallel-merge.c	13;"	d	file:
+CRASH	userprog/no-vm/multi-oom.c	/^enum child_termination_mode { RECURSE, CRASH };$/;"	e	enum:child_termination_mode	file:
+Copy	Algorithm/Diff.pm	/^sub Copy$/;"	s
+DATA_SIZE	vm/page-merge-seq.c	16;"	d	file:
+DATA_SIZE	vm/parallel-merge.c	15;"	d	file:
+DIRECTORY	filesys/extended/grow-dir-lg.c	5;"	d	file:
+Die	Algorithm/Diff.pm	/^sub Die$/;"	s
+Diff	Algorithm/Diff.pm	/^sub Diff {$/;"	s
+EXPECTED_DEPTH_TO_PASS	userprog/no-vm/multi-oom.c	/^static const int EXPECTED_DEPTH_TO_PASS = 30;$/;"	v	file:
+EXPECTED_REPETITIONS	userprog/no-vm/multi-oom.c	/^static const int EXPECTED_REPETITIONS = 10;$/;"	v	file:
+FILE_CNT	filesys/extended/grow-dir-lg.c	4;"	d	file:
+FILE_CNT	filesys/extended/grow-root-lg.c	3;"	d	file:
+FILE_CNT	filesys/extended/grow-root-sm.c	3;"	d	file:
+FILE_SIZE	filesys/extended/grow-two-files.c	9;"	d	file:
+Get	Algorithm/Diff.pm	/^sub Get$/;"	s
+ITER_CNT	threads/priority-fifo.c	27;"	d	file:
+Items	Algorithm/Diff.pm	/^sub Items {$/;"	s
+LCS	Algorithm/Diff.pm	/^sub LCS$/;"	s
+LCS_length	Algorithm/Diff.pm	/^sub LCS_length$/;"	s
+LCSidx	Algorithm/Diff.pm	/^sub LCSidx$/;"	s
+MAX_CNT	internal/stdlib.c	19;"	d	file:
+MAX_SIZE	internal/list.c	19;"	d	file:
+MAX_THREAD_CNT	threads/mlfqs-fair.c	54;"	d	file:
+Max	Algorithm/Diff.pm	/^sub Max {$/;"	s
+Min	Algorithm/Diff.pm	/^sub Min {$/;"	s
+NDEBUG	internal/list.c	10;"	d	file:
+NDEBUG	internal/stdio.c	10;"	d	file:
+NDEBUG	internal/stdlib.c	10;"	d	file:
+NESTING_DEPTH	threads/priority-donate-chain.c	33;"	d	file:
+Next	Algorithm/Diff.pm	/^sub Next {$/;"	s
+Prev	Algorithm/Diff.pm	/^sub Prev {$/;"	s
+RECURSE	userprog/no-vm/multi-oom.c	/^enum child_termination_mode { RECURSE, CRASH };$/;"	e	enum:child_termination_mode	file:
+Range	Algorithm/Diff.pm	/^sub Range {$/;"	s
+Reset	Algorithm/Diff.pm	/^sub Reset$/;"	s
+SIZE	vm/child-linear.c	12;"	d	file:
+SIZE	vm/mmap-shuffle.c	12;"	d	file:
+SIZE	vm/page-linear.c	9;"	d	file:
+SIZE	vm/page-shuffle.c	10;"	d	file:
+Same	Algorithm/Diff.pm	/^sub Same {$/;"	s
+TESTS_ARC4_H	arc4.h	2;"	d
+TESTS_CKSUM_H	cksum.h	2;"	d
+TESTS_FILESYS_BASE_SYN_READ_H	filesys/base/syn-read.h	2;"	d
+TESTS_FILESYS_BASE_SYN_WRITE_H	filesys/base/syn-write.h	2;"	d
+TESTS_FILESYS_EXTENDED_MK_TREE_H	filesys/extended/mk-tree.h	2;"	d
+TESTS_FILESYS_EXTENDED_SYN_RW_H	filesys/extended/syn-rw.h	2;"	d
+TESTS_FILESYS_SEQ_TEST_H	filesys/seq-test.h	2;"	d
+TESTS_LIB_H	lib.h	2;"	d
+TESTS_MAIN_H	main.h	2;"	d
+TESTS_THREADS_TESTS_H	threads/tests.h	2;"	d
+TESTS_USERPROG_BOUNDARY_H	userprog/boundary.h	2;"	d
+TESTS_VM_PARALLEL_MERGE	vm/parallel-merge.h	2;"	d
+TESTS_VM_QSORT_H	vm/qsort.h	2;"	d
+TEST_SIZE	filesys/base/lg-create.c	4;"	d	file:
+TEST_SIZE	filesys/base/lg-full.c	5;"	d	file:
+TEST_SIZE	filesys/base/lg-random.c	6;"	d	file:
+TEST_SIZE	filesys/base/lg-seq-block.c	5;"	d	file:
+TEST_SIZE	filesys/base/lg-seq-random.c	5;"	d	file:
+TEST_SIZE	filesys/base/sm-create.c	4;"	d	file:
+TEST_SIZE	filesys/base/sm-full.c	5;"	d	file:
+TEST_SIZE	filesys/base/sm-random.c	6;"	d	file:
+TEST_SIZE	filesys/base/sm-seq-block.c	5;"	d	file:
+TEST_SIZE	filesys/base/sm-seq-random.c	5;"	d	file:
+TEST_SIZE	filesys/extended/grow-create.c	3;"	d	file:
+TEST_SIZE	filesys/extended/grow-seq-lg.c	4;"	d	file:
+TEST_SIZE	filesys/extended/grow-seq-sm.c	4;"	d	file:
+THREAD_CNT	threads/mlfqs-load-60.c	112;"	d	file:
+THREAD_CNT	threads/mlfqs-load-avg.c	123;"	d	file:
+THREAD_CNT	threads/priority-fifo.c	26;"	d	file:
+_Base	Algorithm/Diff.pm	/^sub _Base() { 5 } # $me->[_Base]: Added to range's min and max$/;"	s
+_ChkPos	Algorithm/Diff.pm	/^sub _ChkPos$/;"	s
+_ChkSeq	Algorithm/Diff.pm	/^sub _ChkSeq$/;"	s
+_End	Algorithm/Diff.pm	/^sub _End()  { 3 } # $me->[_End]: Diff between forward and reverse pos$/;"	s
+_Idx	Algorithm/Diff.pm	/^sub _Idx()  { 0 } # $me->[_Idx]: Ref to array of hunk indices$/;"	s
+_Min	Algorithm/Diff.pm	/^sub _Min() { -2 } # Added to _Off to get min instead of max+1$/;"	s
+_Off	Algorithm/Diff.pm	/^sub _Off()  { 7 } # $me->[_Off]: Offset into _Idx for current position$/;"	s
+_Pos	Algorithm/Diff.pm	/^sub _Pos()  { 6 } # $me->[_Pos]: Which hunk is currently selected$/;"	s
+_Same	Algorithm/Diff.pm	/^sub _Same() { 4 } # $me->[_Same]: 1 if pos 1 contains unchanged items$/;"	s
+_longestCommonSubsequence	Algorithm/Diff.pm	/^sub _longestCommonSubsequence$/;"	s
+_replaceNextLargerWith	Algorithm/Diff.pm	/^sub _replaceNextLargerWith$/;"	s
+_withPositionsOfInInterval	Algorithm/Diff.pm	/^sub _withPositionsOfInInterval$/;"	s
+a	threads/priority-donate-nest.c	/^    struct lock *a;$/;"	m	struct:locks	typeref:struct:locks::lock	file:
+a_thread_func	threads/priority-donate-multiple.c	/^a_thread_func (void *lock_) $/;"	f	file:
+a_thread_func	threads/priority-donate-multiple.c	/^static thread_func a_thread_func;$/;"	v	file:
+a_thread_func	threads/priority-donate-multiple2.c	/^a_thread_func (void *lock_) $/;"	f	file:
+a_thread_func	threads/priority-donate-multiple2.c	/^static thread_func a_thread_func;$/;"	v	file:
+acquire1_thread_func	threads/priority-donate-one.c	/^acquire1_thread_func (void *lock_) $/;"	f	file:
+acquire1_thread_func	threads/priority-donate-one.c	/^static thread_func acquire1_thread_func;$/;"	v	file:
+acquire2_thread_func	threads/priority-donate-one.c	/^acquire2_thread_func (void *lock_) $/;"	f	file:
+acquire2_thread_func	threads/priority-donate-one.c	/^static thread_func acquire2_thread_func;$/;"	v	file:
+acquire_thread_func	threads/priority-donate-lower.c	/^acquire_thread_func (void *lock_) $/;"	f	file:
+acquire_thread_func	threads/priority-donate-lower.c	/^static thread_func acquire_thread_func;$/;"	v	file:
+alarm_priority_thread	threads/alarm-priority.c	/^alarm_priority_thread (void *aux UNUSED) $/;"	f	file:
+alarm_priority_thread	threads/alarm-priority.c	/^static thread_func alarm_priority_thread;$/;"	v	file:
+arc4	arc4.h	/^struct arc4$/;"	s
+arc4_crypt	arc4.c	/^arc4_crypt (struct arc4 *arc4, void *buf_, size_t size)$/;"	f
+arc4_crypt	arc4.pm	/^sub arc4_crypt {$/;"	s
+arc4_init	arc4.c	/^arc4_init (struct arc4 *arc4, const void *key_, size_t size)$/;"	f
+arc4_init	arc4.pm	/^sub arc4_init {$/;"	s
+archive_directory	filesys/extended/tar.c	/^archive_directory (char file_name[], size_t file_name_size, int file_fd,$/;"	f	file:
+archive_file	filesys/extended/tar.c	/^archive_file (char file_name[], size_t file_name_size,$/;"	f	file:
+archive_ordinary_file	filesys/extended/tar.c	/^archive_ordinary_file (const char *file_name, int file_fd,$/;"	f	file:
+b	threads/priority-donate-nest.c	/^    struct lock *b;$/;"	m	struct:locks	typeref:struct:locks::lock	file:
+b_thread_func	threads/priority-donate-multiple.c	/^b_thread_func (void *lock_) $/;"	f	file:
+b_thread_func	threads/priority-donate-multiple.c	/^static thread_func b_thread_func;$/;"	v	file:
+b_thread_func	threads/priority-donate-multiple2.c	/^b_thread_func (void *lock_) $/;"	f	file:
+b_thread_func	threads/priority-donate-multiple2.c	/^static thread_func b_thread_func;$/;"	v	file:
+block_thread	threads/mlfqs-block.c	/^block_thread (void *lock_) $/;"	f	file:
+buf	filesys/base/child-syn-read.c	/^static char buf[BUF_SIZE];$/;"	v	file:
+buf	filesys/base/child-syn-wrt.c	/^char buf[BUF_SIZE];$/;"	v
+buf	filesys/base/syn-read.c	/^static char buf[BUF_SIZE];$/;"	v	file:
+buf	filesys/extended/grow-file-size.c	/^static char buf[2134];$/;"	v	file:
+buf	filesys/extended/grow-sparse.c	/^static char buf[76543];$/;"	v	file:
+buf	filesys/extended/grow-tell.c	/^static char buf[2134];$/;"	v	file:
+buf	filesys/extended/syn-rw.c	/^char buf[BUF_SIZE];$/;"	v
+buf	vm/child-linear.c	/^static char buf[SIZE];$/;"	v	file:
+buf	vm/child-sort.c	/^unsigned char buf[128 * 1024];$/;"	v
+buf	vm/mmap-shuffle.c	/^static char *buf = (char *) 0x10000000;$/;"	v	file:
+buf	vm/page-linear.c	/^static char buf[SIZE];$/;"	v	file:
+buf	vm/page-shuffle.c	/^static char buf[SIZE];$/;"	v	file:
+buf1	filesys/base/syn-remove.c	/^char buf1[1234];$/;"	v
+buf1	filesys/base/syn-write.c	/^char buf1[BUF_SIZE];$/;"	v
+buf1	filesys/extended/child-syn-rw.c	/^static char buf1[BUF_SIZE];$/;"	v	file:
+buf1	vm/page-merge-seq.c	/^unsigned char buf1[DATA_SIZE], buf2[DATA_SIZE];$/;"	v
+buf1	vm/parallel-merge.c	/^unsigned char buf1[DATA_SIZE], buf2[DATA_SIZE];$/;"	v
+buf2	filesys/base/syn-remove.c	/^char buf2[1234];$/;"	v
+buf2	filesys/base/syn-write.c	/^char buf2[BUF_SIZE];$/;"	v
+buf2	filesys/extended/child-syn-rw.c	/^static char buf2[BUF_SIZE];$/;"	v	file:
+buf2	vm/page-merge-seq.c	/^unsigned char buf1[DATA_SIZE], buf2[DATA_SIZE];$/;"	v
+buf2	vm/parallel-merge.c	/^unsigned char buf1[DATA_SIZE], buf2[DATA_SIZE];$/;"	v
+buf_a	filesys/extended/grow-two-files.c	/^static char buf_a[FILE_SIZE];$/;"	v	file:
+buf_b	filesys/extended/grow-two-files.c	/^static char buf_b[FILE_SIZE];$/;"	v	file:
+c_thread_func	threads/priority-donate-multiple2.c	/^c_thread_func (void *a_ UNUSED) $/;"	f	file:
+c_thread_func	threads/priority-donate-multiple2.c	/^static thread_func c_thread_func;$/;"	v	file:
+changing_thread	threads/priority-change.c	/^changing_thread (void *aux UNUSED) $/;"	f	file:
+changing_thread	threads/priority-change.c	/^static thread_func changing_thread;$/;"	v	file:
+check_alarm	threads/alarm.pm	/^sub check_alarm {$/;"	s
+check_archive	tests.pm	/^sub check_archive {$/;"	s
+check_expected	tests.pm	/^sub check_expected {$/;"	s
+check_file	lib.c	/^check_file (const char *file_name, const void *buf, size_t size) $/;"	f
+check_file_handle	lib.c	/^check_file_handle (int fd,$/;"	f
+check_file_size	filesys/extended/grow-file-size.c	/^check_file_size (int fd, long ofs) $/;"	f	file:
+check_for_keyword	tests.pm	/^sub check_for_keyword {$/;"	s
+check_for_panic	tests.pm	/^sub check_for_panic {$/;"	s
+check_for_triple_fault	tests.pm	/^sub check_for_triple_fault {$/;"	s
+check_mlfqs_fair	threads/mlfqs.pm	/^sub check_mlfqs_fair {$/;"	s
+check_process_death	vm/process_death.pm	/^sub check_process_death {$/;"	s
+check_tell	filesys/extended/grow-tell.c	/^check_tell (int fd, long ofs) $/;"	f	file:
+checkf	internal/stdio.c	/^checkf (const char *expect, const char *format, ...) $/;"	f	file:
+child_termination_mode	userprog/no-vm/multi-oom.c	/^enum child_termination_mode { RECURSE, CRASH };$/;"	g	file:
+cksum	cksum.c	/^cksum (const void *b_, size_t n)$/;"	f
+cksum	cksum.pm	/^sub cksum {$/;"	s
+cksum_file	cksum.pm	/^sub cksum_file {$/;"	s
+common_checks	tests.pm	/^sub common_checks {$/;"	s
+compact_diff	Algorithm/Diff.pm	/^sub compact_diff$/;"	s
+compare_bytes	lib.c	/^compare_bytes (const void *read_data_, const void *expected_data_, size_t size,$/;"	f
+compare_files	tests.pm	/^sub compare_files {$/;"	s
+compare_ints	internal/stdlib.c	/^compare_ints (const void *a_, const void *b_) $/;"	f	file:
+compare_output	tests.pm	/^sub compare_output {$/;"	s
+condition	threads/priority-condvar.c	/^static struct condition condition;$/;"	v	typeref:struct:condition	file:
+consume_some_resources	userprog/no-vm/multi-oom.c	/^consume_some_resources (void)$/;"	f	file:
+consume_some_resources_and_die	userprog/no-vm/multi-oom.c	/^consume_some_resources_and_die (int seed)$/;"	f	file:
+copy_string_across_boundary	userprog/boundary.c	/^copy_string_across_boundary (const char *src) $/;"	f
+crctab	cksum.c	/^static unsigned long crctab[] = {$/;"	v	file:
+diff	Algorithm/Diff.pm	/^sub diff$/;"	s
+do_mkdir	filesys/extended/mk-tree.c	/^do_mkdir (const char *format, ...) $/;"	f	file:
+do_remove	filesys/extended/dir-rm-tree.c	/^do_remove (const char *format, ...) $/;"	f	file:
+do_touch	filesys/extended/mk-tree.c	/^do_touch (const char *format, ...)$/;"	f	file:
+do_write	filesys/extended/tar.c	/^do_write (int fd, const char *buffer, int size, bool *write_error) $/;"	f	file:
+donor_thread_func	threads/priority-donate-chain.c	/^donor_thread_func (void *locks_) $/;"	f	file:
+donor_thread_func	threads/priority-donate-chain.c	/^static thread_func donor_thread_func;$/;"	v	file:
+dst	userprog/boundary.c	/^static char dst[8192];$/;"	v	file:
+duration	threads/alarm-wait.c	/^    int duration;               \/* Number of ticks to sleep. *\/$/;"	m	struct:sleep_thread	file:
+elem	internal/list.c	/^    struct list_elem elem;      \/* List element. *\/$/;"	m	struct:value	typeref:struct:value::list_elem	file:
+exec_children	lib.c	/^exec_children (const char *child_name, pid_t pids[], size_t child_cnt) $/;"	f
+fail	lib.c	/^fail (const char *format, ...) $/;"	f
+fail	tests.pm	/^sub fail {$/;"	s
+fail	threads/tests.c	/^fail (const char *format, ...) $/;"	f
+failure_cnt	internal/stdio.c	/^static int failure_cnt;$/;"	v	file:
+file_name	filesys/base/syn-read.h	/^static const char file_name[] = "data";$/;"	v
+file_name	filesys/base/syn-write.h	/^static const char file_name[] = "stuff";$/;"	v
+file_name	filesys/extended/syn-rw.h	/^static const char file_name[] = "logfile";$/;"	v
+file_size	tests.pm	/^sub file_size {$/;"	s
+finish	tests.pm	/^sub finish {$/;"	s
+first	threads/priority-donate-chain.c	/^    struct lock *first;$/;"	m	struct:lock_pair	typeref:struct:lock_pair::lock	file:
+flatten_hierarchy	tests.pm	/^sub flatten_hierarchy {$/;"	s
+function	threads/tests.c	/^    test_func *function;$/;"	m	struct:test	file:
+getObjPkg	Algorithm/Diff.pm	/^sub getObjPkg$/;"	s
+get_boundary_area	userprog/boundary.c	/^get_boundary_area (void) $/;"	f
+get_core_output	tests.pm	/^sub get_core_output {$/;"	s
+h_thread_func	threads/priority-donate-sema.c	/^h_thread_func (void *ls_) $/;"	f	file:
+h_thread_func	threads/priority-donate-sema.c	/^static thread_func h_thread_func;$/;"	v	file:
+hex_dump	tests.pm	/^sub hex_dump {$/;"	s
+high_thread_func	threads/priority-donate-nest.c	/^high_thread_func (void *lock_) $/;"	f	file:
+high_thread_func	threads/priority-donate-nest.c	/^static thread_func high_thread_func;$/;"	v	file:
+histogram	vm/child-sort.c	/^size_t histogram[256];$/;"	v
+histogram	vm/page-merge-seq.c	/^size_t histogram[256];$/;"	v
+histogram	vm/parallel-merge.c	/^size_t histogram[256];$/;"	v
+i	arc4.h	/^    uint8_t i, j;$/;"	m	struct:arc4
+id	threads/alarm-wait.c	/^    int id;                     \/* Sleeper ID. *\/$/;"	m	struct:sleep_thread	file:
+id	threads/priority-fifo.c	/^    int id;                     \/* Sleeper ID. *\/$/;"	m	struct:simple_thread_data	file:
+init	vm/page-merge-seq.c	/^init (void) $/;"	f	file:
+init	vm/parallel-merge.c	/^init (void) $/;"	f	file:
+interloper_thread_func	threads/priority-donate-chain.c	/^interloper_thread_func (void *arg_ UNUSED)$/;"	f	file:
+interloper_thread_func	threads/priority-donate-chain.c	/^static thread_func interloper_thread_func;$/;"	v	file:
+is_dir	tests.pm	/^sub is_dir {$/;"	s
+is_partitioned	vm/qsort.c	/^is_partitioned (const unsigned char *array, size_t size,$/;"	f	file:
+is_sorted	vm/qsort.c	/^is_sorted (const unsigned char *buf, size_t size) $/;"	f	file:
+iterations	threads/alarm-simultaneous.c	/^    int iterations;             \/* Number of iterations per thread. *\/$/;"	m	struct:sleep_test	file:
+iterations	threads/alarm-wait.c	/^    int iterations;             \/* Iterations counted so far. *\/$/;"	m	struct:sleep_thread	file:
+iterations	threads/alarm-wait.c	/^    int iterations;             \/* Number of iterations per thread. *\/$/;"	m	struct:sleep_test	file:
+iterations	threads/priority-fifo.c	/^    int iterations;             \/* Iterations so far. *\/$/;"	m	struct:simple_thread_data	file:
+j	arc4.h	/^    uint8_t i, j;$/;"	m	struct:arc4
+l_thread_func	threads/priority-donate-sema.c	/^l_thread_func (void *ls_) $/;"	f	file:
+l_thread_func	threads/priority-donate-sema.c	/^static thread_func l_thread_func;$/;"	v	file:
+load_thread	threads/mlfqs-fair.c	/^load_thread (void *ti_) $/;"	f	file:
+load_thread	threads/mlfqs-load-60.c	/^load_thread (void *aux UNUSED) $/;"	f	file:
+load_thread	threads/mlfqs-load-avg.c	/^load_thread (void *seq_no_) $/;"	f	file:
+lock	threads/priority-condvar.c	/^static struct lock lock;$/;"	v	typeref:struct:lock	file:
+lock	threads/priority-donate-sema.c	/^    struct lock lock;$/;"	m	struct:lock_and_sema	typeref:struct:lock_and_sema::lock	file:
+lock	threads/priority-fifo.c	/^    struct lock *lock;          \/* Lock on output. *\/$/;"	m	struct:simple_thread_data	typeref:struct:simple_thread_data::lock	file:
+lock_and_sema	threads/priority-donate-sema.c	/^struct lock_and_sema $/;"	s	file:
+lock_pair	threads/priority-donate-chain.c	/^struct lock_pair$/;"	s	file:
+locks	threads/priority-donate-nest.c	/^struct locks $/;"	s	file:
+m_thread_func	threads/priority-donate-sema.c	/^m_thread_func (void *ls_) $/;"	f	file:
+m_thread_func	threads/priority-donate-sema.c	/^static thread_func m_thread_func;$/;"	v	file:
+main	cksum.c	/^main (void) $/;"	f
+main	filesys/base/child-syn-read.c	/^main (int argc, const char *argv[]) $/;"	f
+main	filesys/base/child-syn-wrt.c	/^main (int argc, char *argv[])$/;"	f
+main	filesys/extended/child-syn-rw.c	/^main (int argc, const char *argv[]) $/;"	f
+main	filesys/extended/tar.c	/^main (int argc, char *argv[]) $/;"	f
+main	main.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+main	userprog/args.c	/^main (int argc, char *argv[]) $/;"	f
+main	userprog/child-close.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+main	userprog/child-rox.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+main	userprog/child-simple.c	/^main (void) $/;"	f
+main	userprog/multi-recurse.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+main	userprog/no-vm/multi-oom.c	/^main (int argc, char *argv[])$/;"	f
+main	vm/child-linear.c	/^main (int argc, char *argv[])$/;"	f
+main	vm/child-qsort-mm.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+main	vm/child-qsort.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+main	vm/child-sort.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+make_tar_archive	filesys/extended/tar.c	/^make_tar_archive (const char *archive_name, char *files[], size_t file_cnt) $/;"	f	file:
+make_tree	filesys/extended/mk-tree.c	/^make_tree (int at, int bt, int ct, int dt) $/;"	f
+medium_thread_func	threads/priority-donate-nest.c	/^medium_thread_func (void *locks_) $/;"	f	file:
+medium_thread_func	threads/priority-donate-nest.c	/^static thread_func medium_thread_func;$/;"	v	file:
+merge	vm/page-merge-seq.c	/^merge (void) $/;"	f	file:
+merge	vm/parallel-merge.c	/^merge (void) $/;"	f	file:
+mlfqs_compare	threads/mlfqs.pm	/^sub mlfqs_compare {$/;"	s
+mlfqs_expected_load	threads/mlfqs.pm	/^sub mlfqs_expected_load {$/;"	s
+mlfqs_expected_ticks	threads/mlfqs.pm	/^sub mlfqs_expected_ticks {$/;"	s
+mlfqs_row	threads/mlfqs.pm	/^sub mlfqs_row {$/;"	s
+msg	lib.c	/^msg (const char *format, ...) $/;"	f
+msg	threads/tests.c	/^msg (const char *format, ...) $/;"	f
+name	threads/tests.c	/^    const char *name;$/;"	m	struct:test	file:
+new	Algorithm/Diff.pm	/^sub new$/;"	s
+nice	threads/mlfqs-fair.c	/^    int nice;$/;"	m	struct:thread_info	file:
+normalize_fs	tests.pm	/^sub normalize_fs {$/;"	s
+op	threads/priority-fifo.c	/^    int **op;                   \/* Output buffer position. *\/$/;"	m	struct:simple_thread_data	file:
+open_file	tests.pm	/^sub open_file {$/;"	s
+output_lock	threads/alarm-wait.c	/^    struct lock output_lock;    \/* Lock protecting output buffer. *\/$/;"	m	struct:sleep_test	typeref:struct:sleep_test::lock	file:
+output_pos	threads/alarm-simultaneous.c	/^    int *output_pos;            \/* Current position in output buffer. *\/$/;"	m	struct:sleep_test	file:
+output_pos	threads/alarm-wait.c	/^    int *output_pos;            \/* Current position in output buffer. *\/$/;"	m	struct:sleep_test	file:
+parallel_merge	vm/parallel-merge.c	/^parallel_merge (const char *child_name, int exit_status)$/;"	f
+partition	vm/qsort.c	/^partition (unsigned char *array, size_t size, int pivot) $/;"	f	file:
+pass	tests.pm	/^sub pass {$/;"	s
+pass	threads/tests.c	/^pass (void) $/;"	f
+pick_pivot	vm/qsort.c	/^pick_pivot (unsigned char *buf, size_t size) $/;"	f	file:
+prepare	Algorithm/Diff.pm	/^sub prepare$/;"	s
+print_fs	tests.pm	/^sub print_fs {$/;"	s
+priority_condvar_thread	threads/priority-condvar.c	/^priority_condvar_thread (void *aux UNUSED) $/;"	f	file:
+priority_condvar_thread	threads/priority-condvar.c	/^static thread_func priority_condvar_thread;$/;"	v	file:
+priority_sema_thread	threads/priority-sema.c	/^priority_sema_thread (void *aux UNUSED) $/;"	f	file:
+priority_sema_thread	threads/priority-sema.c	/^static thread_func priority_sema_thread;$/;"	v	file:
+qsort_bytes	vm/qsort.c	/^qsort_bytes (unsigned char *buf, size_t size) $/;"	f
+quiet	lib.c	/^bool quiet = false;$/;"	v
+random_bytes	random.pm	/^sub random_bytes {$/;"	s
+random_init	random.pm	/^sub random_init {$/;"	s
+random_ulong	random.pm	/^sub random_ulong {$/;"	s
+read_tar	tests.pm	/^sub read_tar {$/;"	s
+read_text_file	tests.pm	/^sub read_text_file {$/;"	s
+remove_tree	filesys/extended/dir-rm-tree.c	/^remove_tree (int at, int bt, int ct, int dt) $/;"	f	file:
+return_block_size	filesys/extended/grow-file-size.c	/^return_block_size (void) $/;"	f	file:
+return_block_size	filesys/extended/grow-tell.c	/^return_block_size (void) $/;"	f	file:
+run_test	threads/tests.c	/^run_test (const char *name) $/;"	f
+s	arc4.h	/^    uint8_t s[256];$/;"	m	struct:arc4
+sdiff	Algorithm/Diff.pm	/^sub sdiff$/;"	s
+second	threads/priority-donate-chain.c	/^    struct lock *second;$/;"	m	struct:lock_pair	typeref:struct:lock_pair::lock	file:
+sema	threads/priority-donate-sema.c	/^    struct semaphore sema;$/;"	m	struct:lock_and_sema	typeref:struct:lock_and_sema::semaphore	file:
+sema	threads/priority-sema.c	/^static struct semaphore sema;$/;"	v	typeref:struct:semaphore	file:
+seq_test	filesys/seq-test.c	/^seq_test (const char *file_name, void *buf, size_t size, size_t initial_size,$/;"	f
+shuffle	internal/list.c	/^shuffle (struct value *array, size_t cnt) $/;"	f	file:
+shuffle	internal/stdlib.c	/^shuffle (int *array, size_t cnt) $/;"	f	file:
+shuffle	lib.c	/^shuffle (void *buf_, size_t cnt, size_t size) $/;"	f
+shuffle	lib.pm	/^sub shuffle {$/;"	s
+simple_thread_data	threads/priority-fifo.c	/^struct simple_thread_data $/;"	s	file:
+simple_thread_func	threads/priority-fifo.c	/^simple_thread_func (void *data_) $/;"	f	file:
+simple_thread_func	threads/priority-fifo.c	/^static thread_func simple_thread_func;$/;"	v	file:
+simple_thread_func	threads/priority-preempt.c	/^simple_thread_func (void *aux UNUSED) $/;"	f	file:
+simple_thread_func	threads/priority-preempt.c	/^static thread_func simple_thread_func;$/;"	v	file:
+sleep_test	threads/alarm-simultaneous.c	/^struct sleep_test $/;"	s	file:
+sleep_test	threads/alarm-wait.c	/^struct sleep_test $/;"	s	file:
+sleep_thread	threads/alarm-wait.c	/^struct sleep_thread $/;"	s	file:
+sleeper	threads/alarm-simultaneous.c	/^sleeper (void *test_) $/;"	f	file:
+sleeper	threads/alarm-wait.c	/^sleeper (void *t_) $/;"	f	file:
+sort_chunks	vm/page-merge-seq.c	/^sort_chunks (void)$/;"	f	file:
+sort_chunks	vm/parallel-merge.c	/^sort_chunks (const char *subprocess, int exit_status)$/;"	f	file:
+spawn_child	userprog/no-vm/multi-oom.c	/^spawn_child (int c, enum child_termination_mode mode)$/;"	f	file:
+start	threads/alarm-simultaneous.c	/^    int64_t start;              \/* Current time at start of test. *\/$/;"	m	struct:sleep_test	file:
+start	threads/alarm-wait.c	/^    int64_t start;              \/* Current time at start of test. *\/$/;"	m	struct:sleep_test	file:
+start_time	threads/mlfqs-fair.c	/^    int64_t start_time;$/;"	m	struct:thread_info	file:
+start_time	threads/mlfqs-load-60.c	/^static int64_t start_time;$/;"	v	file:
+start_time	threads/mlfqs-load-avg.c	/^static int64_t start_time;$/;"	v	file:
+swap	lib.c	/^swap (void *a_, void *b_, size_t size) $/;"	f	file:
+swap	vm/qsort.c	/^swap (unsigned char *a, unsigned char *b) $/;"	f	file:
+swap_byte	arc4.c	/^swap_byte (uint8_t *a, uint8_t *b)$/;"	f	file:
+test	internal/list.c	/^test (void) $/;"	f
+test	internal/stdio.c	/^test (void) $/;"	f
+test	internal/stdlib.c	/^test (void) $/;"	f
+test	threads/alarm-wait.c	/^    struct sleep_test *test;     \/* Info shared between all threads. *\/$/;"	m	struct:sleep_thread	typeref:struct:sleep_thread::sleep_test	file:
+test	threads/tests.c	/^struct test $/;"	s	file:
+test_alarm_multiple	threads/alarm-wait.c	/^test_alarm_multiple (void) $/;"	f
+test_alarm_negative	threads/alarm-negative.c	/^test_alarm_negative (void) $/;"	f
+test_alarm_priority	threads/alarm-priority.c	/^test_alarm_priority (void) $/;"	f
+test_alarm_simultaneous	threads/alarm-simultaneous.c	/^test_alarm_simultaneous (void) $/;"	f
+test_alarm_single	threads/alarm-wait.c	/^test_alarm_single (void) $/;"	f
+test_alarm_zero	threads/alarm-zero.c	/^test_alarm_zero (void) $/;"	f
+test_func	threads/tests.h	/^typedef void test_func (void);$/;"	t
+test_hello	threads/alarm-wait.c	/^test_hello (void)$/;"	f
+test_main	filesys/base/syn-read.c	/^test_main (void) $/;"	f
+test_main	filesys/base/syn-remove.c	/^test_main (void) $/;"	f
+test_main	filesys/base/syn-write.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-empty-name.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-mk-tree.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-mkdir.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-open.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-over-file.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-rm-cwd.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-rm-parent.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-rm-root.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-rm-tree.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-rmdir.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-under-file.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/dir-vine.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/grow-file-size.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/grow-sparse.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/grow-tell.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/grow-two-files.c	/^test_main (void) $/;"	f
+test_main	filesys/extended/syn-rw.c	/^test_main (void) $/;"	f
+test_main	userprog/bad-jump.c	/^test_main (void) $/;"	f
+test_main	userprog/bad-jump2.c	/^test_main (void) $/;"	f
+test_main	userprog/bad-read.c	/^test_main (void) $/;"	f
+test_main	userprog/bad-read2.c	/^test_main (void) $/;"	f
+test_main	userprog/bad-write.c	/^test_main (void) $/;"	f
+test_main	userprog/bad-write2.c	/^test_main (void) $/;"	f
+test_main	userprog/child-bad.c	/^test_main (void) $/;"	f
+test_main	userprog/close-bad-fd.c	/^test_main (void) $/;"	f
+test_main	userprog/close-normal.c	/^test_main (void) $/;"	f
+test_main	userprog/close-stdin.c	/^test_main (void) $/;"	f
+test_main	userprog/close-stdout.c	/^test_main (void) $/;"	f
+test_main	userprog/close-twice.c	/^test_main (void) $/;"	f
+test_main	userprog/create-bad-ptr.c	/^test_main (void) $/;"	f
+test_main	userprog/create-bound.c	/^test_main (void) $/;"	f
+test_main	userprog/create-empty.c	/^test_main (void) $/;"	f
+test_main	userprog/create-exists.c	/^test_main (void) $/;"	f
+test_main	userprog/create-long.c	/^test_main (void) $/;"	f
+test_main	userprog/create-normal.c	/^test_main (void) $/;"	f
+test_main	userprog/create-null.c	/^test_main (void) $/;"	f
+test_main	userprog/exec-arg.c	/^test_main (void) $/;"	f
+test_main	userprog/exec-bad-ptr.c	/^test_main (void) $/;"	f
+test_main	userprog/exec-missing.c	/^test_main (void) $/;"	f
+test_main	userprog/exec-multiple.c	/^test_main (void) $/;"	f
+test_main	userprog/exec-once.c	/^test_main (void) $/;"	f
+test_main	userprog/exit.c	/^test_main (void) $/;"	f
+test_main	userprog/halt.c	/^test_main (void) $/;"	f
+test_main	userprog/multi-child-fd.c	/^test_main (void) $/;"	f
+test_main	userprog/open-bad-ptr.c	/^test_main (void) $/;"	f
+test_main	userprog/open-boundary.c	/^test_main (void) $/;"	f
+test_main	userprog/open-empty.c	/^test_main (void) $/;"	f
+test_main	userprog/open-missing.c	/^test_main (void) $/;"	f
+test_main	userprog/open-normal.c	/^test_main (void) $/;"	f
+test_main	userprog/open-null.c	/^test_main (void) $/;"	f
+test_main	userprog/open-twice.c	/^test_main (void) $/;"	f
+test_main	userprog/read-bad-fd.c	/^test_main (void) $/;"	f
+test_main	userprog/read-bad-ptr.c	/^test_main (void) $/;"	f
+test_main	userprog/read-boundary.c	/^test_main (void) $/;"	f
+test_main	userprog/read-normal.c	/^test_main (void) $/;"	f
+test_main	userprog/read-stdout.c	/^test_main (void) $/;"	f
+test_main	userprog/read-zero.c	/^test_main (void) $/;"	f
+test_main	userprog/rox-simple.c	/^test_main (void) $/;"	f
+test_main	userprog/sc-bad-arg.c	/^test_main (void) $/;"	f
+test_main	userprog/sc-bad-sp.c	/^test_main (void) $/;"	f
+test_main	userprog/sc-boundary-2.c	/^test_main (void) $/;"	f
+test_main	userprog/sc-boundary.c	/^test_main (void) $/;"	f
+test_main	userprog/wait-bad-pid.c	/^test_main (void) $/;"	f
+test_main	userprog/wait-killed.c	/^test_main (void) $/;"	f
+test_main	userprog/wait-simple.c	/^test_main (void) $/;"	f
+test_main	userprog/wait-twice.c	/^test_main (void) $/;"	f
+test_main	userprog/write-bad-fd.c	/^test_main (void) $/;"	f
+test_main	userprog/write-bad-ptr.c	/^test_main (void) $/;"	f
+test_main	userprog/write-boundary.c	/^test_main (void) $/;"	f
+test_main	userprog/write-normal.c	/^test_main (void) $/;"	f
+test_main	userprog/write-stdin.c	/^test_main (void) $/;"	f
+test_main	userprog/write-zero.c	/^test_main (void) $/;"	f
+test_main	vm/child-inherit.c	/^test_main (void)$/;"	f
+test_main	vm/child-mm-wrt.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-bad-fd.c	/^test_main (void) $/;"	f
+test_main	vm/mmap-clean.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-close.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-exit.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-inherit.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-misalign.c	/^test_main (void) $/;"	f
+test_main	vm/mmap-null.c	/^test_main (void) $/;"	f
+test_main	vm/mmap-over-code.c	/^test_main (void) $/;"	f
+test_main	vm/mmap-over-data.c	/^test_main (void) $/;"	f
+test_main	vm/mmap-over-stk.c	/^test_main (void) $/;"	f
+test_main	vm/mmap-overlap.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-read.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-remove.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-shuffle.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-twice.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-unmap.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-write.c	/^test_main (void)$/;"	f
+test_main	vm/mmap-zero.c	/^test_main (void) $/;"	f
+test_main	vm/page-linear.c	/^test_main (void)$/;"	f
+test_main	vm/page-merge-mm.c	/^test_main (void) $/;"	f
+test_main	vm/page-merge-par.c	/^test_main (void) $/;"	f
+test_main	vm/page-merge-seq.c	/^test_main (void)$/;"	f
+test_main	vm/page-merge-stk.c	/^test_main (void) $/;"	f
+test_main	vm/page-parallel.c	/^test_main (void)$/;"	f
+test_main	vm/page-shuffle.c	/^test_main (void)$/;"	f
+test_main	vm/pt-bad-addr.c	/^test_main (void)$/;"	f
+test_main	vm/pt-bad-read.c	/^test_main (void)$/;"	f
+test_main	vm/pt-big-stk-obj.c	/^test_main (void)$/;"	f
+test_main	vm/pt-grow-bad.c	/^test_main (void)$/;"	f
+test_main	vm/pt-grow-pusha.c	/^test_main (void)$/;"	f
+test_main	vm/pt-grow-stack.c	/^test_main (void)$/;"	f
+test_main	vm/pt-grow-stk-sc.c	/^test_main (void)$/;"	f
+test_main	vm/pt-write-code-2.c	/^test_main (void)$/;"	f
+test_main	vm/pt-write-code.c	/^test_main (void)$/;"	f
+test_mlfqs_block	threads/mlfqs-block.c	/^test_mlfqs_block (void) $/;"	f
+test_mlfqs_fair	threads/mlfqs-fair.c	/^test_mlfqs_fair (int thread_cnt, int nice_min, int nice_step)$/;"	f	file:
+test_mlfqs_fair_2	threads/mlfqs-fair.c	/^test_mlfqs_fair_2 (void) $/;"	f
+test_mlfqs_fair_20	threads/mlfqs-fair.c	/^test_mlfqs_fair_20 (void) $/;"	f
+test_mlfqs_load_1	threads/mlfqs-load-1.c	/^test_mlfqs_load_1 (void) $/;"	f
+test_mlfqs_load_60	threads/mlfqs-load-60.c	/^test_mlfqs_load_60 (void) $/;"	f
+test_mlfqs_load_avg	threads/mlfqs-load-avg.c	/^test_mlfqs_load_avg (void) $/;"	f
+test_mlfqs_nice_10	threads/mlfqs-fair.c	/^test_mlfqs_nice_10 (void) $/;"	f
+test_mlfqs_nice_2	threads/mlfqs-fair.c	/^test_mlfqs_nice_2 (void) $/;"	f
+test_mlfqs_recent_1	threads/mlfqs-recent-1.c	/^test_mlfqs_recent_1 (void) $/;"	f
+test_name	filesys/base/child-syn-read.c	/^const char *test_name = "child-syn-read";$/;"	v
+test_name	filesys/extended/child-syn-rw.c	/^const char *test_name = "child-syn-rw";$/;"	v
+test_name	lib.c	/^const char *test_name;$/;"	v
+test_name	threads/tests.c	/^static const char *test_name;$/;"	v	file:
+test_name	userprog/child-close.c	/^const char *test_name = "child-close";$/;"	v
+test_name	userprog/child-rox.c	/^const char *test_name = "child-rox";$/;"	v
+test_name	userprog/child-simple.c	/^const char *test_name = "child-simple";$/;"	v
+test_name	userprog/multi-recurse.c	/^const char *test_name = "multi-recurse";$/;"	v
+test_name	userprog/no-vm/multi-oom.c	/^const char *test_name = "multi-oom";$/;"	v
+test_name	vm/child-linear.c	/^const char *test_name = "child-linear";$/;"	v
+test_name	vm/child-qsort-mm.c	/^const char *test_name = "child-qsort-mm";$/;"	v
+test_name	vm/child-qsort.c	/^const char *test_name = "child-qsort";$/;"	v
+test_name	vm/child-sort.c	/^const char *test_name = "child-sort";$/;"	v
+test_priority_change	threads/priority-change.c	/^test_priority_change (void) $/;"	f
+test_priority_condvar	threads/priority-condvar.c	/^test_priority_condvar (void) $/;"	f
+test_priority_donate_chain	threads/priority-donate-chain.c	/^test_priority_donate_chain (void) $/;"	f
+test_priority_donate_lower	threads/priority-donate-lower.c	/^test_priority_donate_lower (void) $/;"	f
+test_priority_donate_multiple	threads/priority-donate-multiple.c	/^test_priority_donate_multiple (void) $/;"	f
+test_priority_donate_multiple2	threads/priority-donate-multiple2.c	/^test_priority_donate_multiple2 (void) $/;"	f
+test_priority_donate_nest	threads/priority-donate-nest.c	/^test_priority_donate_nest (void) $/;"	f
+test_priority_donate_one	threads/priority-donate-one.c	/^test_priority_donate_one (void) $/;"	f
+test_priority_donate_sema	threads/priority-donate-sema.c	/^test_priority_donate_sema (void) $/;"	f
+test_priority_fifo	threads/priority-fifo.c	/^test_priority_fifo (void) $/;"	f
+test_priority_preempt	threads/priority-preempt.c	/^test_priority_preempt (void) $/;"	f
+test_priority_sema	threads/priority-sema.c	/^test_priority_sema (void) $/;"	f
+test_sleep	threads/alarm-simultaneous.c	/^test_sleep (int thread_cnt, int iterations) $/;"	f	file:
+test_sleep	threads/alarm-wait.c	/^test_sleep (int thread_cnt, int iterations) $/;"	f	file:
+tests	threads/tests.c	/^static const struct test tests[] = $/;"	v	typeref:struct:test	file:
+thread_info	threads/mlfqs-fair.c	/^struct thread_info $/;"	s	file:
+tick_count	threads/mlfqs-fair.c	/^    int tick_count;$/;"	m	struct:thread_info	file:
+traverse_balanced	Algorithm/Diff.pm	/^sub traverse_balanced$/;"	s
+traverse_sequences	Algorithm/Diff.pm	/^sub traverse_sequences$/;"	s
+try_write	userprog/child-rox.c	/^try_write (void) $/;"	f	file:
+usage	filesys/extended/tar.c	/^usage (void) $/;"	f	file:
+value	internal/list.c	/^    int value;                  \/* Item value. *\/$/;"	m	struct:value	file:
+value	internal/list.c	/^struct value $/;"	s	file:
+value_less	internal/list.c	/^value_less (const struct list_elem *a_, const struct list_elem *b_,$/;"	f	file:
+verify	vm/page-merge-seq.c	/^verify (void) $/;"	f	file:
+verify	vm/parallel-merge.c	/^verify (void) $/;"	f	file:
+verify_bsearch	internal/stdlib.c	/^verify_bsearch (const int *array, size_t cnt) $/;"	f	file:
+verify_list_bkwd	internal/list.c	/^verify_list_bkwd (struct list *list, int size) $/;"	f	file:
+verify_list_fwd	internal/list.c	/^verify_list_fwd (struct list *list, int size) $/;"	f	file:
+verify_order	internal/stdlib.c	/^verify_order (const int *array, size_t cnt) $/;"	f	file:
+vmsg	lib.c	/^vmsg (const char *format, va_list args, const char *suffix) $/;"	f	file:
+wait_children	lib.c	/^wait_children (pid_t pids[], size_t child_cnt) $/;"	f
+wait_sema	threads/alarm-priority.c	/^static struct semaphore wait_sema;$/;"	v	typeref:struct:semaphore	file:
+wake_time	threads/alarm-priority.c	/^static int64_t wake_time;$/;"	v	file:
+wrap_open	filesys/extended/dir-rm-cwd.c	/^wrap_open (const char *name) $/;"	f	file:
+write_header	filesys/extended/tar.c	/^write_header (const char *file_name,$/;"	f	file:
+write_some_bytes	filesys/extended/grow-two-files.c	/^write_some_bytes (const char *file_name, int fd, const char *buf, size_t *ofs) $/;"	f	file:
+x	vm/mmap-over-data.c	/^static char x;$/;"	v	file:

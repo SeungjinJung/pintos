@@ -1,0 +1,458 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ASSERT	debug.h	26;"	d
+ASSERT	debug.h	30;"	d
+ASSERT	debug.h	36;"	d
+BEST_ELEMS_PER_BUCKET	kernel/hash.c	344;"	d	file:
+BITMAP_ERROR	kernel/bitmap.h	36;"	d
+CHAR	stdio.c	/^        CHAR = 1,               \/* hh *\/$/;"	e	enum:printf_conversion::__anon2	file:
+CHAR_BIT	limits.h	4;"	d
+CHAR_MAX	limits.h	12;"	d
+CHAR_MAX	limits.h	15;"	d
+CHAR_MIN	limits.h	11;"	d
+CHAR_MIN	limits.h	14;"	d
+DIV_ROUND_UP	round.h	10;"	d
+ELEM_BITS	kernel/bitmap.c	22;"	d	file:
+EXIT_FAILURE	user/syscall.h	20;"	d
+EXIT_SUCCESS	user/syscall.h	19;"	d
+FNV_32_BASIS	kernel/hash.c	262;"	d	file:
+FNV_32_PRIME	kernel/hash.c	261;"	d	file:
+GROUP	stdio.c	/^        GROUP = 1 << 5          \/* '\\'' *\/$/;"	e	enum:printf_conversion::__anon1	file:
+INT	stdio.c	/^        INT = 3,                \/* (none) *\/$/;"	e	enum:printf_conversion::__anon2	file:
+INT16_MAX	stdint.h	9;"	d
+INT16_MIN	stdint.h	10;"	d
+INT32_MAX	stdint.h	13;"	d
+INT32_MIN	stdint.h	14;"	d
+INT64_MAX	stdint.h	17;"	d
+INT64_MIN	stdint.h	18;"	d
+INT8_MAX	stdint.h	5;"	d
+INT8_MIN	stdint.h	6;"	d
+INTMAX	stdio.c	/^        INTMAX = 4,             \/* j *\/$/;"	e	enum:printf_conversion::__anon2	file:
+INTMAX_MAX	stdint.h	41;"	d
+INTMAX_MIN	stdint.h	40;"	d
+INTPTR_MAX	stdint.h	34;"	d
+INTPTR_MIN	stdint.h	33;"	d
+INT_MAX	limits.h	22;"	d
+INT_MIN	limits.h	23;"	d
+LLONG_MAX	limits.h	30;"	d
+LLONG_MIN	limits.h	31;"	d
+LONG	stdio.c	/^        LONG = 5,               \/* l *\/$/;"	e	enum:printf_conversion::__anon2	file:
+LONGLONG	stdio.c	/^        LONGLONG = 6,           \/* ll *\/$/;"	e	enum:printf_conversion::__anon2	file:
+LONG_MAX	limits.h	26;"	d
+LONG_MIN	limits.h	27;"	d
+MAP_FAILED	user/syscall.h	13;"	d
+MAX_ELEMS_PER_BUCKET	kernel/hash.c	345;"	d	file:
+MINUS	stdio.c	/^        MINUS = 1 << 0,         \/* '-' *\/$/;"	e	enum:printf_conversion::__anon1	file:
+MIN_ELEMS_PER_BUCKET	kernel/hash.c	343;"	d	file:
+NOT_REACHED	debug.h	27;"	d
+NOT_REACHED	debug.h	34;"	d
+NOT_REACHED	debug.h	37;"	d
+NO_INLINE	debug.h	9;"	d
+NO_RETURN	debug.h	8;"	d
+NULL	stddef.h	4;"	d
+PANIC	debug.h	14;"	d
+PID_ERROR	user/syscall.h	9;"	d
+PLUS	stdio.c	/^        PLUS = 1 << 1,          \/* '+' *\/$/;"	e	enum:printf_conversion::__anon1	file:
+POUND	stdio.c	/^        POUND = 1 << 3,         \/* '#' *\/$/;"	e	enum:printf_conversion::__anon1	file:
+PRINTF_FORMAT	debug.h	10;"	d
+PRIX16	inttypes.h	18;"	d
+PRIX32	inttypes.h	25;"	d
+PRIX64	inttypes.h	32;"	d
+PRIX8	inttypes.h	11;"	d
+PRIXMAX	inttypes.h	39;"	d
+PRIXPTR	inttypes.h	46;"	d
+PRId16	inttypes.h	13;"	d
+PRId32	inttypes.h	20;"	d
+PRId64	inttypes.h	27;"	d
+PRId8	inttypes.h	6;"	d
+PRIdMAX	inttypes.h	34;"	d
+PRIdPTR	inttypes.h	41;"	d
+PRIi16	inttypes.h	14;"	d
+PRIi32	inttypes.h	21;"	d
+PRIi64	inttypes.h	28;"	d
+PRIi8	inttypes.h	7;"	d
+PRIiMAX	inttypes.h	35;"	d
+PRIiPTR	inttypes.h	42;"	d
+PRIo16	inttypes.h	15;"	d
+PRIo32	inttypes.h	22;"	d
+PRIo64	inttypes.h	29;"	d
+PRIo8	inttypes.h	8;"	d
+PRIoMAX	inttypes.h	36;"	d
+PRIoPTR	inttypes.h	43;"	d
+PRIu16	inttypes.h	16;"	d
+PRIu32	inttypes.h	23;"	d
+PRIu64	inttypes.h	30;"	d
+PRIu8	inttypes.h	9;"	d
+PRIuMAX	inttypes.h	37;"	d
+PRIuPTR	inttypes.h	44;"	d
+PRIx16	inttypes.h	17;"	d
+PRIx32	inttypes.h	24;"	d
+PRIx64	inttypes.h	31;"	d
+PRIx8	inttypes.h	10;"	d
+PRIxMAX	inttypes.h	38;"	d
+PRIxPTR	inttypes.h	45;"	d
+PTRDIFFT	stdio.c	/^        PTRDIFFT = 7,           \/* t *\/$/;"	e	enum:printf_conversion::__anon2	file:
+PTRDIFF_MAX	stdint.h	47;"	d
+PTRDIFF_MIN	stdint.h	46;"	d
+READDIR_MAX_LEN	user/syscall.h	16;"	d
+ROUND_DOWN	round.h	14;"	d
+ROUND_UP	round.h	6;"	d
+SCHAR_MAX	limits.h	6;"	d
+SCHAR_MIN	limits.h	7;"	d
+SHORT	stdio.c	/^        SHORT = 2,              \/* h *\/$/;"	e	enum:printf_conversion::__anon2	file:
+SHRT_MAX	limits.h	18;"	d
+SHRT_MIN	limits.h	19;"	d
+SIZET	stdio.c	/^        SIZET = 8               \/* z *\/$/;"	e	enum:printf_conversion::__anon2	file:
+SIZE_MAX	stdint.h	49;"	d
+SPACE	stdio.c	/^        SPACE = 1 << 2,         \/* ' ' *\/$/;"	e	enum:printf_conversion::__anon1	file:
+STDIN_FILENO	stdio.h	15;"	d
+STDOUT_FILENO	stdio.h	16;"	d
+SYS_CHDIR	syscall-nr.h	/^    SYS_CHDIR,                  \/* Change the current directory. *\/$/;"	e	enum:__anon3
+SYS_CLOSE	syscall-nr.h	/^    SYS_CLOSE,                  \/* Close a file. *\/$/;"	e	enum:__anon3
+SYS_CREATE	syscall-nr.h	/^    SYS_CREATE,                 \/* Create a file. *\/$/;"	e	enum:__anon3
+SYS_EXEC	syscall-nr.h	/^    SYS_EXEC,                   \/* Start another process. *\/$/;"	e	enum:__anon3
+SYS_EXIT	syscall-nr.h	/^    SYS_EXIT,                   \/* Terminate this process. *\/$/;"	e	enum:__anon3
+SYS_FILESIZE	syscall-nr.h	/^    SYS_FILESIZE,               \/* Obtain a file's size. *\/$/;"	e	enum:__anon3
+SYS_HALT	syscall-nr.h	/^    SYS_HALT,                   \/* Halt the operating system. *\/$/;"	e	enum:__anon3
+SYS_INUMBER	syscall-nr.h	/^    SYS_INUMBER                 \/* Returns the inode number for a fd. *\/$/;"	e	enum:__anon3
+SYS_ISDIR	syscall-nr.h	/^    SYS_ISDIR,                  \/* Tests if a fd represents a directory. *\/$/;"	e	enum:__anon3
+SYS_MKDIR	syscall-nr.h	/^    SYS_MKDIR,                  \/* Create a directory. *\/$/;"	e	enum:__anon3
+SYS_MMAP	syscall-nr.h	/^    SYS_MMAP,                   \/* Map a file into memory. *\/$/;"	e	enum:__anon3
+SYS_MUNMAP	syscall-nr.h	/^    SYS_MUNMAP,                 \/* Remove a memory mapping. *\/$/;"	e	enum:__anon3
+SYS_OPEN	syscall-nr.h	/^    SYS_OPEN,                   \/* Open a file. *\/$/;"	e	enum:__anon3
+SYS_READ	syscall-nr.h	/^    SYS_READ,                   \/* Read from a file. *\/$/;"	e	enum:__anon3
+SYS_READDIR	syscall-nr.h	/^    SYS_READDIR,                \/* Reads a directory entry. *\/$/;"	e	enum:__anon3
+SYS_REMOVE	syscall-nr.h	/^    SYS_REMOVE,                 \/* Delete a file. *\/$/;"	e	enum:__anon3
+SYS_SEEK	syscall-nr.h	/^    SYS_SEEK,                   \/* Change position in a file. *\/$/;"	e	enum:__anon3
+SYS_TELL	syscall-nr.h	/^    SYS_TELL,                   \/* Report current position in a file. *\/$/;"	e	enum:__anon3
+SYS_WAIT	syscall-nr.h	/^    SYS_WAIT,                   \/* Wait for a child process to die. *\/$/;"	e	enum:__anon3
+SYS_WRITE	syscall-nr.h	/^    SYS_WRITE,                  \/* Write to a file. *\/$/;"	e	enum:__anon3
+UCHAR_MAX	limits.h	8;"	d
+UINT16_MAX	stdint.h	24;"	d
+UINT32_MAX	stdint.h	27;"	d
+UINT64_MAX	stdint.h	30;"	d
+UINT8_MAX	stdint.h	21;"	d
+UINTMAX_MAX	stdint.h	44;"	d
+UINTPTR_MAX	stdint.h	37;"	d
+UINT_MAX	limits.h	24;"	d
+ULLONG_MAX	limits.h	32;"	d
+ULONG_MAX	limits.h	28;"	d
+UNUSED	debug.h	7;"	d
+USHRT_MAX	limits.h	20;"	d
+ZERO	stdio.c	/^        ZERO = 1 << 4,          \/* '0' *\/$/;"	e	enum:printf_conversion::__anon1	file:
+__LIB_CTYPE_H	ctype.h	2;"	d
+__LIB_DEBUG_H	debug.h	2;"	d
+__LIB_INTTYPES_H	inttypes.h	2;"	d
+__LIB_KERNEL_BITMAP_H	kernel/bitmap.h	2;"	d
+__LIB_KERNEL_CONSOLE_H	kernel/console.h	2;"	d
+__LIB_KERNEL_HASH_H	kernel/hash.h	2;"	d
+__LIB_KERNEL_LIST_H	kernel/list.h	2;"	d
+__LIB_KERNEL_STDIO_H	kernel/stdio.h	2;"	d
+__LIB_LIMITS_H	limits.h	2;"	d
+__LIB_RANDOM_H	random.h	2;"	d
+__LIB_ROUND_H	round.h	2;"	d
+__LIB_STDARG_H	stdarg.h	2;"	d
+__LIB_STDBOOL_H	stdbool.h	2;"	d
+__LIB_STDDEF_H	stddef.h	2;"	d
+__LIB_STDINT_H	stdint.h	2;"	d
+__LIB_STDIO_H	stdio.h	2;"	d
+__LIB_STDLIB_H	stdlib.h	2;"	d
+__LIB_STRING_H	string.h	2;"	d
+__LIB_SYSCALL_NR_H	syscall-nr.h	2;"	d
+__LIB_USER_STDIO_H	user/stdio.h	2;"	d
+__LIB_USER_SYSCALL_H	user/syscall.h	2;"	d
+__bool_true_false_are_defined	stdbool.h	7;"	d
+__divdi3	arithmetic.c	/^__divdi3 (long long n, long long d) $/;"	f
+__moddi3	arithmetic.c	/^__moddi3 (long long n, long long d) $/;"	f
+__printf	stdio.c	/^__printf (const char *format,$/;"	f
+__udivdi3	arithmetic.c	/^__udivdi3 (unsigned long long n, unsigned long long d) $/;"	f
+__umoddi3	arithmetic.c	/^__umoddi3 (unsigned long long n, unsigned long long d) $/;"	f
+__vprintf	stdio.c	/^__vprintf (const char *format, va_list args,$/;"	f
+_start	user/entry.c	/^_start (int argc, char *argv[]) $/;"	f
+acquire_console	kernel/console.c	/^acquire_console (void) $/;"	f	file:
+add_char	user/console.c	/^add_char (char c, void *aux_) $/;"	f	file:
+atoi	stdlib.c	/^atoi (const char *s) $/;"	f
+aux	kernel/hash.h	/^    void *aux;                  \/* Auxiliary data for `hash' and `less'. *\/$/;"	m	struct:hash
+base	stdio.c	/^    int base;                   \/* Base. *\/$/;"	m	struct:integer_base	file:
+base_X	stdio.c	/^static const struct integer_base base_X = {16, "0123456789ABCDEF", 'X', 4};$/;"	v	typeref:struct:integer_base	file:
+base_d	stdio.c	/^static const struct integer_base base_d = {10, "0123456789", 0, 3};$/;"	v	typeref:struct:integer_base	file:
+base_o	stdio.c	/^static const struct integer_base base_o = {8, "01234567", 0, 3};$/;"	v	typeref:struct:integer_base	file:
+base_x	stdio.c	/^static const struct integer_base base_x = {16, "0123456789abcdef", 'x', 4};$/;"	v	typeref:struct:integer_base	file:
+binary_search	stdlib.c	/^binary_search (const void *key, const void *array, size_t cnt, size_t size,$/;"	f
+bit_cnt	kernel/bitmap.c	/^    size_t bit_cnt;     \/* Number of bits. *\/$/;"	m	struct:bitmap	file:
+bit_mask	kernel/bitmap.c	/^bit_mask (size_t bit_idx) $/;"	f	file:
+bitmap	kernel/bitmap.c	/^struct bitmap$/;"	s	file:
+bitmap_all	kernel/bitmap.c	/^bitmap_all (const struct bitmap *b, size_t start, size_t cnt) $/;"	f
+bitmap_any	kernel/bitmap.c	/^bitmap_any (const struct bitmap *b, size_t start, size_t cnt) $/;"	f
+bitmap_buf_size	kernel/bitmap.c	/^bitmap_buf_size (size_t bit_cnt) $/;"	f
+bitmap_contains	kernel/bitmap.c	/^bitmap_contains (const struct bitmap *b, size_t start, size_t cnt, bool value) $/;"	f
+bitmap_count	kernel/bitmap.c	/^bitmap_count (const struct bitmap *b, size_t start, size_t cnt, bool value) $/;"	f
+bitmap_create	kernel/bitmap.c	/^bitmap_create (size_t bit_cnt) $/;"	f
+bitmap_create_in_buf	kernel/bitmap.c	/^bitmap_create_in_buf (size_t bit_cnt, void *block, size_t block_size UNUSED)$/;"	f
+bitmap_destroy	kernel/bitmap.c	/^bitmap_destroy (struct bitmap *b) $/;"	f
+bitmap_dump	kernel/bitmap.c	/^bitmap_dump (const struct bitmap *b) $/;"	f
+bitmap_file_size	kernel/bitmap.c	/^bitmap_file_size (const struct bitmap *b) $/;"	f
+bitmap_flip	kernel/bitmap.c	/^bitmap_flip (struct bitmap *b, size_t bit_idx) $/;"	f
+bitmap_mark	kernel/bitmap.c	/^bitmap_mark (struct bitmap *b, size_t bit_idx) $/;"	f
+bitmap_none	kernel/bitmap.c	/^bitmap_none (const struct bitmap *b, size_t start, size_t cnt) $/;"	f
+bitmap_read	kernel/bitmap.c	/^bitmap_read (struct bitmap *b, struct file *file) $/;"	f
+bitmap_reset	kernel/bitmap.c	/^bitmap_reset (struct bitmap *b, size_t bit_idx) $/;"	f
+bitmap_scan	kernel/bitmap.c	/^bitmap_scan (const struct bitmap *b, size_t start, size_t cnt, bool value) $/;"	f
+bitmap_scan_and_flip	kernel/bitmap.c	/^bitmap_scan_and_flip (struct bitmap *b, size_t start, size_t cnt, bool value)$/;"	f
+bitmap_set	kernel/bitmap.c	/^bitmap_set (struct bitmap *b, size_t idx, bool value) $/;"	f
+bitmap_set_all	kernel/bitmap.c	/^bitmap_set_all (struct bitmap *b, bool value) $/;"	f
+bitmap_set_multiple	kernel/bitmap.c	/^bitmap_set_multiple (struct bitmap *b, size_t start, size_t cnt, bool value) $/;"	f
+bitmap_size	kernel/bitmap.c	/^bitmap_size (const struct bitmap *b)$/;"	f
+bitmap_test	kernel/bitmap.c	/^bitmap_test (const struct bitmap *b, size_t idx) $/;"	f
+bitmap_write	kernel/bitmap.c	/^bitmap_write (const struct bitmap *b, struct file *file)$/;"	f
+bits	kernel/bitmap.c	/^    elem_type *bits;    \/* Elements that represent bits. *\/$/;"	m	struct:bitmap	file:
+bool	stdbool.h	4;"	d
+bsearch	stdlib.c	/^bsearch (const void *key, const void *array, size_t cnt,$/;"	f
+bucket	kernel/hash.h	/^    struct list *bucket;        \/* Current bucket. *\/$/;"	m	struct:hash_iterator	typeref:struct:hash_iterator::list
+bucket_cnt	kernel/hash.h	/^    size_t bucket_cnt;          \/* Number of buckets, a power of 2. *\/$/;"	m	struct:hash
+buckets	kernel/hash.h	/^    struct list *buckets;       \/* Array of `bucket_cnt' lists. *\/$/;"	m	struct:hash	typeref:struct:hash::list
+buf	user/console.c	/^    char buf[64];       \/* Character buffer. *\/$/;"	m	struct:vhprintf_aux	file:
+byte_cnt	kernel/bitmap.c	/^byte_cnt (size_t bit_cnt)$/;"	f	file:
+char_cnt	user/console.c	/^    int char_cnt;       \/* Total characters written so far. *\/$/;"	m	struct:vhprintf_aux	file:
+chdir	user/syscall.c	/^chdir (const char *dir)$/;"	f
+close	user/syscall.c	/^close (int fd)$/;"	f
+compare_thunk	stdlib.c	/^compare_thunk (const void *a, const void *b, void *aux) $/;"	f	file:
+console_init	kernel/console.c	/^console_init (void) $/;"	f
+console_lock	kernel/console.c	/^static struct lock console_lock;$/;"	v	typeref:struct:lock	file:
+console_lock_depth	kernel/console.c	/^static int console_lock_depth;$/;"	v	file:
+console_locked_by_current_thread	kernel/console.c	/^console_locked_by_current_thread (void) $/;"	f	file:
+console_panic	kernel/console.c	/^console_panic (void) $/;"	f
+console_print_stats	kernel/console.c	/^console_print_stats (void) $/;"	f
+create	user/syscall.c	/^create (const char *file, unsigned initial_size)$/;"	f
+debug_backtrace	debug.c	/^debug_backtrace (void) $/;"	f
+debug_panic	kernel/debug.c	/^debug_panic (const char *file, int line, const char *function,$/;"	f
+debug_panic	user/debug.c	/^debug_panic (const char *file, int line, const char *function,$/;"	f
+digits	stdio.c	/^    const char *digits;         \/* Collection of digits. *\/$/;"	m	struct:integer_base	file:
+divl	arithmetic.c	/^divl (uint64_t n, uint32_t d)$/;"	f	file:
+do_compare	stdlib.c	/^do_compare (unsigned char *array, size_t a_idx, size_t b_idx, size_t size,$/;"	f	file:
+do_swap	stdlib.c	/^do_swap (unsigned char *array, size_t a_idx, size_t b_idx, size_t size)$/;"	f	file:
+elem	kernel/hash.h	/^    struct hash_elem *elem;     \/* Current hash element in current bucket. *\/$/;"	m	struct:hash_iterator	typeref:struct:hash_iterator::hash_elem
+elem_cnt	kernel/bitmap.c	/^elem_cnt (size_t bit_cnt)$/;"	f	file:
+elem_cnt	kernel/hash.h	/^    size_t elem_cnt;            \/* Number of elements in table. *\/$/;"	m	struct:hash
+elem_idx	kernel/bitmap.c	/^elem_idx (size_t bit_idx) $/;"	f	file:
+elem_type	kernel/bitmap.c	/^typedef unsigned long elem_type;$/;"	t	file:
+exec	user/syscall.c	/^exec (const char *file)$/;"	f
+exit	user/syscall.c	/^exit (int status)$/;"	f
+false	stdbool.h	6;"	d
+filesize	user/syscall.c	/^filesize (int fd) $/;"	f
+find_bucket	kernel/hash.c	/^find_bucket (struct hash *h, struct hash_elem *e) $/;"	f	file:
+find_elem	kernel/hash.c	/^find_elem (struct hash *h, struct list *bucket, struct hash_elem *e) $/;"	f	file:
+find_end_of_run	kernel/list.c	/^find_end_of_run (struct list_elem *a, struct list_elem *b,$/;"	f	file:
+flags	stdio.c	/^    flags;$/;"	m	struct:printf_conversion	typeref:enum:printf_conversion::__anon1	file:
+flush	user/console.c	/^flush (struct vhprintf_aux *aux)$/;"	f	file:
+format_integer	stdio.c	/^format_integer (uintmax_t value, bool is_signed, bool negative, $/;"	f	file:
+format_string	stdio.c	/^format_string (const char *string, int length,$/;"	f	file:
+group	stdio.c	/^    int group;                  \/* Number of digits to group with ' flag. *\/$/;"	m	struct:integer_base	file:
+halt	user/syscall.c	/^halt (void) $/;"	f
+handle	user/console.c	/^    int handle;         \/* Output file handle. *\/$/;"	m	struct:vhprintf_aux	file:
+hash	kernel/hash.h	/^    hash_hash_func *hash;       \/* Hash function. *\/$/;"	m	struct:hash
+hash	kernel/hash.h	/^    struct hash *hash;          \/* The hash table. *\/$/;"	m	struct:hash_iterator	typeref:struct:hash_iterator::hash
+hash	kernel/hash.h	/^struct hash $/;"	s
+hash_action_func	kernel/hash.h	/^typedef void hash_action_func (struct hash_elem *e, void *aux);$/;"	t
+hash_apply	kernel/hash.c	/^hash_apply (struct hash *h, hash_action_func *action) $/;"	f
+hash_bytes	kernel/hash.c	/^hash_bytes (const void *buf_, size_t size)$/;"	f
+hash_clear	kernel/hash.c	/^hash_clear (struct hash *h, hash_action_func *destructor) $/;"	f
+hash_cur	kernel/hash.c	/^hash_cur (struct hash_iterator *i) $/;"	f
+hash_delete	kernel/hash.c	/^hash_delete (struct hash *h, struct hash_elem *e)$/;"	f
+hash_destroy	kernel/hash.c	/^hash_destroy (struct hash *h, hash_action_func *destructor) $/;"	f
+hash_elem	kernel/hash.h	/^struct hash_elem $/;"	s
+hash_empty	kernel/hash.c	/^hash_empty (struct hash *h) $/;"	f
+hash_entry	kernel/hash.h	39;"	d
+hash_find	kernel/hash.c	/^hash_find (struct hash *h, struct hash_elem *e) $/;"	f
+hash_first	kernel/hash.c	/^hash_first (struct hash_iterator *i, struct hash *h) $/;"	f
+hash_hash_func	kernel/hash.h	/^typedef unsigned hash_hash_func (const struct hash_elem *e, void *aux);$/;"	t
+hash_init	kernel/hash.c	/^hash_init (struct hash *h,$/;"	f
+hash_insert	kernel/hash.c	/^hash_insert (struct hash *h, struct hash_elem *new)$/;"	f
+hash_int	kernel/hash.c	/^hash_int (int i) $/;"	f
+hash_iterator	kernel/hash.h	/^struct hash_iterator $/;"	s
+hash_less_func	kernel/hash.h	/^typedef bool hash_less_func (const struct hash_elem *a,$/;"	t
+hash_next	kernel/hash.c	/^hash_next (struct hash_iterator *i)$/;"	f
+hash_replace	kernel/hash.c	/^hash_replace (struct hash *h, struct hash_elem *new) $/;"	f
+hash_size	kernel/hash.c	/^hash_size (struct hash *h) $/;"	f
+hash_string	kernel/hash.c	/^hash_string (const char *s_) $/;"	f
+head	kernel/list.h	/^    struct list_elem head;      \/* List head. *\/$/;"	m	struct:list	typeref:struct:list::list_elem
+heapify	stdlib.c	/^heapify (unsigned char *array, size_t i, size_t cnt, size_t size,$/;"	f	file:
+hex_dump	stdio.c	/^hex_dump (uintptr_t ofs, const void *buf_, size_t size, bool ascii)$/;"	f
+hprintf	user/console.c	/^hprintf (int handle, const char *format, ...) $/;"	f
+inited	random.c	/^static bool inited;     $/;"	v	file:
+inplace_merge	kernel/list.c	/^inplace_merge (struct list_elem *a0, struct list_elem *a1b0,$/;"	f	file:
+insert_elem	kernel/hash.c	/^insert_elem (struct hash *h, struct list *bucket, struct hash_elem *e) $/;"	f	file:
+int16_t	stdint.h	/^typedef signed short int int16_t;$/;"	t
+int32_t	stdint.h	/^typedef signed int int32_t;$/;"	t
+int64_t	stdint.h	/^typedef signed long long int int64_t;$/;"	t
+int8_t	stdint.h	/^typedef signed char int8_t;$/;"	t
+integer_base	stdio.c	/^struct integer_base $/;"	s	file:
+intmax_t	stdint.h	/^typedef int64_t intmax_t;$/;"	t
+intptr_t	stdint.h	/^typedef int32_t intptr_t;$/;"	t
+inumber	user/syscall.c	/^inumber (int fd) $/;"	f
+is_head	kernel/list.c	/^is_head (struct list_elem *elem)$/;"	f	file:
+is_interior	kernel/list.c	/^is_interior (struct list_elem *elem)$/;"	f	file:
+is_power_of_2	kernel/hash.c	/^is_power_of_2 (size_t x) $/;"	f	file:
+is_sorted	kernel/list.c	/^is_sorted (struct list_elem *a, struct list_elem *b,$/;"	f	file:
+is_tail	kernel/list.c	/^is_tail (struct list_elem *elem)$/;"	f	file:
+isalnum	ctype.h	/^static inline int isalnum (int c) { return isalpha (c) || isdigit (c); }$/;"	f
+isalpha	ctype.h	/^static inline int isalpha (int c) { return islower (c) || isupper (c); }$/;"	f
+isascii	ctype.h	/^static inline int isascii (int c) { return c >= 0 && c < 128; }$/;"	f
+isblank	ctype.h	/^static inline int isblank (int c) { return c == ' ' || c == '\\t'; }$/;"	f
+iscntrl	ctype.h	/^static inline int iscntrl (int c) { return (c >= 0 && c < 32) || c == 127; }$/;"	f
+isdigit	ctype.h	/^static inline int isdigit (int c) { return c >= '0' && c <= '9'; }$/;"	f
+isdir	user/syscall.c	/^isdir (int fd) $/;"	f
+isgraph	ctype.h	/^static inline int isgraph (int c) { return c > 32 && c < 127; }$/;"	f
+islower	ctype.h	/^static inline int islower (int c) { return c >= 'a' && c <= 'z'; }$/;"	f
+isprint	ctype.h	/^static inline int isprint (int c) { return c >= 32 && c < 127; }$/;"	f
+ispunct	ctype.h	/^static inline int ispunct (int c) {$/;"	f
+isspace	ctype.h	/^static inline int isspace (int c) {$/;"	f
+isupper	ctype.h	/^static inline int isupper (int c) { return c >= 'A' && c <= 'Z'; }$/;"	f
+isxdigit	ctype.h	/^static inline int isxdigit (int c) {$/;"	f
+last_mask	kernel/bitmap.c	/^last_mask (const struct bitmap *b) $/;"	f	file:
+length	stdio.c	/^    int length;         \/* Length of output string. *\/$/;"	m	struct:vsnprintf_aux	file:
+less	kernel/hash.h	/^    hash_less_func *less;       \/* Comparison function. *\/$/;"	m	struct:hash
+list	kernel/list.h	/^struct list $/;"	s
+list_back	kernel/list.c	/^list_back (struct list *list)$/;"	f
+list_begin	kernel/list.c	/^list_begin (struct list *list)$/;"	f
+list_elem	kernel/hash.h	/^    struct list_elem list_elem;$/;"	m	struct:hash_elem	typeref:struct:hash_elem::list_elem
+list_elem	kernel/list.h	/^struct list_elem $/;"	s
+list_elem_to_hash_elem	kernel/hash.c	12;"	d	file:
+list_empty	kernel/list.c	/^list_empty (struct list *list)$/;"	f
+list_end	kernel/list.c	/^list_end (struct list *list)$/;"	f
+list_entry	kernel/list.h	108;"	d
+list_front	kernel/list.c	/^list_front (struct list *list)$/;"	f
+list_head	kernel/list.c	/^list_head (struct list *list) $/;"	f
+list_init	kernel/list.c	/^list_init (struct list *list)$/;"	f
+list_insert	kernel/list.c	/^list_insert (struct list_elem *before, struct list_elem *elem)$/;"	f
+list_insert_ordered	kernel/list.c	/^list_insert_ordered (struct list *list, struct list_elem *elem,$/;"	f
+list_less_func	kernel/list.h	/^typedef bool list_less_func (const struct list_elem *a,$/;"	t
+list_max	kernel/list.c	/^list_max (struct list *list, list_less_func *less, void *aux)$/;"	f
+list_min	kernel/list.c	/^list_min (struct list *list, list_less_func *less, void *aux)$/;"	f
+list_next	kernel/list.c	/^list_next (struct list_elem *elem)$/;"	f
+list_pop_back	kernel/list.c	/^list_pop_back (struct list *list)$/;"	f
+list_pop_front	kernel/list.c	/^list_pop_front (struct list *list)$/;"	f
+list_prev	kernel/list.c	/^list_prev (struct list_elem *elem)$/;"	f
+list_push_back	kernel/list.c	/^list_push_back (struct list *list, struct list_elem *elem)$/;"	f
+list_push_front	kernel/list.c	/^list_push_front (struct list *list, struct list_elem *elem)$/;"	f
+list_rbegin	kernel/list.c	/^list_rbegin (struct list *list) $/;"	f
+list_remove	kernel/list.c	/^list_remove (struct list_elem *elem)$/;"	f
+list_rend	kernel/list.c	/^list_rend (struct list *list) $/;"	f
+list_reverse	kernel/list.c	/^list_reverse (struct list *list)$/;"	f
+list_size	kernel/list.c	/^list_size (struct list *list)$/;"	f
+list_sort	kernel/list.c	/^list_sort (struct list *list, list_less_func *less, void *aux)$/;"	f
+list_splice	kernel/list.c	/^list_splice (struct list_elem *before,$/;"	f
+list_tail	kernel/list.c	/^list_tail (struct list *list) $/;"	f
+list_unique	kernel/list.c	/^list_unique (struct list *list, struct list *duplicates,$/;"	f
+mapid_t	user/syscall.h	/^typedef int mapid_t;$/;"	t
+max_length	stdio.c	/^    int max_length;     \/* Max length of output string. *\/$/;"	m	struct:vsnprintf_aux	file:
+memchr	string.c	/^memchr (const void *block_, int ch_, size_t size) $/;"	f
+memcmp	string.c	/^memcmp (const void *a_, const void *b_, size_t size) $/;"	f
+memcpy	string.c	/^memcpy (void *dst_, const void *src_, size_t size) $/;"	f
+memmove	string.c	/^memmove (void *dst_, const void *src_, size_t size) $/;"	f
+memset	string.c	/^memset (void *dst_, int value, size_t size) $/;"	f
+mkdir	user/syscall.c	/^mkdir (const char *dir)$/;"	f
+mmap	user/syscall.c	/^mmap (int fd, void *addr)$/;"	f
+munmap	user/syscall.c	/^munmap (mapid_t mapid)$/;"	f
+next	kernel/list.h	/^    struct list_elem *next;     \/* Next list element. *\/$/;"	m	struct:list_elem	typeref:struct:list_elem::list_elem
+nlz	arithmetic.c	/^nlz (uint32_t x) $/;"	f	file:
+offsetof	stddef.h	5;"	d
+open	user/syscall.c	/^open (const char *file)$/;"	f
+output_dup	stdio.c	/^output_dup (char ch, size_t cnt, void (*output) (char, void *), void *aux) $/;"	f	file:
+p	stdio.c	/^    char *p;            \/* Current output position. *\/$/;"	m	struct:vsnprintf_aux	file:
+p	user/console.c	/^    char *p;            \/* Current position in buffer. *\/$/;"	m	struct:vhprintf_aux	file:
+parse_conversion	stdio.c	/^parse_conversion (const char *format, struct printf_conversion *c,$/;"	f	file:
+pid_t	user/syscall.h	/^typedef int pid_t;$/;"	t
+precision	stdio.c	/^    int precision;$/;"	m	struct:printf_conversion	file:
+prev	kernel/list.h	/^    struct list_elem *prev;     \/* Previous list element. *\/$/;"	m	struct:list_elem	typeref:struct:list_elem::list_elem
+printf	stdio.c	/^printf (const char *format, ...) $/;"	f
+printf_conversion	stdio.c	/^struct printf_conversion $/;"	s	file:
+ptrdiff_t	stddef.h	/^typedef __PTRDIFF_TYPE__ ptrdiff_t;$/;"	t
+putbuf	kernel/console.c	/^putbuf (const char *buffer, size_t n) $/;"	f
+putchar	kernel/console.c	/^putchar (int c) $/;"	f
+putchar	user/console.c	/^putchar (int c) $/;"	f
+putchar_have_lock	kernel/console.c	/^putchar_have_lock (uint8_t c) $/;"	f	file:
+puts	kernel/console.c	/^puts (const char *s) $/;"	f
+puts	user/console.c	/^puts (const char *s) $/;"	f
+qsort	stdlib.c	/^qsort (void *array, size_t cnt, size_t size,$/;"	f
+random_bytes	random.c	/^random_bytes (void *buf_, size_t size) $/;"	f
+random_init	random.c	/^random_init (unsigned seed)$/;"	f
+random_ulong	random.c	/^random_ulong (void) $/;"	f
+read	user/syscall.c	/^read (int fd, void *buffer, unsigned size)$/;"	f
+readdir	user/syscall.c	/^readdir (int fd, char name[READDIR_MAX_LEN + 1]) $/;"	f
+rehash	kernel/hash.c	/^rehash (struct hash *h) $/;"	f	file:
+release_console	kernel/console.c	/^release_console (void) $/;"	f	file:
+remove	user/syscall.c	/^remove (const char *file)$/;"	f
+remove_elem	kernel/hash.c	/^remove_elem (struct hash *h, struct hash_elem *e) $/;"	f	file:
+s	random.c	/^static uint8_t s[256];          \/* S[]. *\/$/;"	v	file:
+s_i	random.c	/^static uint8_t s_i, s_j;        \/* i, j. *\/$/;"	v	file:
+s_j	random.c	/^static uint8_t s_i, s_j;        \/* i, j. *\/$/;"	v	file:
+sdiv64	arithmetic.c	/^sdiv64 (int64_t n, int64_t d)$/;"	f	file:
+seek	user/syscall.c	/^seek (int fd, unsigned position) $/;"	f
+size_t	stddef.h	/^typedef __SIZE_TYPE__ size_t;$/;"	t
+smod64	arithmetic.c	/^smod64 (int64_t n, int64_t d)$/;"	f	file:
+snprintf	stdio.c	/^snprintf (char *buffer, size_t buf_size, const char *format, ...) $/;"	f
+sort	stdlib.c	/^sort (void *array, size_t cnt, size_t size,$/;"	f
+sprintf	stdio.h	36;"	d
+strcat	string.h	31;"	d
+strchr	string.c	/^strchr (const char *string, int c_) $/;"	f
+strcmp	string.c	/^strcmp (const char *a_, const char *b_) $/;"	f
+strcpy	string.h	29;"	d
+strcspn	string.c	/^strcspn (const char *string, const char *stop) $/;"	f
+strlcat	string.c	/^strlcat (char *dst, const char *src, size_t size) $/;"	f
+strlcpy	string.c	/^strlcpy (char *dst, const char *src, size_t size) $/;"	f
+strlen	string.c	/^strlen (const char *string) $/;"	f
+strncat	string.h	32;"	d
+strncpy	string.h	30;"	d
+strnlen	string.c	/^strnlen (const char *string, size_t maxlen) $/;"	f
+strpbrk	string.c	/^strpbrk (const char *string, const char *stop) $/;"	f
+strrchr	string.c	/^strrchr (const char *string, int c_) $/;"	f
+strspn	string.c	/^strspn (const char *string, const char *skip) $/;"	f
+strstr	string.c	/^strstr (const char *haystack, const char *needle) $/;"	f
+strtok	string.h	33;"	d
+strtok_r	string.c	/^strtok_r (char *s, const char *delimiters, char **save_ptr) $/;"	f
+swap	kernel/list.c	/^swap (struct list_elem **a, struct list_elem **b) $/;"	f	file:
+swap_byte	random.c	/^swap_byte (uint8_t *a, uint8_t *b) $/;"	f	file:
+syscall0	user/syscall.c	6;"	d	file:
+syscall1	user/syscall.c	19;"	d	file:
+syscall2	user/syscall.c	33;"	d	file:
+syscall3	user/syscall.c	49;"	d	file:
+tail	kernel/list.h	/^    struct list_elem tail;      \/* List tail. *\/$/;"	m	struct:list	typeref:struct:list::list_elem
+tell	user/syscall.c	/^tell (int fd) $/;"	f
+tolower	ctype.h	/^static inline int tolower (int c) { return isupper (c) ? c - 'A' + 'a' : c; }$/;"	f
+toupper	ctype.h	/^static inline int toupper (int c) { return islower (c) ? c - 'a' + 'A' : c; }$/;"	f
+true	stdbool.h	5;"	d
+turn_off_least_1bit	kernel/hash.c	/^turn_off_least_1bit (size_t x) $/;"	f	file:
+type	stdio.c	/^    type;$/;"	m	struct:printf_conversion	typeref:enum:printf_conversion::__anon2	file:
+udiv64	arithmetic.c	/^udiv64 (uint64_t n, uint64_t d)$/;"	f	file:
+uint16_t	stdint.h	/^typedef unsigned short int uint16_t;$/;"	t
+uint32_t	stdint.h	/^typedef unsigned int uint32_t;$/;"	t
+uint64_t	stdint.h	/^typedef unsigned long long int uint64_t;$/;"	t
+uint8_t	stdint.h	/^typedef unsigned char uint8_t;$/;"	t
+uintmax_t	stdint.h	/^typedef uint64_t uintmax_t;$/;"	t
+uintptr_t	stdint.h	/^typedef uint32_t uintptr_t;$/;"	t
+umod64	arithmetic.c	/^umod64 (uint64_t n, uint64_t d)$/;"	f	file:
+use_console_lock	kernel/console.c	/^static bool use_console_lock;$/;"	v	file:
+va_arg	stdarg.h	11;"	d
+va_copy	stdarg.h	12;"	d
+va_end	stdarg.h	10;"	d
+va_list	stdarg.h	/^typedef __builtin_va_list va_list;$/;"	t
+va_start	stdarg.h	9;"	d
+vhprintf	user/console.c	/^vhprintf (int handle, const char *format, va_list args) $/;"	f
+vhprintf_aux	user/console.c	/^struct vhprintf_aux $/;"	s	file:
+vprintf	kernel/console.c	/^vprintf (const char *format, va_list args) $/;"	f
+vprintf	user/console.c	/^vprintf (const char *format, va_list args) $/;"	f
+vprintf_helper	kernel/console.c	/^vprintf_helper (char c, void *char_cnt_) $/;"	f	file:
+vsnprintf	stdio.c	/^vsnprintf (char *buffer, size_t buf_size, const char *format, va_list args) $/;"	f
+vsnprintf_aux	stdio.c	/^struct vsnprintf_aux $/;"	s	file:
+vsnprintf_helper	stdio.c	/^vsnprintf_helper (char ch, void *aux_)$/;"	f	file:
+vsprintf	stdio.h	37;"	d
+wait	user/syscall.c	/^wait (pid_t pid)$/;"	f
+width	stdio.c	/^    int width;$/;"	m	struct:printf_conversion	file:
+write	user/syscall.c	/^write (int fd, const void *buffer, unsigned size)$/;"	f
+write_cnt	kernel/console.c	/^static int64_t write_cnt;$/;"	v	file:
+x	stdio.c	/^    int x;                      \/* `x' character to use, for base 16 only. *\/$/;"	m	struct:integer_base	file:

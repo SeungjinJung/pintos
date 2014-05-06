@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+BLOCK_SIZE	lg-random.c	5;"	d	file:
+BLOCK_SIZE	lg-seq-block.c	6;"	d	file:
+BLOCK_SIZE	sm-random.c	5;"	d	file:
+BLOCK_SIZE	sm-seq-block.c	6;"	d	file:
+BUF_SIZE	syn-read.h	4;"	d
+BUF_SIZE	syn-write.h	6;"	d
+CHILD_CNT	syn-read.c	14;"	d	file:
+CHILD_CNT	syn-write.h	4;"	d
+CHUNK_SIZE	syn-write.h	5;"	d
+TESTS_FILESYS_BASE_SYN_READ_H	syn-read.h	2;"	d
+TESTS_FILESYS_BASE_SYN_WRITE_H	syn-write.h	2;"	d
+TEST_SIZE	lg-create.c	4;"	d	file:
+TEST_SIZE	lg-full.c	5;"	d	file:
+TEST_SIZE	lg-random.c	6;"	d	file:
+TEST_SIZE	lg-seq-block.c	5;"	d	file:
+TEST_SIZE	lg-seq-random.c	5;"	d	file:
+TEST_SIZE	sm-create.c	4;"	d	file:
+TEST_SIZE	sm-full.c	5;"	d	file:
+TEST_SIZE	sm-random.c	6;"	d	file:
+TEST_SIZE	sm-seq-block.c	5;"	d	file:
+TEST_SIZE	sm-seq-random.c	5;"	d	file:
+buf	child-syn-read.c	/^static char buf[BUF_SIZE];$/;"	v	file:
+buf	child-syn-wrt.c	/^char buf[BUF_SIZE];$/;"	v
+buf	syn-read.c	/^static char buf[BUF_SIZE];$/;"	v	file:
+buf1	syn-remove.c	/^char buf1[1234];$/;"	v
+buf1	syn-write.c	/^char buf1[BUF_SIZE];$/;"	v
+buf2	syn-remove.c	/^char buf2[1234];$/;"	v
+buf2	syn-write.c	/^char buf2[BUF_SIZE];$/;"	v
+file_name	syn-read.h	/^static const char file_name[] = "data";$/;"	v
+file_name	syn-write.h	/^static const char file_name[] = "stuff";$/;"	v
+main	child-syn-read.c	/^main (int argc, const char *argv[]) $/;"	f
+main	child-syn-wrt.c	/^main (int argc, char *argv[])$/;"	f
+test_main	syn-read.c	/^test_main (void) $/;"	f
+test_main	syn-remove.c	/^test_main (void) $/;"	f
+test_main	syn-write.c	/^test_main (void) $/;"	f
+test_name	child-syn-read.c	/^const char *test_name = "child-syn-read";$/;"	v

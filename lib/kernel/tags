@@ -1,0 +1,149 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+BEST_ELEMS_PER_BUCKET	hash.c	344;"	d	file:
+BITMAP_ERROR	bitmap.h	36;"	d
+ELEM_BITS	bitmap.c	22;"	d	file:
+FNV_32_BASIS	hash.c	262;"	d	file:
+FNV_32_PRIME	hash.c	261;"	d	file:
+MAX_ELEMS_PER_BUCKET	hash.c	345;"	d	file:
+MIN_ELEMS_PER_BUCKET	hash.c	343;"	d	file:
+__LIB_KERNEL_BITMAP_H	bitmap.h	2;"	d
+__LIB_KERNEL_CONSOLE_H	console.h	2;"	d
+__LIB_KERNEL_HASH_H	hash.h	2;"	d
+__LIB_KERNEL_LIST_H	list.h	2;"	d
+__LIB_KERNEL_STDIO_H	stdio.h	2;"	d
+acquire_console	console.c	/^acquire_console (void) $/;"	f	file:
+aux	hash.h	/^    void *aux;                  \/* Auxiliary data for `hash' and `less'. *\/$/;"	m	struct:hash
+bit_cnt	bitmap.c	/^    size_t bit_cnt;     \/* Number of bits. *\/$/;"	m	struct:bitmap	file:
+bit_mask	bitmap.c	/^bit_mask (size_t bit_idx) $/;"	f	file:
+bitmap	bitmap.c	/^struct bitmap$/;"	s	file:
+bitmap_all	bitmap.c	/^bitmap_all (const struct bitmap *b, size_t start, size_t cnt) $/;"	f
+bitmap_any	bitmap.c	/^bitmap_any (const struct bitmap *b, size_t start, size_t cnt) $/;"	f
+bitmap_buf_size	bitmap.c	/^bitmap_buf_size (size_t bit_cnt) $/;"	f
+bitmap_contains	bitmap.c	/^bitmap_contains (const struct bitmap *b, size_t start, size_t cnt, bool value) $/;"	f
+bitmap_count	bitmap.c	/^bitmap_count (const struct bitmap *b, size_t start, size_t cnt, bool value) $/;"	f
+bitmap_create	bitmap.c	/^bitmap_create (size_t bit_cnt) $/;"	f
+bitmap_create_in_buf	bitmap.c	/^bitmap_create_in_buf (size_t bit_cnt, void *block, size_t block_size UNUSED)$/;"	f
+bitmap_destroy	bitmap.c	/^bitmap_destroy (struct bitmap *b) $/;"	f
+bitmap_dump	bitmap.c	/^bitmap_dump (const struct bitmap *b) $/;"	f
+bitmap_file_size	bitmap.c	/^bitmap_file_size (const struct bitmap *b) $/;"	f
+bitmap_flip	bitmap.c	/^bitmap_flip (struct bitmap *b, size_t bit_idx) $/;"	f
+bitmap_mark	bitmap.c	/^bitmap_mark (struct bitmap *b, size_t bit_idx) $/;"	f
+bitmap_none	bitmap.c	/^bitmap_none (const struct bitmap *b, size_t start, size_t cnt) $/;"	f
+bitmap_read	bitmap.c	/^bitmap_read (struct bitmap *b, struct file *file) $/;"	f
+bitmap_reset	bitmap.c	/^bitmap_reset (struct bitmap *b, size_t bit_idx) $/;"	f
+bitmap_scan	bitmap.c	/^bitmap_scan (const struct bitmap *b, size_t start, size_t cnt, bool value) $/;"	f
+bitmap_scan_and_flip	bitmap.c	/^bitmap_scan_and_flip (struct bitmap *b, size_t start, size_t cnt, bool value)$/;"	f
+bitmap_set	bitmap.c	/^bitmap_set (struct bitmap *b, size_t idx, bool value) $/;"	f
+bitmap_set_all	bitmap.c	/^bitmap_set_all (struct bitmap *b, bool value) $/;"	f
+bitmap_set_multiple	bitmap.c	/^bitmap_set_multiple (struct bitmap *b, size_t start, size_t cnt, bool value) $/;"	f
+bitmap_size	bitmap.c	/^bitmap_size (const struct bitmap *b)$/;"	f
+bitmap_test	bitmap.c	/^bitmap_test (const struct bitmap *b, size_t idx) $/;"	f
+bitmap_write	bitmap.c	/^bitmap_write (const struct bitmap *b, struct file *file)$/;"	f
+bits	bitmap.c	/^    elem_type *bits;    \/* Elements that represent bits. *\/$/;"	m	struct:bitmap	file:
+bucket	hash.h	/^    struct list *bucket;        \/* Current bucket. *\/$/;"	m	struct:hash_iterator	typeref:struct:hash_iterator::list
+bucket_cnt	hash.h	/^    size_t bucket_cnt;          \/* Number of buckets, a power of 2. *\/$/;"	m	struct:hash
+buckets	hash.h	/^    struct list *buckets;       \/* Array of `bucket_cnt' lists. *\/$/;"	m	struct:hash	typeref:struct:hash::list
+byte_cnt	bitmap.c	/^byte_cnt (size_t bit_cnt)$/;"	f	file:
+console_init	console.c	/^console_init (void) $/;"	f
+console_lock	console.c	/^static struct lock console_lock;$/;"	v	typeref:struct:lock	file:
+console_lock_depth	console.c	/^static int console_lock_depth;$/;"	v	file:
+console_locked_by_current_thread	console.c	/^console_locked_by_current_thread (void) $/;"	f	file:
+console_panic	console.c	/^console_panic (void) $/;"	f
+console_print_stats	console.c	/^console_print_stats (void) $/;"	f
+debug_panic	debug.c	/^debug_panic (const char *file, int line, const char *function,$/;"	f
+elem	hash.h	/^    struct hash_elem *elem;     \/* Current hash element in current bucket. *\/$/;"	m	struct:hash_iterator	typeref:struct:hash_iterator::hash_elem
+elem_cnt	bitmap.c	/^elem_cnt (size_t bit_cnt)$/;"	f	file:
+elem_cnt	hash.h	/^    size_t elem_cnt;            \/* Number of elements in table. *\/$/;"	m	struct:hash
+elem_idx	bitmap.c	/^elem_idx (size_t bit_idx) $/;"	f	file:
+elem_type	bitmap.c	/^typedef unsigned long elem_type;$/;"	t	file:
+find_bucket	hash.c	/^find_bucket (struct hash *h, struct hash_elem *e) $/;"	f	file:
+find_elem	hash.c	/^find_elem (struct hash *h, struct list *bucket, struct hash_elem *e) $/;"	f	file:
+find_end_of_run	list.c	/^find_end_of_run (struct list_elem *a, struct list_elem *b,$/;"	f	file:
+hash	hash.h	/^    hash_hash_func *hash;       \/* Hash function. *\/$/;"	m	struct:hash
+hash	hash.h	/^    struct hash *hash;          \/* The hash table. *\/$/;"	m	struct:hash_iterator	typeref:struct:hash_iterator::hash
+hash	hash.h	/^struct hash $/;"	s
+hash_action_func	hash.h	/^typedef void hash_action_func (struct hash_elem *e, void *aux);$/;"	t
+hash_apply	hash.c	/^hash_apply (struct hash *h, hash_action_func *action) $/;"	f
+hash_bytes	hash.c	/^hash_bytes (const void *buf_, size_t size)$/;"	f
+hash_clear	hash.c	/^hash_clear (struct hash *h, hash_action_func *destructor) $/;"	f
+hash_cur	hash.c	/^hash_cur (struct hash_iterator *i) $/;"	f
+hash_delete	hash.c	/^hash_delete (struct hash *h, struct hash_elem *e)$/;"	f
+hash_destroy	hash.c	/^hash_destroy (struct hash *h, hash_action_func *destructor) $/;"	f
+hash_elem	hash.h	/^struct hash_elem $/;"	s
+hash_empty	hash.c	/^hash_empty (struct hash *h) $/;"	f
+hash_entry	hash.h	39;"	d
+hash_find	hash.c	/^hash_find (struct hash *h, struct hash_elem *e) $/;"	f
+hash_first	hash.c	/^hash_first (struct hash_iterator *i, struct hash *h) $/;"	f
+hash_hash_func	hash.h	/^typedef unsigned hash_hash_func (const struct hash_elem *e, void *aux);$/;"	t
+hash_init	hash.c	/^hash_init (struct hash *h,$/;"	f
+hash_insert	hash.c	/^hash_insert (struct hash *h, struct hash_elem *new)$/;"	f
+hash_int	hash.c	/^hash_int (int i) $/;"	f
+hash_iterator	hash.h	/^struct hash_iterator $/;"	s
+hash_less_func	hash.h	/^typedef bool hash_less_func (const struct hash_elem *a,$/;"	t
+hash_next	hash.c	/^hash_next (struct hash_iterator *i)$/;"	f
+hash_replace	hash.c	/^hash_replace (struct hash *h, struct hash_elem *new) $/;"	f
+hash_size	hash.c	/^hash_size (struct hash *h) $/;"	f
+hash_string	hash.c	/^hash_string (const char *s_) $/;"	f
+head	list.h	/^    struct list_elem head;      \/* List head. *\/$/;"	m	struct:list	typeref:struct:list::list_elem
+inplace_merge	list.c	/^inplace_merge (struct list_elem *a0, struct list_elem *a1b0,$/;"	f	file:
+insert_elem	hash.c	/^insert_elem (struct hash *h, struct list *bucket, struct hash_elem *e) $/;"	f	file:
+is_head	list.c	/^is_head (struct list_elem *elem)$/;"	f	file:
+is_interior	list.c	/^is_interior (struct list_elem *elem)$/;"	f	file:
+is_power_of_2	hash.c	/^is_power_of_2 (size_t x) $/;"	f	file:
+is_sorted	list.c	/^is_sorted (struct list_elem *a, struct list_elem *b,$/;"	f	file:
+is_tail	list.c	/^is_tail (struct list_elem *elem)$/;"	f	file:
+last_mask	bitmap.c	/^last_mask (const struct bitmap *b) $/;"	f	file:
+less	hash.h	/^    hash_less_func *less;       \/* Comparison function. *\/$/;"	m	struct:hash
+list	list.h	/^struct list $/;"	s
+list_back	list.c	/^list_back (struct list *list)$/;"	f
+list_begin	list.c	/^list_begin (struct list *list)$/;"	f
+list_elem	hash.h	/^    struct list_elem list_elem;$/;"	m	struct:hash_elem	typeref:struct:hash_elem::list_elem
+list_elem	list.h	/^struct list_elem $/;"	s
+list_elem_to_hash_elem	hash.c	12;"	d	file:
+list_empty	list.c	/^list_empty (struct list *list)$/;"	f
+list_end	list.c	/^list_end (struct list *list)$/;"	f
+list_entry	list.h	108;"	d
+list_front	list.c	/^list_front (struct list *list)$/;"	f
+list_head	list.c	/^list_head (struct list *list) $/;"	f
+list_init	list.c	/^list_init (struct list *list)$/;"	f
+list_insert	list.c	/^list_insert (struct list_elem *before, struct list_elem *elem)$/;"	f
+list_insert_ordered	list.c	/^list_insert_ordered (struct list *list, struct list_elem *elem,$/;"	f
+list_less_func	list.h	/^typedef bool list_less_func (const struct list_elem *a,$/;"	t
+list_max	list.c	/^list_max (struct list *list, list_less_func *less, void *aux)$/;"	f
+list_min	list.c	/^list_min (struct list *list, list_less_func *less, void *aux)$/;"	f
+list_next	list.c	/^list_next (struct list_elem *elem)$/;"	f
+list_pop_back	list.c	/^list_pop_back (struct list *list)$/;"	f
+list_pop_front	list.c	/^list_pop_front (struct list *list)$/;"	f
+list_prev	list.c	/^list_prev (struct list_elem *elem)$/;"	f
+list_push_back	list.c	/^list_push_back (struct list *list, struct list_elem *elem)$/;"	f
+list_push_front	list.c	/^list_push_front (struct list *list, struct list_elem *elem)$/;"	f
+list_rbegin	list.c	/^list_rbegin (struct list *list) $/;"	f
+list_remove	list.c	/^list_remove (struct list_elem *elem)$/;"	f
+list_rend	list.c	/^list_rend (struct list *list) $/;"	f
+list_reverse	list.c	/^list_reverse (struct list *list)$/;"	f
+list_size	list.c	/^list_size (struct list *list)$/;"	f
+list_sort	list.c	/^list_sort (struct list *list, list_less_func *less, void *aux)$/;"	f
+list_splice	list.c	/^list_splice (struct list_elem *before,$/;"	f
+list_tail	list.c	/^list_tail (struct list *list) $/;"	f
+list_unique	list.c	/^list_unique (struct list *list, struct list *duplicates,$/;"	f
+next	list.h	/^    struct list_elem *next;     \/* Next list element. *\/$/;"	m	struct:list_elem	typeref:struct:list_elem::list_elem
+prev	list.h	/^    struct list_elem *prev;     \/* Previous list element. *\/$/;"	m	struct:list_elem	typeref:struct:list_elem::list_elem
+putbuf	console.c	/^putbuf (const char *buffer, size_t n) $/;"	f
+putchar	console.c	/^putchar (int c) $/;"	f
+putchar_have_lock	console.c	/^putchar_have_lock (uint8_t c) $/;"	f	file:
+puts	console.c	/^puts (const char *s) $/;"	f
+rehash	hash.c	/^rehash (struct hash *h) $/;"	f	file:
+release_console	console.c	/^release_console (void) $/;"	f	file:
+remove_elem	hash.c	/^remove_elem (struct hash *h, struct hash_elem *e) $/;"	f	file:
+swap	list.c	/^swap (struct list_elem **a, struct list_elem **b) $/;"	f	file:
+tail	list.h	/^    struct list_elem tail;      \/* List tail. *\/$/;"	m	struct:list	typeref:struct:list::list_elem
+turn_off_least_1bit	hash.c	/^turn_off_least_1bit (size_t x) $/;"	f	file:
+use_console_lock	console.c	/^static bool use_console_lock;$/;"	v	file:
+vprintf	console.c	/^vprintf (const char *format, va_list args) $/;"	f
+vprintf_helper	console.c	/^vprintf_helper (char c, void *char_cnt_) $/;"	f	file:
+write_cnt	console.c	/^static int64_t write_cnt;$/;"	v	file:

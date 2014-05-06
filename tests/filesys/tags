@@ -1,0 +1,105 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+BLOCK_SIZE	base/lg-random.c	5;"	d	file:
+BLOCK_SIZE	base/lg-seq-block.c	6;"	d	file:
+BLOCK_SIZE	base/sm-random.c	5;"	d	file:
+BLOCK_SIZE	base/sm-seq-block.c	6;"	d	file:
+BUF_SIZE	base/syn-read.h	4;"	d
+BUF_SIZE	base/syn-write.h	6;"	d
+BUF_SIZE	extended/syn-rw.h	6;"	d
+CHILD_CNT	base/syn-read.c	14;"	d	file:
+CHILD_CNT	base/syn-write.h	4;"	d
+CHILD_CNT	extended/syn-rw.c	12;"	d	file:
+CHUNK_CNT	extended/syn-rw.h	5;"	d
+CHUNK_SIZE	base/syn-write.h	5;"	d
+CHUNK_SIZE	extended/syn-rw.h	4;"	d
+DIRECTORY	extended/grow-dir-lg.c	5;"	d	file:
+FILE_CNT	extended/grow-dir-lg.c	4;"	d	file:
+FILE_CNT	extended/grow-root-lg.c	3;"	d	file:
+FILE_CNT	extended/grow-root-sm.c	3;"	d	file:
+FILE_SIZE	extended/grow-two-files.c	9;"	d	file:
+TESTS_FILESYS_BASE_SYN_READ_H	base/syn-read.h	2;"	d
+TESTS_FILESYS_BASE_SYN_WRITE_H	base/syn-write.h	2;"	d
+TESTS_FILESYS_EXTENDED_MK_TREE_H	extended/mk-tree.h	2;"	d
+TESTS_FILESYS_EXTENDED_SYN_RW_H	extended/syn-rw.h	2;"	d
+TESTS_FILESYS_SEQ_TEST_H	seq-test.h	2;"	d
+TEST_SIZE	base/lg-create.c	4;"	d	file:
+TEST_SIZE	base/lg-full.c	5;"	d	file:
+TEST_SIZE	base/lg-random.c	6;"	d	file:
+TEST_SIZE	base/lg-seq-block.c	5;"	d	file:
+TEST_SIZE	base/lg-seq-random.c	5;"	d	file:
+TEST_SIZE	base/sm-create.c	4;"	d	file:
+TEST_SIZE	base/sm-full.c	5;"	d	file:
+TEST_SIZE	base/sm-random.c	6;"	d	file:
+TEST_SIZE	base/sm-seq-block.c	5;"	d	file:
+TEST_SIZE	base/sm-seq-random.c	5;"	d	file:
+TEST_SIZE	extended/grow-create.c	3;"	d	file:
+TEST_SIZE	extended/grow-seq-lg.c	4;"	d	file:
+TEST_SIZE	extended/grow-seq-sm.c	4;"	d	file:
+archive_directory	extended/tar.c	/^archive_directory (char file_name[], size_t file_name_size, int file_fd,$/;"	f	file:
+archive_file	extended/tar.c	/^archive_file (char file_name[], size_t file_name_size,$/;"	f	file:
+archive_ordinary_file	extended/tar.c	/^archive_ordinary_file (const char *file_name, int file_fd,$/;"	f	file:
+buf	base/child-syn-read.c	/^static char buf[BUF_SIZE];$/;"	v	file:
+buf	base/child-syn-wrt.c	/^char buf[BUF_SIZE];$/;"	v
+buf	base/syn-read.c	/^static char buf[BUF_SIZE];$/;"	v	file:
+buf	extended/grow-file-size.c	/^static char buf[2134];$/;"	v	file:
+buf	extended/grow-sparse.c	/^static char buf[76543];$/;"	v	file:
+buf	extended/grow-tell.c	/^static char buf[2134];$/;"	v	file:
+buf	extended/syn-rw.c	/^char buf[BUF_SIZE];$/;"	v
+buf1	base/syn-remove.c	/^char buf1[1234];$/;"	v
+buf1	base/syn-write.c	/^char buf1[BUF_SIZE];$/;"	v
+buf1	extended/child-syn-rw.c	/^static char buf1[BUF_SIZE];$/;"	v	file:
+buf2	base/syn-remove.c	/^char buf2[1234];$/;"	v
+buf2	base/syn-write.c	/^char buf2[BUF_SIZE];$/;"	v
+buf2	extended/child-syn-rw.c	/^static char buf2[BUF_SIZE];$/;"	v	file:
+buf_a	extended/grow-two-files.c	/^static char buf_a[FILE_SIZE];$/;"	v	file:
+buf_b	extended/grow-two-files.c	/^static char buf_b[FILE_SIZE];$/;"	v	file:
+check_file_size	extended/grow-file-size.c	/^check_file_size (int fd, long ofs) $/;"	f	file:
+check_tell	extended/grow-tell.c	/^check_tell (int fd, long ofs) $/;"	f	file:
+do_mkdir	extended/mk-tree.c	/^do_mkdir (const char *format, ...) $/;"	f	file:
+do_remove	extended/dir-rm-tree.c	/^do_remove (const char *format, ...) $/;"	f	file:
+do_touch	extended/mk-tree.c	/^do_touch (const char *format, ...)$/;"	f	file:
+do_write	extended/tar.c	/^do_write (int fd, const char *buffer, int size, bool *write_error) $/;"	f	file:
+file_name	base/syn-read.h	/^static const char file_name[] = "data";$/;"	v
+file_name	base/syn-write.h	/^static const char file_name[] = "stuff";$/;"	v
+file_name	extended/syn-rw.h	/^static const char file_name[] = "logfile";$/;"	v
+main	base/child-syn-read.c	/^main (int argc, const char *argv[]) $/;"	f
+main	base/child-syn-wrt.c	/^main (int argc, char *argv[])$/;"	f
+main	extended/child-syn-rw.c	/^main (int argc, const char *argv[]) $/;"	f
+main	extended/tar.c	/^main (int argc, char *argv[]) $/;"	f
+make_tar_archive	extended/tar.c	/^make_tar_archive (const char *archive_name, char *files[], size_t file_cnt) $/;"	f	file:
+make_tree	extended/mk-tree.c	/^make_tree (int at, int bt, int ct, int dt) $/;"	f
+remove_tree	extended/dir-rm-tree.c	/^remove_tree (int at, int bt, int ct, int dt) $/;"	f	file:
+return_block_size	extended/grow-file-size.c	/^return_block_size (void) $/;"	f	file:
+return_block_size	extended/grow-tell.c	/^return_block_size (void) $/;"	f	file:
+seq_test	seq-test.c	/^seq_test (const char *file_name, void *buf, size_t size, size_t initial_size,$/;"	f
+test_main	base/syn-read.c	/^test_main (void) $/;"	f
+test_main	base/syn-remove.c	/^test_main (void) $/;"	f
+test_main	base/syn-write.c	/^test_main (void) $/;"	f
+test_main	extended/dir-empty-name.c	/^test_main (void) $/;"	f
+test_main	extended/dir-mk-tree.c	/^test_main (void) $/;"	f
+test_main	extended/dir-mkdir.c	/^test_main (void) $/;"	f
+test_main	extended/dir-open.c	/^test_main (void) $/;"	f
+test_main	extended/dir-over-file.c	/^test_main (void) $/;"	f
+test_main	extended/dir-rm-cwd.c	/^test_main (void) $/;"	f
+test_main	extended/dir-rm-parent.c	/^test_main (void) $/;"	f
+test_main	extended/dir-rm-root.c	/^test_main (void) $/;"	f
+test_main	extended/dir-rm-tree.c	/^test_main (void) $/;"	f
+test_main	extended/dir-rmdir.c	/^test_main (void) $/;"	f
+test_main	extended/dir-under-file.c	/^test_main (void) $/;"	f
+test_main	extended/dir-vine.c	/^test_main (void) $/;"	f
+test_main	extended/grow-file-size.c	/^test_main (void) $/;"	f
+test_main	extended/grow-sparse.c	/^test_main (void) $/;"	f
+test_main	extended/grow-tell.c	/^test_main (void) $/;"	f
+test_main	extended/grow-two-files.c	/^test_main (void) $/;"	f
+test_main	extended/syn-rw.c	/^test_main (void) $/;"	f
+test_name	base/child-syn-read.c	/^const char *test_name = "child-syn-read";$/;"	v
+test_name	extended/child-syn-rw.c	/^const char *test_name = "child-syn-rw";$/;"	v
+usage	extended/tar.c	/^usage (void) $/;"	f	file:
+wrap_open	extended/dir-rm-cwd.c	/^wrap_open (const char *name) $/;"	f	file:
+write_header	extended/tar.c	/^write_header (const char *file_name,$/;"	f	file:
+write_some_bytes	extended/grow-two-files.c	/^write_some_bytes (const char *file_name, int fd, const char *buf, size_t *ofs) $/;"	f	file:

@@ -1,0 +1,96 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ACTUAL	child-mm-wrt.c	12;"	d	file:
+ACTUAL	mmap-close.c	10;"	d	file:
+ACTUAL	mmap-unmap.c	9;"	d	file:
+ACTUAL	mmap-write.c	11;"	d	file:
+CHILD_CNT	page-parallel.c	7;"	d	file:
+CHUNK_CNT	page-merge-seq.c	15;"	d	file:
+CHUNK_CNT	parallel-merge.c	14;"	d	file:
+CHUNK_SIZE	page-merge-seq.c	14;"	d	file:
+CHUNK_SIZE	parallel-merge.c	13;"	d	file:
+DATA_SIZE	page-merge-seq.c	16;"	d	file:
+DATA_SIZE	parallel-merge.c	15;"	d	file:
+SIZE	child-linear.c	12;"	d	file:
+SIZE	mmap-shuffle.c	12;"	d	file:
+SIZE	page-linear.c	9;"	d	file:
+SIZE	page-shuffle.c	10;"	d	file:
+TESTS_VM_PARALLEL_MERGE	parallel-merge.h	2;"	d
+TESTS_VM_QSORT_H	qsort.h	2;"	d
+buf	child-linear.c	/^static char buf[SIZE];$/;"	v	file:
+buf	child-sort.c	/^unsigned char buf[128 * 1024];$/;"	v
+buf	mmap-shuffle.c	/^static char *buf = (char *) 0x10000000;$/;"	v	file:
+buf	page-linear.c	/^static char buf[SIZE];$/;"	v	file:
+buf	page-shuffle.c	/^static char buf[SIZE];$/;"	v	file:
+buf1	page-merge-seq.c	/^unsigned char buf1[DATA_SIZE], buf2[DATA_SIZE];$/;"	v
+buf1	parallel-merge.c	/^unsigned char buf1[DATA_SIZE], buf2[DATA_SIZE];$/;"	v
+buf2	page-merge-seq.c	/^unsigned char buf1[DATA_SIZE], buf2[DATA_SIZE];$/;"	v
+buf2	parallel-merge.c	/^unsigned char buf1[DATA_SIZE], buf2[DATA_SIZE];$/;"	v
+check_process_death	process_death.pm	/^sub check_process_death {$/;"	s
+histogram	child-sort.c	/^size_t histogram[256];$/;"	v
+histogram	page-merge-seq.c	/^size_t histogram[256];$/;"	v
+histogram	parallel-merge.c	/^size_t histogram[256];$/;"	v
+init	page-merge-seq.c	/^init (void) $/;"	f	file:
+init	parallel-merge.c	/^init (void) $/;"	f	file:
+is_partitioned	qsort.c	/^is_partitioned (const unsigned char *array, size_t size,$/;"	f	file:
+is_sorted	qsort.c	/^is_sorted (const unsigned char *buf, size_t size) $/;"	f	file:
+main	child-linear.c	/^main (int argc, char *argv[])$/;"	f
+main	child-qsort-mm.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+main	child-qsort.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+main	child-sort.c	/^main (int argc UNUSED, char *argv[]) $/;"	f
+merge	page-merge-seq.c	/^merge (void) $/;"	f	file:
+merge	parallel-merge.c	/^merge (void) $/;"	f	file:
+parallel_merge	parallel-merge.c	/^parallel_merge (const char *child_name, int exit_status)$/;"	f
+partition	qsort.c	/^partition (unsigned char *array, size_t size, int pivot) $/;"	f	file:
+pick_pivot	qsort.c	/^pick_pivot (unsigned char *buf, size_t size) $/;"	f	file:
+qsort_bytes	qsort.c	/^qsort_bytes (unsigned char *buf, size_t size) $/;"	f
+sort_chunks	page-merge-seq.c	/^sort_chunks (void)$/;"	f	file:
+sort_chunks	parallel-merge.c	/^sort_chunks (const char *subprocess, int exit_status)$/;"	f	file:
+swap	qsort.c	/^swap (unsigned char *a, unsigned char *b) $/;"	f	file:
+test_main	child-inherit.c	/^test_main (void)$/;"	f
+test_main	child-mm-wrt.c	/^test_main (void)$/;"	f
+test_main	mmap-bad-fd.c	/^test_main (void) $/;"	f
+test_main	mmap-clean.c	/^test_main (void)$/;"	f
+test_main	mmap-close.c	/^test_main (void)$/;"	f
+test_main	mmap-exit.c	/^test_main (void)$/;"	f
+test_main	mmap-inherit.c	/^test_main (void)$/;"	f
+test_main	mmap-misalign.c	/^test_main (void) $/;"	f
+test_main	mmap-null.c	/^test_main (void) $/;"	f
+test_main	mmap-over-code.c	/^test_main (void) $/;"	f
+test_main	mmap-over-data.c	/^test_main (void) $/;"	f
+test_main	mmap-over-stk.c	/^test_main (void) $/;"	f
+test_main	mmap-overlap.c	/^test_main (void)$/;"	f
+test_main	mmap-read.c	/^test_main (void)$/;"	f
+test_main	mmap-remove.c	/^test_main (void)$/;"	f
+test_main	mmap-shuffle.c	/^test_main (void)$/;"	f
+test_main	mmap-twice.c	/^test_main (void)$/;"	f
+test_main	mmap-unmap.c	/^test_main (void)$/;"	f
+test_main	mmap-write.c	/^test_main (void)$/;"	f
+test_main	mmap-zero.c	/^test_main (void) $/;"	f
+test_main	page-linear.c	/^test_main (void)$/;"	f
+test_main	page-merge-mm.c	/^test_main (void) $/;"	f
+test_main	page-merge-par.c	/^test_main (void) $/;"	f
+test_main	page-merge-seq.c	/^test_main (void)$/;"	f
+test_main	page-merge-stk.c	/^test_main (void) $/;"	f
+test_main	page-parallel.c	/^test_main (void)$/;"	f
+test_main	page-shuffle.c	/^test_main (void)$/;"	f
+test_main	pt-bad-addr.c	/^test_main (void)$/;"	f
+test_main	pt-bad-read.c	/^test_main (void)$/;"	f
+test_main	pt-big-stk-obj.c	/^test_main (void)$/;"	f
+test_main	pt-grow-bad.c	/^test_main (void)$/;"	f
+test_main	pt-grow-pusha.c	/^test_main (void)$/;"	f
+test_main	pt-grow-stack.c	/^test_main (void)$/;"	f
+test_main	pt-grow-stk-sc.c	/^test_main (void)$/;"	f
+test_main	pt-write-code-2.c	/^test_main (void)$/;"	f
+test_main	pt-write-code.c	/^test_main (void)$/;"	f
+test_name	child-linear.c	/^const char *test_name = "child-linear";$/;"	v
+test_name	child-qsort-mm.c	/^const char *test_name = "child-qsort-mm";$/;"	v
+test_name	child-qsort.c	/^const char *test_name = "child-qsort";$/;"	v
+test_name	child-sort.c	/^const char *test_name = "child-sort";$/;"	v
+verify	page-merge-seq.c	/^verify (void) $/;"	f	file:
+verify	parallel-merge.c	/^verify (void) $/;"	f	file:
+x	mmap-over-data.c	/^static char x;$/;"	v	file:

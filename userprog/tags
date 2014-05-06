@@ -1,0 +1,150 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+CLS_CODE_DATA	gdt.c	/^    CLS_CODE_DATA = 1           \/* Code or data segment. *\/$/;"	e	enum:seg_class	file:
+CLS_SYSTEM	gdt.c	/^    CLS_SYSTEM = 0,             \/* System segment. *\/$/;"	e	enum:seg_class	file:
+Elf32_Addr	process.c	/^typedef uint32_t Elf32_Word, Elf32_Addr, Elf32_Off;$/;"	t	file:
+Elf32_Ehdr	process.c	/^struct Elf32_Ehdr$/;"	s	file:
+Elf32_Half	process.c	/^typedef uint16_t Elf32_Half;$/;"	t	file:
+Elf32_Off	process.c	/^typedef uint32_t Elf32_Word, Elf32_Addr, Elf32_Off;$/;"	t	file:
+Elf32_Phdr	process.c	/^struct Elf32_Phdr$/;"	s	file:
+Elf32_Word	process.c	/^typedef uint32_t Elf32_Word, Elf32_Addr, Elf32_Off;$/;"	t	file:
+GRAN_BYTE	gdt.c	/^    GRAN_BYTE = 0,              \/* Limit has 1-byte granularity. *\/$/;"	e	enum:seg_granularity	file:
+GRAN_PAGE	gdt.c	/^    GRAN_PAGE = 1               \/* Limit has 4 kB granularity. *\/$/;"	e	enum:seg_granularity	file:
+NO_RETURN	process.c	/^static thread_func start_process NO_RETURN;$/;"	v	file:
+PE32Ax	process.c	299;"	d	file:
+PE32Hx	process.c	301;"	d	file:
+PE32Ox	process.c	300;"	d	file:
+PE32Wx	process.c	298;"	d	file:
+PF_P	exception.h	5;"	d
+PF_R	process.c	351;"	d	file:
+PF_U	exception.h	7;"	d
+PF_W	exception.h	6;"	d
+PF_W	process.c	350;"	d	file:
+PF_X	process.c	349;"	d	file:
+PT_DYNAMIC	process.c	341;"	d	file:
+PT_INTERP	process.c	342;"	d	file:
+PT_LOAD	process.c	340;"	d	file:
+PT_NOTE	process.c	343;"	d	file:
+PT_NULL	process.c	339;"	d	file:
+PT_PHDR	process.c	345;"	d	file:
+PT_SHLIB	process.c	344;"	d	file:
+PT_STACK	process.c	346;"	d	file:
+SEL_CNT	gdt.h	11;"	d
+SEL_TSS	gdt.h	10;"	d
+SEL_UCSEG	gdt.h	8;"	d
+SEL_UDSEG	gdt.h	9;"	d
+TOOLARGETOCONSOLE	syscall.c	18;"	d	file:
+USERPROG_EXCEPTION_H	exception.h	2;"	d
+USERPROG_GDT_H	gdt.h	2;"	d
+USERPROG_PAGEDIR_H	pagedir.h	2;"	d
+USERPROG_PROCESS_H	process.h	2;"	d
+USERPROG_SYSCALL_H	syscall.h	2;"	d
+USERPROG_TSS_H	tss.h	2;"	d
+active_pd	pagedir.c	/^active_pd (void) $/;"	f	file:
+back_link	tss.c	/^    uint16_t back_link, :16;$/;"	m	struct:tss	file:
+bitmap	tss.c	/^    uint16_t trace, bitmap;$/;"	m	struct:tss	file:
+cr3	tss.c	/^    uint32_t cr3;$/;"	m	struct:tss	file:
+cs	tss.c	/^    uint16_t cs, :16;$/;"	m	struct:tss	file:
+ds	tss.c	/^    uint16_t ds, :16;$/;"	m	struct:tss	file:
+e_ehsize	process.c	/^	Elf32_Half    e_ehsize;$/;"	m	struct:Elf32_Ehdr	file:
+e_entry	process.c	/^	Elf32_Addr    e_entry;$/;"	m	struct:Elf32_Ehdr	file:
+e_flags	process.c	/^	Elf32_Word    e_flags;$/;"	m	struct:Elf32_Ehdr	file:
+e_ident	process.c	/^	unsigned char e_ident[16];$/;"	m	struct:Elf32_Ehdr	file:
+e_machine	process.c	/^	Elf32_Half    e_machine;$/;"	m	struct:Elf32_Ehdr	file:
+e_phentsize	process.c	/^	Elf32_Half    e_phentsize;$/;"	m	struct:Elf32_Ehdr	file:
+e_phnum	process.c	/^	Elf32_Half    e_phnum;$/;"	m	struct:Elf32_Ehdr	file:
+e_phoff	process.c	/^	Elf32_Off     e_phoff;$/;"	m	struct:Elf32_Ehdr	file:
+e_shentsize	process.c	/^	Elf32_Half    e_shentsize;$/;"	m	struct:Elf32_Ehdr	file:
+e_shnum	process.c	/^	Elf32_Half    e_shnum;$/;"	m	struct:Elf32_Ehdr	file:
+e_shoff	process.c	/^	Elf32_Off     e_shoff;$/;"	m	struct:Elf32_Ehdr	file:
+e_shstrndx	process.c	/^	Elf32_Half    e_shstrndx;$/;"	m	struct:Elf32_Ehdr	file:
+e_type	process.c	/^	Elf32_Half    e_type;$/;"	m	struct:Elf32_Ehdr	file:
+e_version	process.c	/^	Elf32_Word    e_version;$/;"	m	struct:Elf32_Ehdr	file:
+eax	tss.c	/^    uint32_t eax, ecx, edx, ebx;$/;"	m	struct:tss	file:
+ebp	tss.c	/^    uint32_t esp, ebp, esi, edi;$/;"	m	struct:tss	file:
+ebx	tss.c	/^    uint32_t eax, ecx, edx, ebx;$/;"	m	struct:tss	file:
+ecx	tss.c	/^    uint32_t eax, ecx, edx, ebx;$/;"	m	struct:tss	file:
+edi	tss.c	/^    uint32_t esp, ebp, esi, edi;$/;"	m	struct:tss	file:
+edx	tss.c	/^    uint32_t eax, ecx, edx, ebx;$/;"	m	struct:tss	file:
+eflags	tss.c	/^    uint32_t eflags;$/;"	m	struct:tss	file:
+eip	tss.c	/^    void (*eip) (void);$/;"	m	struct:tss	file:
+es	tss.c	/^    uint16_t es, :16;$/;"	m	struct:tss	file:
+esi	tss.c	/^    uint32_t esp, ebp, esi, edi;$/;"	m	struct:tss	file:
+esp	tss.c	/^    uint32_t esp, ebp, esi, edi;$/;"	m	struct:tss	file:
+esp0	tss.c	/^    void *esp0;                         \/* Ring 0 stack virtual address. *\/$/;"	m	struct:tss	file:
+esp1	tss.c	/^    void *esp1;$/;"	m	struct:tss	file:
+esp2	tss.c	/^    void *esp2;$/;"	m	struct:tss	file:
+exception_init	exception.c	/^exception_init (void) $/;"	f
+exception_print_stats	exception.c	/^exception_print_stats (void) $/;"	f
+filesys	syscall.c	/^static struct semaphore filesys[MAXFD]; \/* for synchronizing file access *\/$/;"	v	typeref:struct:semaphore	file:
+findthread	process.c	/^struct thread *findthread(struct list *elist, tid_t t){$/;"	f
+fs	tss.c	/^    uint16_t fs, :16;$/;"	m	struct:tss	file:
+gdt	gdt.c	/^static uint64_t gdt[SEL_CNT];$/;"	v	file:
+gdt_init	gdt.c	/^gdt_init (void)$/;"	f
+getaddr	syscall.c	/^getaddr(void *ptr){$/;"	f	file:
+goodfd	syscall.c	/^bool goodfd(int fd){$/;"	f
+goodfileptr	syscall.c	/^bool goodfileptr(void *fileptr){$/;"	f
+gs	tss.c	/^    uint16_t gs, :16;$/;"	m	struct:tss	file:
+install_page	process.c	/^install_page (void *upage, void *kpage, bool writable)$/;"	f	file:
+invalidate_pagedir	pagedir.c	/^invalidate_pagedir (uint32_t *pd) $/;"	f	file:
+kill	exception.c	/^kill (struct intr_frame *f) $/;"	f	file:
+ldt	tss.c	/^    uint16_t ldt, :16;$/;"	m	struct:tss	file:
+load	process.c	/^load (const char *file_name, void (**eip) (void), void **esp) $/;"	f
+load_segment	process.c	/^load_segment (struct file *file, off_t ofs, uint8_t *upage,$/;"	f	file:
+lookup_page	pagedir.c	/^lookup_page (uint32_t *pd, const void *vaddr, bool create)$/;"	f	file:
+makeP_C	syscall.c	/^int makeP_C(tid_t t){$/;"	f
+make_code_desc	gdt.c	/^make_code_desc (int dpl)$/;"	f	file:
+make_data_desc	gdt.c	/^make_data_desc (int dpl)$/;"	f	file:
+make_gdtr_operand	gdt.c	/^make_gdtr_operand (uint16_t limit, void *base)$/;"	f	file:
+make_seg_desc	gdt.c	/^make_seg_desc (uint32_t base,$/;"	f	file:
+make_tss_desc	gdt.c	/^make_tss_desc (void *laddr)$/;"	f	file:
+p_align	process.c	/^	Elf32_Word p_align;$/;"	m	struct:Elf32_Phdr	file:
+p_filesz	process.c	/^	Elf32_Word p_filesz;$/;"	m	struct:Elf32_Phdr	file:
+p_flags	process.c	/^	Elf32_Word p_flags;$/;"	m	struct:Elf32_Phdr	file:
+p_memsz	process.c	/^	Elf32_Word p_memsz;$/;"	m	struct:Elf32_Phdr	file:
+p_offset	process.c	/^	Elf32_Off  p_offset;$/;"	m	struct:Elf32_Phdr	file:
+p_paddr	process.c	/^	Elf32_Addr p_paddr;$/;"	m	struct:Elf32_Phdr	file:
+p_type	process.c	/^	Elf32_Word p_type;$/;"	m	struct:Elf32_Phdr	file:
+p_vaddr	process.c	/^	Elf32_Addr p_vaddr;$/;"	m	struct:Elf32_Phdr	file:
+page_fault	exception.c	/^page_fault (struct intr_frame *f) $/;"	f	file:
+page_fault_cnt	exception.c	/^static long long page_fault_cnt;$/;"	v	file:
+pagedir_activate	pagedir.c	/^pagedir_activate (uint32_t *pd) $/;"	f
+pagedir_clear_page	pagedir.c	/^pagedir_clear_page (uint32_t *pd, void *upage) $/;"	f
+pagedir_create	pagedir.c	/^pagedir_create (void) $/;"	f
+pagedir_destroy	pagedir.c	/^pagedir_destroy (uint32_t *pd) $/;"	f
+pagedir_get_page	pagedir.c	/^pagedir_get_page (uint32_t *pd, const void *uaddr) $/;"	f
+pagedir_is_accessed	pagedir.c	/^pagedir_is_accessed (uint32_t *pd, const void *vpage) $/;"	f
+pagedir_is_dirty	pagedir.c	/^pagedir_is_dirty (uint32_t *pd, const void *vpage) $/;"	f
+pagedir_set_accessed	pagedir.c	/^pagedir_set_accessed (uint32_t *pd, const void *vpage, bool accessed) $/;"	f
+pagedir_set_dirty	pagedir.c	/^pagedir_set_dirty (uint32_t *pd, const void *vpage, bool dirty) $/;"	f
+pagedir_set_page	pagedir.c	/^pagedir_set_page (uint32_t *pd, void *upage, void *kpage, bool writable)$/;"	f
+process_activate	process.c	/^process_activate (void)$/;"	f
+process_execute	process.c	/^process_execute (const char *file_name) $/;"	f
+process_exit	process.c	/^process_exit (void)$/;"	f
+process_wait	process.c	/^process_wait (tid_t child_tid UNUSED) $/;"	f
+pushespaddr	process.c	/^pushespaddr(void **esp, unsigned int value){$/;"	f	file:
+pushespstr	process.c	/^pushespstr(void **esp, void *value, unsigned int length){$/;"	f	file:
+seg_class	gdt.c	/^enum seg_class$/;"	g	file:
+seg_granularity	gdt.c	/^enum seg_granularity$/;"	g	file:
+setup_stack	process.c	/^setup_stack (void **esp) $/;"	f	file:
+ss	tss.c	/^    uint16_t ss, :16;$/;"	m	struct:tss	file:
+ss0	tss.c	/^    uint16_t ss0, :16;                  \/* Ring 0 stack segment selector. *\/$/;"	m	struct:tss	file:
+ss1	tss.c	/^    uint16_t ss1, :16;$/;"	m	struct:tss	file:
+ss2	tss.c	/^    uint16_t ss2, :16;$/;"	m	struct:tss	file:
+start_process	process.c	/^start_process (void *f_name)$/;"	f	file:
+syscall_handler	syscall.c	/^syscall_handler (struct intr_frame *f UNUSED) $/;"	f	file:
+syscall_init	syscall.c	/^syscall_init (void) $/;"	f
+sysexit	syscall.c	/^void sysexit(int status){$/;"	f
+trace	tss.c	/^    uint16_t trace, bitmap;$/;"	m	struct:tss	file:
+tss	tss.c	/^static struct tss *tss;$/;"	v	typeref:struct:tss	file:
+tss	tss.c	/^struct tss$/;"	s	file:
+tss_get	tss.c	/^tss_get (void) $/;"	f
+tss_init	tss.c	/^tss_init (void) $/;"	f
+tss_update	tss.c	/^tss_update (void) $/;"	f
+validate_segment	process.c	/^validate_segment (const struct Elf32_Phdr *phdr, struct file *file) $/;"	f	file:
+wait_execute	process.c	/^static struct semaphore wait_execute;$/;"	v	typeref:struct:semaphore	file:
+wakeupwaiting	process.c	/^static void wakeupwaiting(int status){$/;"	f	file:

@@ -1,0 +1,182 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+CHANNEL_CNT	disk.c	82;"	d	file:
+CMD_IDENTIFY_DEVICE	disk.c	47;"	d	file:
+CMD_READ_SECTOR_RETRY	disk.c	48;"	d	file:
+CMD_WRITE_SECTOR_RETRY	disk.c	49;"	d	file:
+COL_CNT	vga.c	13;"	d	file:
+CTL_SRST	disk.c	37;"	d	file:
+DATA_REG	kbd.c	11;"	d	file:
+DEVICES_DISK_H	disk.h	2;"	d
+DEVICES_INPUT_H	input.h	2;"	d
+DEVICES_INTQ_H	intq.h	2;"	d
+DEVICES_KBD_H	kbd.h	2;"	d
+DEVICES_SERIAL_H	serial.h	2;"	d
+DEVICES_TIMER_H	timer.h	2;"	d
+DEVICES_VGA_H	vga.h	2;"	d
+DEV_DEV	disk.c	42;"	d	file:
+DEV_LBA	disk.c	41;"	d	file:
+DEV_MBS	disk.c	40;"	d	file:
+DISK_SECTOR_SIZE	disk.h	8;"	d
+FCR_REG	serial.c	31;"	d	file:
+GRAY_ON_BLACK	vga.c	21;"	d	file:
+IER_RECV	serial.c	37;"	d	file:
+IER_REG	serial.c	23;"	d	file:
+IER_XMIT	serial.c	38;"	d	file:
+IIR_REG	serial.c	30;"	d	file:
+INTQ_BUFSIZE	intq.h	21;"	d
+IO_BASE	serial.c	18;"	d	file:
+LCR_DLAB	serial.c	42;"	d	file:
+LCR_N81	serial.c	41;"	d	file:
+LCR_REG	serial.c	32;"	d	file:
+LSR_DR	serial.c	48;"	d	file:
+LSR_REG	serial.c	34;"	d	file:
+LSR_THRE	serial.c	49;"	d	file:
+LS_REG	serial.c	26;"	d	file:
+MCR_OUT2	serial.c	45;"	d	file:
+MCR_REG	serial.c	33;"	d	file:
+MS_REG	serial.c	27;"	d	file:
+POLL	serial.c	/^static enum { UNINIT, POLL, QUEUE } mode;$/;"	e	enum:__anon1	file:
+PRDSNu	disk.h	16;"	d
+QUEUE	serial.c	/^static enum { UNINIT, POLL, QUEUE } mode;$/;"	e	enum:__anon1	file:
+RBR_REG	serial.c	21;"	d	file:
+ROW_CNT	vga.c	14;"	d	file:
+STA_BSY	disk.c	32;"	d	file:
+STA_DRDY	disk.c	33;"	d	file:
+STA_DRQ	disk.c	34;"	d	file:
+THR_REG	serial.c	22;"	d	file:
+TIMER_FREQ	timer.h	8;"	d
+UNINIT	serial.c	/^static enum { UNINIT, POLL, QUEUE } mode;$/;"	e	enum:__anon1	file:
+blocked_list	timer.c	/^struct list blocked_list;$/;"	v	typeref:struct:list
+buf	intq.h	/^    uint8_t buf[INTQ_BUFSIZE];  \/* Buffer. *\/$/;"	m	struct:intq
+buffer	input.c	/^static struct intq buffer;$/;"	v	typeref:struct:intq	file:
+busy_wait	timer.c	/^busy_wait (int64_t loops) $/;"	f	file:
+capacity	disk.c	/^    disk_sector_t capacity;     \/* Capacity in sectors (if is_ata). *\/$/;"	m	struct:disk	file:
+caps_lock	kbd.c	/^static bool caps_lock;$/;"	v	file:
+channel	disk.c	/^    struct channel *channel;    \/* Channel disk is on. *\/$/;"	m	struct:disk	typeref:struct:disk::channel	file:
+channel	disk.c	/^struct channel $/;"	s	file:
+channels	disk.c	/^static struct channel channels[CHANNEL_CNT];$/;"	v	typeref:struct:channel	file:
+chars	kbd.c	/^    const char *chars;          \/* chars[0] has scancode first_scancode,$/;"	m	struct:keymap	file:
+check_device_type	disk.c	/^check_device_type (struct disk *d) $/;"	f	file:
+clear_row	vga.c	/^clear_row (size_t y) $/;"	f	file:
+cls	vga.c	/^cls (void)$/;"	f	file:
+completion_wait	disk.c	/^    struct semaphore completion_wait;   \/* Up'd by interrupt handler. *\/$/;"	m	struct:channel	typeref:struct:channel::semaphore	file:
+cx	vga.c	/^static size_t cx, cy;$/;"	v	file:
+cy	vga.c	/^static size_t cx, cy;$/;"	v	file:
+dev_no	disk.c	/^    int dev_no;                 \/* Device 0 or 1 for master or slave. *\/$/;"	m	struct:disk	file:
+devices	disk.c	/^    struct disk devices[2];     \/* The devices on this channel. *\/$/;"	m	struct:channel	typeref:struct:channel::disk	file:
+disk	disk.c	/^struct disk $/;"	s	file:
+disk_get	disk.c	/^disk_get (int chan_no, int dev_no) $/;"	f
+disk_init	disk.c	/^disk_init (void) $/;"	f
+disk_print_stats	disk.c	/^disk_print_stats (void) $/;"	f
+disk_read	disk.c	/^disk_read (struct disk *d, disk_sector_t sec_no, void *buffer) $/;"	f
+disk_sector_t	disk.h	/^typedef uint32_t disk_sector_t;$/;"	t
+disk_size	disk.c	/^disk_size (struct disk *d) $/;"	f
+disk_write	disk.c	/^disk_write (struct disk *d, disk_sector_t sec_no, const void *buffer)$/;"	f
+early_wakeup	timer.c	/^early_wakeup(const struct list_elem *a, const struct list_elem *b, void *aux UNUSED){$/;"	f	file:
+expecting_interrupt	disk.c	/^    bool expecting_interrupt;   \/* True if an interrupt is expected, false if$/;"	m	struct:channel	file:
+fb	vga.c	/^static uint8_t (*fb)[COL_CNT][2];$/;"	v	file:
+find_cursor	vga.c	/^find_cursor (size_t *x, size_t *y) $/;"	f	file:
+first_scancode	kbd.c	/^    uint8_t first_scancode;     \/* First scancode. *\/$/;"	m	struct:keymap	file:
+head	intq.h	/^    int head;                   \/* New data is written here. *\/$/;"	m	struct:intq
+identify_ata_device	disk.c	/^identify_ata_device (struct disk *d) $/;"	f	file:
+init	vga.c	/^init (void)$/;"	f	file:
+init_poll	serial.c	/^init_poll (void) $/;"	f	file:
+input_full	input.c	/^input_full (void) $/;"	f
+input_getc	input.c	/^input_getc (void) $/;"	f
+input_init	input.c	/^input_init (void) $/;"	f
+input_putc	input.c	/^input_putc (uint8_t key) $/;"	f
+input_sector	disk.c	/^input_sector (struct channel *c, void *sector) $/;"	f	file:
+interrupt_handler	disk.c	/^interrupt_handler (struct intr_frame *f) $/;"	f	file:
+intq	intq.h	/^struct intq$/;"	s
+intq_empty	intq.c	/^intq_empty (const struct intq *q) $/;"	f
+intq_full	intq.c	/^intq_full (const struct intq *q) $/;"	f
+intq_getc	intq.c	/^intq_getc (struct intq *q) $/;"	f
+intq_init	intq.c	/^intq_init (struct intq *q) $/;"	f
+intq_putc	intq.c	/^intq_putc (struct intq *q, uint8_t byte) $/;"	f
+invariant_keymap	kbd.c	/^static const struct keymap invariant_keymap[] = $/;"	v	typeref:struct:keymap	file:
+irq	disk.c	/^    uint8_t irq;                \/* Interrupt in use. *\/$/;"	m	struct:channel	file:
+is_ata	disk.c	/^    bool is_ata;                \/* 1=This device is an ATA disk. *\/$/;"	m	struct:disk	file:
+issue_pio_command	disk.c	/^issue_pio_command (struct channel *c, uint8_t command) $/;"	f	file:
+kbd_init	kbd.c	/^kbd_init (void) $/;"	f
+kbd_print_stats	kbd.c	/^kbd_print_stats (void) $/;"	f
+key_cnt	kbd.c	/^static int64_t key_cnt;$/;"	v	file:
+keyboard_interrupt	kbd.c	/^keyboard_interrupt (struct intr_frame *args UNUSED) $/;"	f	file:
+keyboard_interrupt	kbd.c	/^static intr_handler_func keyboard_interrupt;$/;"	v	file:
+keymap	kbd.c	/^struct keymap$/;"	s	file:
+left_alt	kbd.c	/^static bool left_alt, right_alt;        \/* Left and right Alt keys. *\/$/;"	v	file:
+left_ctrl	kbd.c	/^static bool left_ctrl, right_ctrl;      \/* Left and right Ctl keys. *\/$/;"	v	file:
+left_shift	kbd.c	/^static bool left_shift, right_shift;    \/* Left and right Shift keys. *\/$/;"	v	file:
+lock	disk.c	/^    struct lock lock;           \/* Must acquire to access the controller. *\/$/;"	m	struct:channel	typeref:struct:channel::lock	file:
+lock	intq.h	/^    struct lock lock;           \/* Only one thread may wait at once. *\/$/;"	m	struct:intq	typeref:struct:intq::lock
+loops_per_tick	timer.c	/^static unsigned loops_per_tick;$/;"	v	file:
+map_key	kbd.c	/^map_key (const struct keymap k[], unsigned scancode, uint8_t *c) $/;"	f	file:
+mode	serial.c	/^static enum { UNINIT, POLL, QUEUE } mode;$/;"	v	typeref:enum:__anon1	file:
+move_cursor	vga.c	/^move_cursor (void) $/;"	f	file:
+name	disk.c	/^    char name[8];               \/* Name, e.g. "hd0". *\/$/;"	m	struct:channel	file:
+name	disk.c	/^    char name[8];               \/* Name, e.g. "hd0:1". *\/$/;"	m	struct:disk	file:
+newline	vga.c	/^newline (void)$/;"	f	file:
+next	intq.c	/^next (int pos) $/;"	f	file:
+not_empty	intq.h	/^    struct thread *not_empty;   \/* Thread waiting for not-empty condition. *\/$/;"	m	struct:intq	typeref:struct:intq::thread
+not_full	intq.h	/^    struct thread *not_full;    \/* Thread waiting for not-full condition. *\/$/;"	m	struct:intq	typeref:struct:intq::thread
+output_sector	disk.c	/^output_sector (struct channel *c, const void *sector) $/;"	f	file:
+print_ata_string	disk.c	/^print_ata_string (char *string, size_t size) $/;"	f	file:
+printlist	timer.c	/^void printlist(int p){$/;"	f
+putc_poll	serial.c	/^putc_poll (uint8_t byte) $/;"	f	file:
+read_cnt	disk.c	/^    long long read_cnt;         \/* Number of sectors read. *\/$/;"	m	struct:disk	file:
+real_time_sleep	timer.c	/^real_time_sleep (int64_t num, int32_t denom) $/;"	f	file:
+reg_alt_status	disk.c	29;"	d	file:
+reg_base	disk.c	/^    uint16_t reg_base;          \/* Base I\/O port. *\/$/;"	m	struct:channel	file:
+reg_command	disk.c	23;"	d	file:
+reg_ctl	disk.c	28;"	d	file:
+reg_data	disk.c	15;"	d	file:
+reg_device	disk.c	21;"	d	file:
+reg_error	disk.c	16;"	d	file:
+reg_lbah	disk.c	20;"	d	file:
+reg_lbal	disk.c	18;"	d	file:
+reg_lbam	disk.c	19;"	d	file:
+reg_nsect	disk.c	17;"	d	file:
+reg_status	disk.c	22;"	d	file:
+reset_channel	disk.c	/^reset_channel (struct channel *c) $/;"	f	file:
+right_alt	kbd.c	/^static bool left_alt, right_alt;        \/* Left and right Alt keys. *\/$/;"	v	file:
+right_ctrl	kbd.c	/^static bool left_ctrl, right_ctrl;      \/* Left and right Ctl keys. *\/$/;"	v	file:
+right_shift	kbd.c	/^static bool left_shift, right_shift;    \/* Left and right Shift keys. *\/$/;"	v	file:
+select_device	disk.c	/^select_device (const struct disk *d)$/;"	f	file:
+select_device_wait	disk.c	/^select_device_wait (const struct disk *d) $/;"	f	file:
+select_sector	disk.c	/^select_sector (struct disk *d, disk_sector_t sec_no) $/;"	f	file:
+serial_flush	serial.c	/^serial_flush (void) $/;"	f
+serial_init_queue	serial.c	/^serial_init_queue (void) $/;"	f
+serial_interrupt	serial.c	/^serial_interrupt (struct intr_frame *f UNUSED) $/;"	f	file:
+serial_interrupt	serial.c	/^static intr_handler_func serial_interrupt;$/;"	v	file:
+serial_notify	serial.c	/^serial_notify (void) $/;"	f
+serial_putc	serial.c	/^serial_putc (uint8_t byte) $/;"	f
+set_serial	serial.c	/^set_serial (int bps)$/;"	f	file:
+shifted_keymap	kbd.c	/^static const struct keymap shifted_keymap[] = $/;"	v	typeref:struct:keymap	file:
+signal	intq.c	/^signal (struct intq *q UNUSED, struct thread **waiter) $/;"	f	file:
+tail	intq.h	/^    int tail;                   \/* Old data is read here. *\/$/;"	m	struct:intq
+ticks	timer.c	/^static int64_t ticks;$/;"	v	file:
+timer_calibrate	timer.c	/^timer_calibrate (void) $/;"	f
+timer_elapsed	timer.c	/^timer_elapsed (int64_t then) $/;"	f
+timer_init	timer.c	/^timer_init (void) $/;"	f
+timer_interrupt	timer.c	/^static intr_handler_func timer_interrupt;$/;"	v	file:
+timer_interrupt	timer.c	/^timer_interrupt (struct intr_frame *args UNUSED)$/;"	f	file:
+timer_msleep	timer.c	/^timer_msleep (int64_t ms) $/;"	f
+timer_nsleep	timer.c	/^timer_nsleep (int64_t ns) $/;"	f
+timer_print_stats	timer.c	/^timer_print_stats (void) $/;"	f
+timer_sleep	timer.c	/^timer_sleep (int64_t ticks) $/;"	f
+timer_ticks	timer.c	/^timer_ticks (void) $/;"	f
+timer_usleep	timer.c	/^timer_usleep (int64_t us) $/;"	f
+too_many_loops	timer.c	/^too_many_loops (unsigned loops) $/;"	f	file:
+txq	serial.c	/^static struct intq txq;$/;"	v	typeref:struct:intq	file:
+unshifted_keymap	kbd.c	/^static const struct keymap unshifted_keymap[] = $/;"	v	typeref:struct:keymap	file:
+vga_putc	vga.c	/^vga_putc (int c)$/;"	f
+wait	intq.c	/^wait (struct intq *q UNUSED, struct thread **waiter) $/;"	f	file:
+wait_until_idle	disk.c	/^wait_until_idle (const struct disk *d) $/;"	f	file:
+wait_while_busy	disk.c	/^wait_while_busy (const struct disk *d) $/;"	f	file:
+wakeup_thread	timer.c	/^void wakeup_thread(){$/;"	f
+write_cnt	disk.c	/^    long long write_cnt;        \/* Number of sectors written. *\/$/;"	m	struct:disk	file:
+write_ier	serial.c	/^write_ier (void) $/;"	f	file:
