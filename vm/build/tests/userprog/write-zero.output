@@ -1,0 +1,33 @@
+Copying tests/userprog/write-zero into /tmp/pmwcs6gcFI.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/pmwcs6gcFI.dsk...
+Writing command line to /tmp/SSWl2kHu2z.dsk...
+qemu -hda /tmp/SSWl2kHu2z.dsk -hdb /tmp/6uIyosRvh1.dsk -hdc /tmp/pmwcs6gcFI.dsk -hdd /tmp/C5BUSRmgY5.dsk -m 4 -net none -nographic -monitor null
+Kernel command line: -q -f put write-zero put sample.txt run write-zero
+Pintos booting with 4,096 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+Calibrating timer...  78,540,800 loops/s.
+hd0:0: detected 145 sector (72 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 75 sector (37 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+hd1:1: detected 8,064 sector (3 MB) disk, model "QEMU HARDDISK", serial "QM00004"
+Formatting file system...done.
+Boot complete.
+Putting 'write-zero' into the file system...
+Putting 'sample.txt' into the file system...
+Executing 'write-zero':
+(write-zero) begin
+(write-zero) open "sample.txt"
+(write-zero) end
+write-zero: exit(0)
+Execution of 'write-zero' complete.
+Timer: 67 ticks
+Thread: 30 idle ticks, 36 kernel ticks, 1 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 90 reads, 160 writes
+hd1:0: 75 reads, 0 writes
+hd1:1: 0 reads, 0 writes
+Console: 1001 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
