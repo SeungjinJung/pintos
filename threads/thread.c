@@ -493,6 +493,8 @@ init_thread (struct thread *t, const char *name, int priority)
 	t->waitfor = -1;
 	t->parent_id = NULL;
 	t->selffile = NULL;
+
+	list_init(&t->mmap_table);
 }
 
 /* Allocates a SIZE-byte frame at the top of thread T's stack and

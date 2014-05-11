@@ -1,13 +1,13 @@
-Copying tests/userprog/wait-killed into /tmp/ZF7YK3blDa.dsk...
-Copying tests/userprog/child-bad into /tmp/ZF7YK3blDa.dsk...
-Writing command line to /tmp/c6yvsUIU1Q.dsk...
-qemu -hda /tmp/c6yvsUIU1Q.dsk -hdb /tmp/O0MjtPJOj3.dsk -hdc /tmp/ZF7YK3blDa.dsk -hdd /tmp/VphD6rAaAE.dsk -m 4 -net none -nographic -monitor null
+Copying tests/userprog/wait-killed into /tmp/TcYAPSokVS.dsk...
+Copying tests/userprog/child-bad into /tmp/TcYAPSokVS.dsk...
+Writing command line to /tmp/W1TEwVALcS.dsk...
+qemu -hda /tmp/W1TEwVALcS.dsk -hdb /tmp/yVphpggXDd.dsk -hdc /tmp/TcYAPSokVS.dsk -hdd /tmp/Wo7IkrZHq8.dsk -m 4 -net none -nographic -monitor null
 Kernel command line: -q -f put wait-killed put child-bad run wait-killed
 Pintos booting with 4,096 kB RAM...
 371 pages available in kernel pool.
-371 pages available in user pool.
+370 pages available in user pool.
 Calibrating timer...  78,540,800 loops/s.
-hd0:0: detected 145 sector (72 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:0: detected 153 sector (76 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 146 sector (73 kB) disk, model "QEMU HARDDISK", serial "QM00003"
 hd1:1: detected 8,064 sector (3 MB) disk, model "QEMU HARDDISK", serial "QM00004"
@@ -23,13 +23,13 @@ child-bad: exit(-1)
 (wait-killed) end
 wait-killed: exit(0)
 Execution of 'wait-killed' complete.
-Timer: 79 ticks
-Thread: 30 idle ticks, 47 kernel ticks, 2 user ticks
+Timer: 80 ticks
+Thread: 30 idle ticks, 48 kernel ticks, 2 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 116 reads, 302 writes
 hd1:0: 146 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 1049 characters output
 Keyboard: 0 keys pressed
-Exception: 1 page faults
+Exception: 7 page faults
 Powering off...

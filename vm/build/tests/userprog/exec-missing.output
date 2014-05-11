@@ -1,12 +1,12 @@
-Copying tests/userprog/exec-missing into /tmp/w5lGelxy1d.dsk...
-Writing command line to /tmp/JiKFPrd4kj.dsk...
-qemu -hda /tmp/JiKFPrd4kj.dsk -hdb /tmp/hfVX6sQDby.dsk -hdc /tmp/w5lGelxy1d.dsk -hdd /tmp/aeoaXwmtsC.dsk -m 4 -net none -nographic -monitor null
+Copying tests/userprog/exec-missing into /tmp/v8mDpY6tEe.dsk...
+Writing command line to /tmp/WeTJddKB4o.dsk...
+qemu -hda /tmp/WeTJddKB4o.dsk -hdb /tmp/G1EvmOibgM.dsk -hdc /tmp/v8mDpY6tEe.dsk -hdd /tmp/2LuPa5C6Am.dsk -m 4 -net none -nographic -monitor null
 Kernel command line: -q -f put exec-missing run exec-missing
 Pintos booting with 4,096 kB RAM...
 371 pages available in kernel pool.
-371 pages available in user pool.
+370 pages available in user pool.
 Calibrating timer...  78,540,800 loops/s.
-hd0:0: detected 145 sector (72 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:0: detected 153 sector (76 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 73 sector (36 kB) disk, model "QEMU HARDDISK", serial "QM00003"
 hd1:1: detected 8,064 sector (3 MB) disk, model "QEMU HARDDISK", serial "QM00004"
@@ -28,5 +28,5 @@ hd1:0: 73 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 998 characters output
 Keyboard: 0 keys pressed
-Exception: 0 page faults
+Exception: 3 page faults
 Powering off...

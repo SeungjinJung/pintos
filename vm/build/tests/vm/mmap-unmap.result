@@ -1,2 +1,1 @@
-FAIL
-Output missing 'mmap-unmap: exit(-1)' message.
+PASS

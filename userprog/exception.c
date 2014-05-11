@@ -14,6 +14,9 @@
 #include "vm/swap.h"
 #include "userprog/process.h"
 
+#include "filesys/file.h"
+#include "filesys/filesys.h"
+
 #define MAX_USER_STACK 8*1024*1024
 
 /* Number of page faults processed. */
@@ -178,12 +181,18 @@ page_fault (struct intr_frame *f)
 	if(not_present){
 		//현재 메모리에 존재하지 않는경우 일단 process의 page_table에서 검색
 		struct pte* pte = find_page(cur->page_table, fault_page);
-//		printf("Page_fault Occur at %x from %x\n", fault_page, user);
 		if(pte){
-//			printf("mapping is needed with %x --> %x\n", pte->vaddr, pte->paddr);
 			//다시 memory로 로드한다(swap_in)
 			void *kpage = get_page(PAL_USER | PAL_ZERO);
-			swap_in(pte->disk_ind, kpage);
+			if(pte->loc == SWP){
+				//Swap에 있을경우 Swap In
+				swap_in(pte->disk_ind, kpage);
+			}
+			else if(pte->loc == NOZ){
+				//zero가 아닌 page의 경우 FILE에서 읽어들임
+				file_read_at (pte->file, kpage, pte->file_size, pte->ofs);
+			}
+			pte->paddr = kpage;
 			//install을 통해 연결시킴
 			install_page(fault_page, kpage, pte->writable);
 			pte->loc = MEM;

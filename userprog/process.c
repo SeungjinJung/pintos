@@ -22,6 +22,9 @@
 #include "threads/synch.h"
 #include "threads/malloc.h"
 #include <list.h>
+
+#include "userprog/syscall.h"
+
 static thread_func start_process NO_RETURN;
 static bool load (const char *cmdline, void (**eip) (void), void **esp);
 
@@ -235,6 +238,7 @@ process_wait (tid_t child_tid UNUSED)
 	}
 	cur->waitfor = -1;
 //	thread_set_priority(0);
+//	printf("wait state : %d\n", cur->child_exit_status);
 	return cur->child_exit_status;
 }
 
@@ -245,6 +249,17 @@ process_exit (void)
 	struct thread *curr = thread_current ();
 	uint32_t *pd;
 	int i;
+
+	//mmap table에 있는 데이터를 free함
+	//중간에 dirty되어 있는것이 있으면 기록
+	struct list_elem *e;
+	struct list *mlist = &curr->mmap_table;
+	struct mmap_elem *me;
+	for(e = list_begin(mlist); e!=list_end(mlist); e=list_next(e)){
+		me = list_entry(e, struct mmap_elem, lelem);
+		sys_unmmap(curr, me);
+	}
+
 	wakeupwaiting(curr->child_exit_status);
 	//close my fds
 	for(i=0; i<MAXFD; i++){
@@ -260,7 +275,6 @@ process_exit (void)
 	//페이지 테이블 destroy
 	//여기서 연결된 frame과 pagedir의 element를 free시킴
 	destroy_page_table(curr->page_table);
-
 	/* Destroy the current process's page directory and switch back
 		 to the kernel-only page directory. */
 	pd = curr->pagedir;
@@ -570,34 +584,53 @@ load_segment (struct file *file, off_t ofs, uint8_t *upage,
 		size_t page_read_bytes = read_bytes < PGSIZE ? read_bytes : PGSIZE;
 		size_t page_zero_bytes = PGSIZE - page_read_bytes;
 
-		/* Get a page of memory. */
-//		uint8_t *kpage = palloc_get_page (PAL_USER);
-		uint8_t *kpage = get_page(PAL_USER);
-
-		if (kpage == NULL)
-			return false;
-
-		/* Load this page. */
-		if (file_read (file, kpage, page_read_bytes) != (int) page_read_bytes)
-		{
-			palloc_free_page (kpage);
-			return false; 
+		struct pte * pte =  make_page_entry(upage, 0);
+		if(page_read_bytes == PGSIZE){
+			pte->loc = NOZ;
+			pte->ofs = ofs;
+			pte->file = file;
+			pte->file_size = PGSIZE;
+			pte->writable = writable;
+			ofs += page_read_bytes;
+			file_seek(file, ofs);
 		}
-		memset (kpage + page_read_bytes, 0, page_zero_bytes);
-
-		/* Add the page to the process's address space. */
-		if (!install_page (upage, kpage, writable)) 
-		{
-			palloc_free_page (kpage);
-			return false; 
+		else if(page_zero_bytes == PGSIZE){
+			pte->loc = ALZ;
+			pte->ofs = ofs;
+			pte->file = file;
+			pte->writable = writable;
+			pte->file_size = PGSIZE;
+			ofs += page_zero_bytes;
+			file_seek(file, ofs);
 		}
 		else{
-			//segment를 page_table에 추가
-			struct pte * pte =  make_page_entry(upage, kpage);
-			pte->writable = writable;
-			pte->loc = MEM;
-			insert_page(thread_current()->page_table, pte);
+			/* Get a page of memory. */
+			uint8_t *kpage = get_page(PAL_USER);
+			pte->paddr = kpage;
+			if (kpage == NULL)
+				return false;
+
+			/* Load this page. */
+			if (file_read (file, kpage, page_read_bytes) != (int) page_read_bytes)
+			{
+				palloc_free_page (kpage);
+				return false; 
+			}
+			memset (kpage + page_read_bytes, 0, page_zero_bytes);
+
+			/* Add the page to the process's address space. */
+			if (!install_page (upage, kpage, writable)) 
+			{
+				palloc_free_page (kpage);
+				return false; 
+			}
+			else{
+				//segment를 page_table에 추가
+				pte->writable = writable;
+				pte->loc = MEM;
+			}
 		}
+		insert_page(thread_current()->page_table, pte);
 		/* Advance. */
 		read_bytes -= page_read_bytes;
 		zero_bytes -= page_zero_bytes;

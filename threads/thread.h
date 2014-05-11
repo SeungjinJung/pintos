@@ -128,6 +128,7 @@ struct thread
 	/* below varibable for PJ3 */
 	struct pt *page_table;
 	void *esp;
+	struct list mmap_table;
 };
 
 /* If false (default), use round-robin scheduler.

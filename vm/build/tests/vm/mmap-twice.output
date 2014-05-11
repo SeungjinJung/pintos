@@ -1,13 +1,13 @@
-Copying tests/vm/mmap-twice into /tmp/gpoMIpknyt.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/gpoMIpknyt.dsk...
-Writing command line to /tmp/c8Xnus4Xk2.dsk...
-qemu -hda /tmp/c8Xnus4Xk2.dsk -hdb /tmp/APTdIOby2l.dsk -hdc /tmp/gpoMIpknyt.dsk -hdd /tmp/50hv7IRL8D.dsk -m 4 -net none -nographic -monitor null
+Copying tests/vm/mmap-twice into /tmp/saGwHGjVIe.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/saGwHGjVIe.dsk...
+Writing command line to /tmp/OAAow9Xv1Y.dsk...
+qemu -hda /tmp/OAAow9Xv1Y.dsk -hdb /tmp/WuH5VjPeYS.dsk -hdc /tmp/saGwHGjVIe.dsk -hdd /tmp/97EgJdT4gK.dsk -m 4 -net none -nographic -monitor null
 Kernel command line: -q -f put mmap-twice put sample.txt run mmap-twice
 Pintos booting with 4,096 kB RAM...
 371 pages available in kernel pool.
-371 pages available in user pool.
+370 pages available in user pool.
 Calibrating timer...  78,540,800 loops/s.
-hd0:0: detected 145 sector (72 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:0: detected 153 sector (76 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 79 sector (39 kB) disk, model "QEMU HARDDISK", serial "QM00003"
 hd1:1: detected 8,064 sector (3 MB) disk, model "QEMU HARDDISK", serial "QM00004"
@@ -19,14 +19,20 @@ Executing 'mmap-twice':
 (mmap-twice) begin
 (mmap-twice) open "sample.txt" #0
 (mmap-twice) mmap "sample.txt" #0 at 0x10000000
+(mmap-twice) open "sample.txt" #1
+(mmap-twice) mmap "sample.txt" #1 at 0x20000000
+(mmap-twice) compare mmap'd file 0 against data
+(mmap-twice) compare mmap'd file 1 against data
+(mmap-twice) end
+mmap-twice: exit(0)
 Execution of 'mmap-twice' complete.
-Timer: 67 ticks
-Thread: 30 idle ticks, 36 kernel ticks, 1 user ticks
+Timer: 70 ticks
+Thread: 30 idle ticks, 38 kernel ticks, 2 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 98 reads, 168 writes
+hd0:1: 105 reads, 168 writes
 hd1:0: 79 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1015 characters output
+Console: 1231 characters output
 Keyboard: 0 keys pressed
-Exception: 0 page faults
+Exception: 5 page faults
 Powering off...

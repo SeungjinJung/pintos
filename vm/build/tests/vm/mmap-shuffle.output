@@ -1,12 +1,12 @@
-Copying tests/vm/mmap-shuffle into /tmp/iWuwQk7Sag.dsk...
-Writing command line to /tmp/Lxagz0cZ2h.dsk...
-qemu -hda /tmp/Lxagz0cZ2h.dsk -hdb /tmp/riJ6bMoMPe.dsk -hdc /tmp/iWuwQk7Sag.dsk -hdd /tmp/WUnzySLLFX.dsk -m 4 -net none -nographic -monitor null
+Copying tests/vm/mmap-shuffle into /tmp/uYisk4HCDm.dsk...
+Writing command line to /tmp/kVfKQnRY9f.dsk...
+qemu -hda /tmp/kVfKQnRY9f.dsk -hdb /tmp/3RLrBholX4.dsk -hdc /tmp/uYisk4HCDm.dsk -hdd /tmp/qK6WiKH3Fg.dsk -m 4 -net none -nographic -monitor null
 Kernel command line: -q -f put mmap-shuffle run mmap-shuffle
 Pintos booting with 4,096 kB RAM...
 371 pages available in kernel pool.
-371 pages available in user pool.
+370 pages available in user pool.
 Calibrating timer...  78,540,800 loops/s.
-hd0:0: detected 145 sector (72 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:0: detected 153 sector (76 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 81 sector (40 kB) disk, model "QEMU HARDDISK", serial "QM00003"
 hd1:1: detected 8,064 sector (3 MB) disk, model "QEMU HARDDISK", serial "QM00004"
@@ -18,14 +18,27 @@ Executing 'mmap-shuffle':
 (mmap-shuffle) create "buffer"
 (mmap-shuffle) open "buffer"
 (mmap-shuffle) mmap "buffer"
+(mmap-shuffle) init: cksum=3115322833
+(mmap-shuffle) shuffle 0: cksum=1691062564
+(mmap-shuffle) shuffle 1: cksum=1973575879
+(mmap-shuffle) shuffle 2: cksum=1647619479
+(mmap-shuffle) shuffle 3: cksum=96566261
+(mmap-shuffle) shuffle 4: cksum=3885786467
+(mmap-shuffle) shuffle 5: cksum=3022003332
+(mmap-shuffle) shuffle 6: cksum=3614934266
+(mmap-shuffle) shuffle 7: cksum=2704001777
+(mmap-shuffle) shuffle 8: cksum=735775156
+(mmap-shuffle) shuffle 9: cksum=1864109763
+(mmap-shuffle) end
+mmap-shuffle: exit(0)
 Execution of 'mmap-shuffle' complete.
-Timer: 91 ticks
-Thread: 30 idle ticks, 38 kernel ticks, 23 user ticks
+Timer: 155 ticks
+Thread: 30 idle ticks, 37 kernel ticks, 88 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 95 reads, 430 writes
+hd0:1: 351 reads, 686 writes
 hd1:0: 81 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 975 characters output
+Console: 1483 characters output
 Keyboard: 0 keys pressed
-Exception: 0 page faults
+Exception: 35 page faults
 Powering off...

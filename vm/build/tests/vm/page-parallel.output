@@ -1,13 +1,13 @@
-Copying tests/vm/page-parallel into /tmp/xZ5uGHAj9n.dsk...
-Copying tests/vm/child-linear into /tmp/xZ5uGHAj9n.dsk...
-Writing command line to /tmp/tir3ErFVHz.dsk...
-qemu -hda /tmp/tir3ErFVHz.dsk -hdb /tmp/HNpTS16twp.dsk -hdc /tmp/xZ5uGHAj9n.dsk -hdd /tmp/Wrtfy4tDkI.dsk -m 4 -net none -nographic -monitor null
+Copying tests/vm/page-parallel into /tmp/cgDUa14lV0.dsk...
+Copying tests/vm/child-linear into /tmp/cgDUa14lV0.dsk...
+Writing command line to /tmp/XLVdea9iqL.dsk...
+qemu -hda /tmp/XLVdea9iqL.dsk -hdb /tmp/8iIhlBDK7g.dsk -hdc /tmp/cgDUa14lV0.dsk -hdd /tmp/0MXzDs330p.dsk -m 4 -net none -nographic -monitor null
 Kernel command line: -q -f put page-parallel put child-linear run page-parallel
 Pintos booting with 4,096 kB RAM...
 371 pages available in kernel pool.
-371 pages available in user pool.
+370 pages available in user pool.
 Calibrating timer...  78,540,800 loops/s.
-hd0:0: detected 145 sector (72 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:0: detected 153 sector (76 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 149 sector (74 kB) disk, model "QEMU HARDDISK", serial "QM00003"
 hd1:1: detected 8,064 sector (3 MB) disk, model "QEMU HARDDISK", serial "QM00004"
@@ -32,13 +32,13 @@ child-linear: exit(66)
 (page-parallel) end
 page-parallel: exit(0)
 Execution of 'page-parallel' complete.
-Timer: 917 ticks
-Thread: 30 idle ticks, 48 kernel ticks, 839 user ticks
+Timer: 149 ticks
+Thread: 30 idle ticks, 48 kernel ticks, 71 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 227 reads, 308 writes
+hd0:1: 195 reads, 308 writes
 hd1:0: 149 reads, 0 writes
-hd1:1: 7560 reads, 7616 writes
-Console: 1378 characters output
+hd1:1: 0 reads, 0 writes
+Console: 1371 characters output
 Keyboard: 0 keys pressed
-Exception: 945 page faults
+Exception: 1031 page faults
 Powering off...

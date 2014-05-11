@@ -15,6 +15,11 @@
 #include "threads/synch.h"
 #include <string.h>
 #include <list.h>
+
+#include "vm/page.h"
+#include "vm/frame.h"
+#include "vm/page.h"
+
 #define TOOLARGETOCONSOLE 4096
 
 static void sysexit(int);
@@ -22,7 +27,68 @@ static bool goodfileptr(void *);
 static bool goodfd(int);
 static int makeP_C(tid_t);
 
+static struct mmap_elem *find_mmap(struct list *,int);
+static bool mmap_overlap_check(struct list *, void *);
+
 static void syscall_handler (struct intr_frame *);
+
+struct mmap_elem* find_mmap(struct list *mlist, int fd){
+	struct list_elem *e;
+	struct mmap_elem* me;
+	for(e = list_begin(mlist); e != list_end(mlist); e = list_next(e)){
+		me = list_entry(e, struct mmap_elem, lelem);
+		if(me->map_pid == fd){
+			return me;
+		}
+	}
+	return NULL;
+}
+
+//addr이 현재 mmap된 다른 주소와 overlap이 되면 true 아니면 false
+//즉 false가 리턴 되어야 주소를 쓸수 있다는 의미
+bool mmap_overlap_check(struct list* mlist, void *addr){
+	struct list_elem *e;
+	struct mmap_elem* me;
+	for(e = list_begin(mlist); e != list_end(mlist); e = list_next(e)){
+		me = list_entry(e, struct mmap_elem, lelem);
+		if(me->mstart <= addr && me->mstart + me->msize > addr){
+			return true;
+		}
+	}
+	return false;
+}
+
+void sys_unmmap(struct thread* cur, struct mmap_elem* me){
+	//find file pointer
+	int ofilesize = me->msize;
+	//unmap 시작
+	int last_page = ((ofilesize-1)/PGSIZE)+1;
+	void* addr = me->mstart;
+	while(last_page >0){
+		struct pte* pte = find_page(cur->page_table, addr);
+		if(pte == NULL){
+			printf("ERROR\n");
+			ASSERT(false);
+		}
+		//수정된 page인 경우
+		if(pagedir_is_dirty(cur->pagedir, addr)){
+			file_write_at(pte->file, addr, pte->file_size, pte->ofs);
+		}
+		if(pte->loc == MEM){
+			//메모리일 경우 allocate된 메모리 free 시킴
+			free_page(cur->pagedir, addr);
+			delete_frame(find_frame(pte->paddr));
+		}
+		else if(pte->loc == SWP){
+			//Swap에 있을 경우 Swap table을 free 시킴
+			swap_free(pte->disk_ind);
+		}
+		delete_page(cur->page_table, pte);
+		//진행을 위해 변수 수정
+		addr +=  PGSIZE;
+		last_page--;
+	}
+}
 
 static struct semaphore filesys[MAXFD]; /* for synchronizing file access */
 	void
@@ -63,13 +129,6 @@ syscall_handler (struct intr_frame *f UNUSED)
 		//this systemcall is about exec
 		const char *cmd_line = (const char *)getaddr(f->esp+0x04);
 		tid_t pid = process_execute(cmd_line);
-		//		int status = process_wait(pid);
-		//		if(pid < 0){//it means error occurs
-		//			f->eax = -1;
-		//		}
-		//		else
-		//			printf("exit code : %d\n", thread_current()->child_exit_status);
-		//make parent child relationship
 		f->eax = makeP_C(pid);
 	}
 	else if(syscallnum == SYS_WAIT){
@@ -86,9 +145,6 @@ syscall_handler (struct intr_frame *f UNUSED)
 			f->eax=-1;
 			return;
 		}
-
-		//		printf("syswait called %d,%d\n", thread_current()->tid, pid);
-		//struct thread *cur = thread_current();
 		f->eax = process_wait(pid); 
 	}
 	else if(syscallnum == SYS_CREATE){
@@ -331,7 +387,102 @@ syscall_handler (struct intr_frame *f UNUSED)
 		//remove the fd in fd_set
 		cur->fd_set[fd] = 0;
 	}
+	else if(syscallnum == SYS_MMAP){
+		int fd = (int)getaddr(f->esp+0x4);
+		void *addr = (void *)getaddr(f->esp+0x08);
+		struct thread *cur = thread_current();
+		struct file* ofile;
+		//fd가 0또는 1일경우 map 불가
+		if(fd == 0 || fd == 1){
+			f->eax = -1;
+			return;
+		}
+		//page mis-align된 경우 fail
+		if((unsigned int)addr % PGSIZE != 0){
+			f->eax = -1;
+			return;
+		}
+		//이미 map된 곳에 다시 map을 하거나
+		//사용중인 addr일경우(code segment등) 이면 fail
+		if(pagedir_get_page(cur->pagedir, addr)){
+			f->eax = -1;
+			return;
+		}
+		if(!goodfd(fd)){
+			sysexit(-1);
+			return;
+		}
+		if(!goodfileptr(cur->fd_set[fd])){
+			sysexit(-1);
+			return;
+		}
+		//find file pointer
+		ofile = (struct file*)ptov((uintptr_t)cur->fd_set[fd]);
 
+		//document에 적힌대로 file_reopen을 사용하여서
+		//close 되어도 사용가능하게 만듦
+		ofile = file_reopen(ofile);
+
+		int ofilesize = file_length(ofile);
+
+		//파일 size가 0이면 fail
+		if(ofilesize == 0){
+			f->eax = -1;
+			return;
+		}
+		//주소가 0이면 fail
+		if(addr == 0){
+			f->eax = -1;
+			return;
+		}
+		//주소가 overlap 되면 fail
+		if(mmap_overlap_check(&cur->mmap_table, addr)){
+			f->eax = -1;
+			return;
+		}
+		//위를 다 통과하면 map 시작
+		int last_page = ((ofilesize-1)/PGSIZE)+1;
+		int last_size = ofilesize;
+		int go_page = 0;
+		while(last_page >0){
+			struct pte* pte = make_page_entry(addr + go_page*PGSIZE, 0);
+			pte->loc = NOZ;	//NOZ가 FILE안에 있으니 가져오라는 의미와 동일
+			pte->file = ofile;
+			pte->writable = true;	//기본적으로 writable;
+			pte->ofs = go_page*PGSIZE;
+			pte->file_size = PGSIZE<last_size ? PGSIZE : last_size;
+			//page table에 page table entry 등록
+			insert_page(cur->page_table, pte);
+
+			//진행을 위해 변수 수정
+			last_page--;
+			last_size -= pte->file_size;
+			go_page++;
+		}
+		//mmap table에 추가
+		struct mmap_elem *me = (struct mmap_elem *)malloc(sizeof(struct mmap_elem));
+		me->map_pid = fd;	//mapid_t의 변수를 fd와 같은 값으로 사용
+		me->mfd = fd;
+		me->mfile = ofile;
+		me->mstart = addr;
+		me->msize = ofilesize;
+		list_push_back(&cur->mmap_table, &me->lelem);
+		//리턴값은 map_pid
+		f->eax = me->map_pid;
+	}
+	else if(syscallnum == SYS_MUNMAP){
+		int mapping  = (int)getaddr(f->esp+0x04);
+		struct thread* cur = thread_current();
+		struct mmap_elem* me = find_mmap(&(cur->mmap_table), mapping);
+		int fd = me->mfd;
+		if(!goodfd(fd)){
+			sysexit(-1);
+			return;
+		}
+		sys_unmmap(cur, me);
+		list_remove(&me->lelem);
+		free(me);
+	}
 	else{//if the syscallnum is out of contol
 		//bad sp
 		if(syscallnum < 13)
@@ -367,20 +518,6 @@ bool goodfileptr(void *fileptr){
 		return false;
 	}
 	return true;
-	/*
-	if(is_user_vaddr(fileptr) && fileptr >= (void *)0x08048000){
-		//ASSERT(false);
-		if(pagedir_get_page(cur->pagedir, fileptr) == NULL){
-			//invalid file poiner
-			return false;
-		}
-		return true;
-	}
-	else if(fileptr < (void *)0x08048000)
-		return true;
-	else
-		return false;
-		*/
 }
 int makeP_C(tid_t t){
 	struct thread *cur = thread_current();

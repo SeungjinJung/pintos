@@ -1,12 +1,12 @@
-Copying tests/userprog/args-dbl-space into /tmp/ciznFnAPO3.dsk...
-Writing command line to /tmp/qhAcIhcb4W.dsk...
-qemu -hda /tmp/qhAcIhcb4W.dsk -hdb /tmp/TqUcA212Af.dsk -hdc /tmp/ciznFnAPO3.dsk -hdd /tmp/sCik9MuiL5.dsk -m 4 -net none -nographic -monitor null
+Copying tests/userprog/args-dbl-space into /tmp/W5SeV4Kx8D.dsk...
+Writing command line to /tmp/KbPl1ZJAgc.dsk...
+qemu -hda /tmp/KbPl1ZJAgc.dsk -hdb /tmp/X9da1UgrZY.dsk -hdc /tmp/W5SeV4Kx8D.dsk -hdd /tmp/WpeuPKlZ39.dsk -m 4 -net none -nographic -monitor null
 Kernel command line: -q -f put args-dbl-space run 'args-dbl-space two  spaces!'
 Pintos booting with 4,096 kB RAM...
 371 pages available in kernel pool.
-371 pages available in user pool.
+370 pages available in user pool.
 Calibrating timer...  78,540,800 loops/s.
-hd0:0: detected 145 sector (72 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:0: detected 153 sector (76 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 72 sector (36 kB) disk, model "QEMU HARDDISK", serial "QM00003"
 hd1:1: detected 8,064 sector (3 MB) disk, model "QEMU HARDDISK", serial "QM00004"
@@ -23,13 +23,13 @@ Executing 'args-dbl-space two  spaces!':
 (args) end
 args-dbl-space: exit(0)
 Execution of 'args-dbl-space two  spaces!' complete.
-Timer: 67 ticks
-Thread: 30 idle ticks, 35 kernel ticks, 2 user ticks
+Timer: 68 ticks
+Thread: 30 idle ticks, 36 kernel ticks, 2 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 152 writes
 hd1:0: 72 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 1085 characters output
 Keyboard: 0 keys pressed
-Exception: 0 page faults
+Exception: 3 page faults
 Powering off...

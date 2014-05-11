@@ -5,11 +5,15 @@
 #include "threads/thread.h"
 #include "threads/palloc.h"
 #include "userprog/pagedir.h"
+#include "filesys/file.h"
+#include "filesys/filesys.h"
 
 #define PAGE_SIZE 4096
 
-#define SWP 10
-#define MEM 11
+#define SWP 0
+#define MEM 1
+#define ALZ 2
+#define NOZ 3
 
 //page table entry ±¸Á¶Ã¼
 struct pte{
@@ -19,6 +23,10 @@ struct pte{
 	int loc;
 	bool writable;
 	struct hash_elem helem;
+	//below variable for PJ3-2
+	unsigned int ofs;
+	struct file *file;
+	int file_size;
 };
 
 //page table

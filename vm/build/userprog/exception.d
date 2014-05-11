@@ -6,7 +6,9 @@ userprog/exception.o: ../../userprog/exception.c \
   ../../threads/thread.h ../../lib/kernel/list.h ../../threads/synch.h \
   ../../vm/frame.h ../../threads/thread.h ../../lib/kernel/hash.h \
   ../../lib/kernel/list.h ../../vm/page.h ../../threads/palloc.h \
-  ../../userprog/pagedir.h ../../vm/swap.h ../../vm/page.h \
+  ../../userprog/pagedir.h ../../filesys/file.h ../../filesys/off_t.h \
+  ../../filesys/filesys.h ../../vm/swap.h ../../vm/page.h \
   ../../userprog/pagedir.h ../../threads/vaddr.h ../../threads/loader.h \
   ../../threads/palloc.h ../../vm/page.h ../../vm/frame.h ../../vm/swap.h \
-  ../../userprog/process.h ../../threads/synch.h
+  ../../userprog/process.h ../../threads/synch.h ../../filesys/file.h \
+  ../../filesys/filesys.h

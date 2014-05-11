@@ -42,6 +42,15 @@ struct pt* init_page_table(){
 	return new_pt;
 }
 
+bool delete_page(struct pt *pt, struct pte* pte){
+	if(hash_delete(&pt->page_table, &pte->helem) != NULL){
+		free(pte);
+		return true;
+	}
+	return false;
+}
+
+
 /* 페이지 테이블 Entry 삭제 */
 static void pte_destroy (struct hash_elem *e, void *aux UNUSED)
 {

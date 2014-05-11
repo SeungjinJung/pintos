@@ -1,13 +1,13 @@
-Copying tests/vm/mmap-clean into /tmp/2ywk9d8nCq.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/2ywk9d8nCq.dsk...
-Writing command line to /tmp/AjkuFxKEAQ.dsk...
-qemu -hda /tmp/AjkuFxKEAQ.dsk -hdb /tmp/e9L9WzKmhZ.dsk -hdc /tmp/2ywk9d8nCq.dsk -hdd /tmp/2gC3tVyZQw.dsk -m 4 -net none -nographic -monitor null
+Copying tests/vm/mmap-clean into /tmp/rNTTy8iTUb.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/rNTTy8iTUb.dsk...
+Writing command line to /tmp/Crd64HRqo0.dsk...
+qemu -hda /tmp/Crd64HRqo0.dsk -hdb /tmp/468v7aCY26.dsk -hdc /tmp/rNTTy8iTUb.dsk -hdd /tmp/bcxA1tZ2d3.dsk -m 4 -net none -nographic -monitor null
 Kernel command line: -q -f put mmap-clean put sample.txt run mmap-clean
 Pintos booting with 4,096 kB RAM...
 371 pages available in kernel pool.
-371 pages available in user pool.
+370 pages available in user pool.
 Calibrating timer...  78,540,800 loops/s.
-hd0:0: detected 145 sector (72 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:0: detected 153 sector (76 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 80 sector (40 kB) disk, model "QEMU HARDDISK", serial "QM00003"
 hd1:1: detected 8,064 sector (3 MB) disk, model "QEMU HARDDISK", serial "QM00004"
@@ -19,14 +19,21 @@ Executing 'mmap-clean':
 (mmap-clean) begin
 (mmap-clean) open "sample.txt"
 (mmap-clean) mmap "sample.txt"
+(mmap-clean) write "sample.txt"
+(mmap-clean) munmap "sample.txt"
+(mmap-clean) seek "sample.txt"
+(mmap-clean) read "sample.txt"
+(mmap-clean) file change was retained after munmap
+(mmap-clean) end
+mmap-clean: exit(0)
 Execution of 'mmap-clean' complete.
-Timer: 68 ticks
-Thread: 30 idle ticks, 37 kernel ticks, 1 user ticks
+Timer: 69 ticks
+Thread: 30 idle ticks, 37 kernel ticks, 2 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 100 reads, 170 writes
+hd0:1: 105 reads, 171 writes
 hd1:0: 80 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 996 characters output
+Console: 1211 characters output
 Keyboard: 0 keys pressed
-Exception: 0 page faults
+Exception: 4 page faults
 Powering off...

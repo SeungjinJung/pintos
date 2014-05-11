@@ -14,30 +14,31 @@ Elf32_Phdr	process.c	/^struct Elf32_Phdr$/;"	s	file:
 Elf32_Word	process.c	/^typedef uint32_t Elf32_Word, Elf32_Addr, Elf32_Off;$/;"	t	file:
 GRAN_BYTE	gdt.c	/^    GRAN_BYTE = 0,              \/* Limit has 1-byte granularity. *\/$/;"	e	enum:seg_granularity	file:
 GRAN_PAGE	gdt.c	/^    GRAN_PAGE = 1               \/* Limit has 4 kB granularity. *\/$/;"	e	enum:seg_granularity	file:
+MAX_USER_STACK	exception.c	20;"	d	file:
 NO_RETURN	process.c	/^static thread_func start_process NO_RETURN;$/;"	v	file:
-PE32Ax	process.c	299;"	d	file:
-PE32Hx	process.c	301;"	d	file:
-PE32Ox	process.c	300;"	d	file:
-PE32Wx	process.c	298;"	d	file:
+PE32Ax	process.c	322;"	d	file:
+PE32Hx	process.c	324;"	d	file:
+PE32Ox	process.c	323;"	d	file:
+PE32Wx	process.c	321;"	d	file:
 PF_P	exception.h	5;"	d
-PF_R	process.c	351;"	d	file:
+PF_R	process.c	374;"	d	file:
 PF_U	exception.h	7;"	d
 PF_W	exception.h	6;"	d
-PF_W	process.c	350;"	d	file:
-PF_X	process.c	349;"	d	file:
-PT_DYNAMIC	process.c	341;"	d	file:
-PT_INTERP	process.c	342;"	d	file:
-PT_LOAD	process.c	340;"	d	file:
-PT_NOTE	process.c	343;"	d	file:
-PT_NULL	process.c	339;"	d	file:
-PT_PHDR	process.c	345;"	d	file:
-PT_SHLIB	process.c	344;"	d	file:
-PT_STACK	process.c	346;"	d	file:
+PF_W	process.c	373;"	d	file:
+PF_X	process.c	372;"	d	file:
+PT_DYNAMIC	process.c	364;"	d	file:
+PT_INTERP	process.c	365;"	d	file:
+PT_LOAD	process.c	363;"	d	file:
+PT_NOTE	process.c	366;"	d	file:
+PT_NULL	process.c	362;"	d	file:
+PT_PHDR	process.c	368;"	d	file:
+PT_SHLIB	process.c	367;"	d	file:
+PT_STACK	process.c	369;"	d	file:
 SEL_CNT	gdt.h	11;"	d
 SEL_TSS	gdt.h	10;"	d
 SEL_UCSEG	gdt.h	8;"	d
 SEL_UDSEG	gdt.h	9;"	d
-TOOLARGETOCONSOLE	syscall.c	18;"	d	file:
+TOOLARGETOCONSOLE	syscall.c	23;"	d	file:
 USERPROG_EXCEPTION_H	exception.h	2;"	d
 USERPROG_GDT_H	gdt.h	2;"	d
 USERPROG_PAGEDIR_H	pagedir.h	2;"	d
@@ -81,6 +82,7 @@ esp2	tss.c	/^    void *esp2;$/;"	m	struct:tss	file:
 exception_init	exception.c	/^exception_init (void) $/;"	f
 exception_print_stats	exception.c	/^exception_print_stats (void) $/;"	f
 filesys	syscall.c	/^static struct semaphore filesys[MAXFD]; \/* for synchronizing file access *\/$/;"	v	typeref:struct:semaphore	file:
+find_mmap	syscall.c	/^struct mmap_elem* find_mmap(struct list *mlist, int fd){$/;"	f
 findthread	process.c	/^struct thread *findthread(struct list *elist, tid_t t){$/;"	f
 fs	tss.c	/^    uint16_t fs, :16;$/;"	m	struct:tss	file:
 gdt	gdt.c	/^static uint64_t gdt[SEL_CNT];$/;"	v	file:
@@ -89,10 +91,11 @@ getaddr	syscall.c	/^getaddr(void *ptr){$/;"	f	file:
 goodfd	syscall.c	/^bool goodfd(int fd){$/;"	f
 goodfileptr	syscall.c	/^bool goodfileptr(void *fileptr){$/;"	f
 gs	tss.c	/^    uint16_t gs, :16;$/;"	m	struct:tss	file:
-install_page	process.c	/^install_page (void *upage, void *kpage, bool writable)$/;"	f	file:
+install_page	process.c	/^install_page (void *upage, void *kpage, bool writable)$/;"	f
 invalidate_pagedir	pagedir.c	/^invalidate_pagedir (uint32_t *pd) $/;"	f	file:
 kill	exception.c	/^kill (struct intr_frame *f) $/;"	f	file:
 ldt	tss.c	/^    uint16_t ldt, :16;$/;"	m	struct:tss	file:
+lelem	syscall.h	/^	struct list_elem lelem;$/;"	m	struct:mmap_elem	typeref:struct:mmap_elem::list_elem
 load	process.c	/^load (const char *file_name, void (**eip) (void), void **esp) $/;"	f
 load_segment	process.c	/^load_segment (struct file *file, off_t ofs, uint8_t *upage,$/;"	f	file:
 lookup_page	pagedir.c	/^lookup_page (uint32_t *pd, const void *vaddr, bool create)$/;"	f	file:
@@ -102,6 +105,13 @@ make_data_desc	gdt.c	/^make_data_desc (int dpl)$/;"	f	file:
 make_gdtr_operand	gdt.c	/^make_gdtr_operand (uint16_t limit, void *base)$/;"	f	file:
 make_seg_desc	gdt.c	/^make_seg_desc (uint32_t base,$/;"	f	file:
 make_tss_desc	gdt.c	/^make_tss_desc (void *laddr)$/;"	f	file:
+map_pid	syscall.h	/^	int map_pid;$/;"	m	struct:mmap_elem
+mfd	syscall.h	/^	int mfd;$/;"	m	struct:mmap_elem
+mfile	syscall.h	/^	struct file* mfile;$/;"	m	struct:mmap_elem	typeref:struct:mmap_elem::file
+mmap_elem	syscall.h	/^struct mmap_elem{$/;"	s
+mmap_overlap_check	syscall.c	/^bool mmap_overlap_check(struct list* mlist, void *addr){$/;"	f
+msize	syscall.h	/^	unsigned int msize;$/;"	m	struct:mmap_elem
+mstart	syscall.h	/^	void * mstart;$/;"	m	struct:mmap_elem
 p_align	process.c	/^	Elf32_Word p_align;$/;"	m	struct:Elf32_Phdr	file:
 p_filesz	process.c	/^	Elf32_Word p_filesz;$/;"	m	struct:Elf32_Phdr	file:
 p_flags	process.c	/^	Elf32_Word p_flags;$/;"	m	struct:Elf32_Phdr	file:
@@ -136,6 +146,7 @@ ss0	tss.c	/^    uint16_t ss0, :16;                  \/* Ring 0 stack segment sel
 ss1	tss.c	/^    uint16_t ss1, :16;$/;"	m	struct:tss	file:
 ss2	tss.c	/^    uint16_t ss2, :16;$/;"	m	struct:tss	file:
 start_process	process.c	/^start_process (void *f_name)$/;"	f	file:
+sys_unmmap	syscall.c	/^void sys_unmmap(struct thread* cur, struct mmap_elem* me){$/;"	f
 syscall_handler	syscall.c	/^syscall_handler (struct intr_frame *f UNUSED) $/;"	f	file:
 syscall_init	syscall.c	/^syscall_init (void) $/;"	f
 sysexit	syscall.c	/^void sysexit(int status){$/;"	f
@@ -147,4 +158,4 @@ tss_init	tss.c	/^tss_init (void) $/;"	f
 tss_update	tss.c	/^tss_update (void) $/;"	f
 validate_segment	process.c	/^validate_segment (const struct Elf32_Phdr *phdr, struct file *file) $/;"	f	file:
 wait_execute	process.c	/^static struct semaphore wait_execute;$/;"	v	typeref:struct:semaphore	file:
-wakeupwaiting	process.c	/^static void wakeupwaiting(int status){$/;"	f	file:
+wakeupwaiting	process.c	/^void wakeupwaiting(int status){$/;"	f
